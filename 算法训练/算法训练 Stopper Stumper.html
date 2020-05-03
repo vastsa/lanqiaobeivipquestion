@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Stopper Stumper</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+Stephen Stepper的杂货店出售各种类型的瓶塞。瓶塞的形状是两个高1.5cm的同心圆柱叠在一起。<br />
+&nbsp; &nbsp;<img alt="" width="260" height="99" src="http://lx.lanqiao.cn/RequireFile.do?fid=6ayHJtMR" /><br />
+&nbsp;当Stephen邮寄顾客打包货物的时候，他尽量地节约空间。因为瓶塞是他店里最小的货物，所以他会最后打包。他发现每次都是将一些瓶塞放进包裹顶部的一个三角形空隙。瓶塞只能选择图1中两种放置方法之一。三角形空间只有3cm深，所以不能在一个瓶塞上再放一个。当然，两个瓶塞可以想图1和图2所示的叠在一起。你要做的就是帮Stephen判断能不能将塞子放进三角形空间里。<br />
+&nbsp;例如，假设一个三角形空间边长分别为8,7,10，我们要放3个瓶塞外部/内部直径分别为2cm/3cm，1.5cm/3cm和1cm/3cm。像图2的方式可以将它们放进空间里。(虚线表示一个塞子在下面的比较小的圆柱。)Stephen只会考虑3个瓶塞都接触两条边且没有两个不同的瓶塞接触到相同的两条边。<br />
+&nbsp;<img alt="" width="260" height="151" src="http://lx.lanqiao.cn/RequireFile.do?fid=menRahR5" /><br />
+【输入格式】<br />
+输入包含一行数。<br />
+3个正整数表示三角形三边长，3对共6个正实数表示3个瓶塞的规格。对于每对实数，前一个表示较小的圆柱直径，后一个表示较大的圆柱直径。输入最后一行所有数据都是0。<br />
+【输出格式】<br />
+输出一行表示数据组数。<br />
+接着一行表示是否可以满足要求。<br />
+每组数据输出后打印一个空行。<br />
+&nbsp;最后一组数据输出后不打印空行。<br />
+【样例输入】<br />
+6 6 6 0.5 1.0 0.3 2.0 0.4 1.0<br />
+10 10 10 2.0 3.0 1.0 2.0 1.5 3.5<br />
+20 6 20 3.0 4.5 0.5 1.0 4.0 5.0<br />
+8 7 10 2.0 3.0 1.5 3.0 1.0 3.0<br />
+8 7 10 2.0 3.0 2.5 3.0 2.0 3.0<br />
+0 0 0 0.0 0.0 0.0 0.0 0.0 0.0<br />
+【样例输出】<br />
+Triangle number 1:<br />
+All three stoppers will fit in the triangular space<br />
+Triangle number 2:<br />
+All three stoppers will fit in the triangular space<br />
+Triangle number 3:<br />
+Stoppers will not fit in the triangular space<br />
+Triangle number 4:<br />
+All three stoppers will fit in the triangular space<br />
+Triangle number 5:<br />
+Stoppers will not fit in the triangular space<br />
+【数据规模和约定】<br />
+我也不是很清楚，反正都在实数范围，数据范围没啥意义&nbsp;</p>

@@ -1,0 +1,25 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 最大的算式</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+<font face="Times New Roman">题目很简单，给出N个数字，不改变它们的相对位置，在中间加入K个乘号和N-K-1个加号，（括号随便加）使最终结果尽量大。因为乘号和加号一共就是N-1个了，所以恰好每两个相邻数字之间都有一个符号。例如： <br />
+　　N=5，K=2，5个数字分别为1、2、3、4、5，可以加成： <br />
+　　　　1*2*(3+4+5)=24 <br />
+　　　　1*(2+3)*(4+5)=45 <br />
+　　　　(1*2+3)*(4+5)=45 <br />
+　　　　&hellip;&hellip; </font><br />
+【输入格式】<br />
+<font face="Times New Roman">输入文件共有二行，第一行为两个有空格隔开的整数，表示N和K，其中（2&lt;=N&lt;=15, 0&lt;=K&lt;=N-1）。第二行为 N个用空格隔开的数字（每个数字在0到9之间）。</font></p>
+<p>【输出格式】<br />
+<font face="Times New Roman">　输出文件仅一行包含一个整数，表示要求的最大的结果</font></p>
+<p>【样例输入】<br />
+　5 2<br />
+　　1 2 3 4 5<br />
+&nbsp;</p>
+<p>【样例输出】<br />
+120</p>
+<p><font face="Times New Roman"><font face="Arial">【</font>样例说明】<br />
+　　　　(1+2+3)*4*5=120 </font><br />
+&nbsp;</p>

@@ -1,0 +1,253 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 字符串的展开</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;<span style="font-size:7.5pt;
+mso-font-kerning:0pt"><span>&nbsp;</span></span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">在初赛普及组的</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">阅读程序写结果</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">的问题中，我们曾给出一个字符串展开的例子：如果在输入的字符串中，含有类似于</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-h&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">或者</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;4-8&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">的字串，我们就把它当作一种简写，输出时，用连续递增的字母获数字串替代其中的减号，即，将上面两个子串分别输出为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;defgh&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">和</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;45678&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。在本题中，我们通过增加一些参数的设置，使字符串的展开更为灵活。具体约定如下：</span></p>
+<p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"> &nbsp;&nbsp;&nbsp;<span>&nbsp; </span><span>&nbsp;</span>(1) </span><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">遇到下面的情况需要做字符串的展开：在输入的字符串中，出现了减号</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;-&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">，减号两侧同为小写字母或同为数字，且按照</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">ASCII</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">码的顺序，减号右边的字符严格大于左边的字符。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+&nbsp;&nbsp;&nbsp;<span>&nbsp; </span><span>&nbsp;</span>(2) </span><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">参数</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">：展开方式。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1=1</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">时，对于字母子串，填充小写字母；</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1=2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">时，对于字母子串，填充大写字母。这两种情况下数字子串的填充方式相同。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1=3</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">时，不论是字母子串还是数字字串，都用与要填充的字母个数相同的星号</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;*&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">来填充。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+&nbsp;&nbsp;&nbsp;<span>&nbsp; </span><span>&nbsp;</span>(3) </span><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">参数</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p2</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">：填充字符的重复个数。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p2=k</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">表示同一个字符要连续填充</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">k</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">个。例如，当</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p2=3</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">时，子串</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-h&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应扩展为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;deeefffgggh&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。减号两边的字符不变。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+&nbsp;&nbsp;&nbsp;<span>&nbsp; </span><span>&nbsp;</span>(4) </span><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">参数</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p3</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">：是否改为逆序：</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p3=1</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">表示维持原来顺序，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p3=2</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">表示采用逆序输出，注意这时候仍然不包括减号两端的字符。例如当</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1=1</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">、</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p2=2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">、</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p3=2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">时，子串</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-h&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应扩展为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;dggffeeh&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+&nbsp;&nbsp;&nbsp; <span>&nbsp;&nbsp;</span>(5) </span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">如果减号右边的字符恰好是左边字符的后继，只删除中间的减号，例如：</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-e&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应输出为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;de&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;3-4&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应输出为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;34&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。如果减号右边的字符按照</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">ASCII</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">码的顺序小于或等于左边字符，输出时，要保留中间的减号，例如：</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-d&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应输出为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;d-d&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;3-1&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">应输出为</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;3-1&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:15.0pt;text-align:left;
+text-indent:-15.0pt;mso-char-indent-count:-2.0;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【输入】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">输入</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">包括两行：</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">第</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">1</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">行为用空格隔开的</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">3</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">个正整数，一次表示参数</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p1</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">p3</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">第</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">行为一行字符串，仅由数字、小写字母和减号</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">&ldquo;-&rdquo;</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">组成。行首和行末均无空格。</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="margin-left:15.0pt;text-align:left;
+text-indent:-15.0pt;mso-char-indent-count:-2.0;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【输出】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">输出</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">只有一行，为展开后的字符串。</span></p>
+<p class="MsoNormal" align="left" style="margin-left:15.0pt;text-align:left;
+text-indent:-15.0pt;mso-char-indent-count:-2.0;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char">
+<p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【输入输出样例</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">1</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-padding-alt:0cm 0cm 0cm 0cm">
+    <tbody>
+        <tr>
+            <td width="328" valign="top" style="width:246.35pt;border:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输入</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+            <td width="328" valign="top" style="width:246.35pt;border:solid windowtext 1.0pt;
+            border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输出</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="328" valign="top" style="width:246.35pt;border:solid windowtext 1.0pt;
+            border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">1 2 1<br />
+            abcs-w1234-9s-4zz<o:p></o:p></span></p>
+            </td>
+            <td width="328" valign="top" style="width:246.35pt;border-top:none;border-left:
+            none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">abcsttuuvvw1234556677889s-4zz<o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【输入输出样例</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">2</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-padding-alt:0cm 0cm 0cm 0cm">
+    <tbody>
+        <tr>
+            <td width="283" valign="top" style="width:212.05pt;border:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输入</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+            <td width="285" valign="top" style="width:214.05pt;border:solid windowtext 1.0pt;
+            border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输出</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="283" valign="top" style="width:212.05pt;border:solid windowtext 1.0pt;
+            border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">2 3 2<br />
+            a-d-d<o:p></o:p></span></p>
+            </td>
+            <td width="285" valign="top" style="width:214.05pt;border-top:none;border-left:
+            none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">aCCCBBBd-d<o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【输入输出样例</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">3</span><span style="font-size:
+7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse;mso-padding-alt:0cm 0cm 0cm 0cm">
+    <tbody>
+        <tr>
+            <td width="279" valign="top" style="width:209.35pt;border:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输入</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+            <td width="289" valign="top" style="width:216.75pt;border:solid windowtext 1.0pt;
+            border-left:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><b><span style="font-size:7.5pt;font-family:
+            宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+            mso-font-kerning:0pt">输出</span></b><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt"><o:p></o:p></span></p>
+            </td>
+        </tr>
+        <tr>
+            <td width="279" valign="top" style="width:209.35pt;border:solid windowtext 1.0pt;
+            border-top:none;padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">3 4 2<br />
+            di-jkstra2-6<o:p></o:p></span></p>
+            </td>
+            <td width="289" valign="top" style="width:216.75pt;border-top:none;border-left:
+            none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+            padding:0cm 5.4pt 0cm 5.4pt">
+            <p class="MsoNormal" align="left" style="text-align:left;mso-line-height-alt:
+            0pt;mso-pagination:widow-orphan"><span lang="EN-US" style="font-size:7.5pt;
+            mso-font-kerning:0pt">dijkstra2************6<o:p></o:p></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p class="MsoNormal" align="left" style="margin-left:15.0pt;text-align:left;
+text-indent:-15.0pt;mso-char-indent-count:-2.0;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">【限制】</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><br />
+40%</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:
+0pt">的数据满足：字符串长度不超过</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:
+0pt">5<br />
+100%</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:
+0pt">的数据满足：</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:
+0pt">1&lt;=p1&lt;=3</span><span style="font-size:7.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;
+mso-font-kerning:0pt">1&lt;=p2&lt;=8</span><span style="font-size:7.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:0pt">，</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">1&lt;=p3&lt;=2</span><span style="font-size:7.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:0pt">。字符串长度不超过</span><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt">100<o:p></o:p></span></p>
+</p>
+<p class="MsoNormal" align="left" style="margin-left:15.0pt;text-align:left;
+text-indent:-15.0pt;mso-char-indent-count:-2.0;mso-line-height-alt:0pt;
+mso-pagination:widow-orphan;layout-grid-mode:char"><span lang="EN-US" style="font-size:7.5pt;mso-font-kerning:0pt"><o:p></o:p></span></p>

@@ -1,0 +1,68 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 字符串的操作</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br>
+给出一个字符串S，然后给出q条指令，分别有4种：</p>
+<p>&nbsp;</p>
+<p>1. Append str</p>
+<p>表示在S的最后追加一个字符串str。</p>
+<p>例：</p>
+<p>原字符串：ABCDE</p>
+<p>执行 Append FGHIJ 后</p>
+<p>字符串变为：ABCDEFGHIJ</p>
+<p>&nbsp;</p>
+<p>2. Insert x str</p>
+<p>表示在位置x处插入一个字符串str。（输入保证0&lt;x&lt;=当前字符串长度）</p>
+<p>例：</p>
+<p>原字符串：ABCGHIJ</p>
+<p>执行 Insert 4 DEF 后</p>
+<p>字符串变为：ABCDEFGHIJ</p>
+<p>&nbsp;</p>
+<p>3. Swap a b c d</p>
+<p>表示交换从第a位到第b位的字符串与从第c位到第d位的字符串。（输入保证0&lt;a&lt;b&lt;c&lt;d&lt;=当前字符串长度）</p>
+<p>例：</p>
+<p>原字符串：ABGHIFCDEJ</p>
+<p>执行 Swap 3 5 7 9后</p>
+<p>字符串变为：ABCDEFGHIJ</p>
+<p>&nbsp;</p>
+<p>4. Reverse a b</p>
+<p>表示将从第a位到第b位的字符串反转。（输入保证0&lt;a&lt;b&lt;=当前字符串长度）</p>
+<p>例：</p>
+<p>原字符串：ABGFEDCHIJ</p>
+<p>执行 Reverse 3 7 后</p>
+<p>字符串变为：ABCDEFGHIJ</p>
+<p>&nbsp;</p>
+<p>最后输出按顺序执行完指令后的字符串。<br>
+【输入格式】<br>
+输入第一行包含字符串S，第二行包含一个整数q，接下来q行分别为q个指令。<br>
+【输出格式】<br>
+输出为1行，为按顺序执行完输入指令后的字符串。<br>
+【样例输入】<br>
+My</p>
+<p>5</p>
+<p>Append &nbsp;Hello</p>
+<p>Insert 3 dlroW</p>
+<p>Reverse 3 7</p>
+<p>Swap 3 7 8 12</p>
+<p>Swap 1 2 3 7</p>
+<p><br>
+【样例输出】<br>
+HelloMyWorld</p>
+<p>&nbsp;</p>
+<p>【样例解释】</p>
+<p>原字符串：My</p>
+<p>执行&nbsp;Append &nbsp;Hello 后：MyHello</p>
+<p>执行&nbsp;Insert 3 dlroW 后：MydlroWHello</p>
+<p>执行&nbsp;Reverse 3 7 后：MyWorldHello</p>
+<p>执行&nbsp;Swap 3 7 8 12 后：MyHelloWorld</p>
+<p>执行&nbsp;Swap 1 2 3 7 后：HelloMyWorld</p>
+<p><br>
+【数据规模和约定】<br>
+&nbsp;</p>
+<p>对于30%的数据，q=1；</p>
+<p>&nbsp;</p>
+<p>对于70%的数据，如有Swap指令，Swap指令中b-a=d-c；</p>
+<p>&nbsp;</p>
+<p>对于100%的数据，最终字符串长度不大于40000，1&lt;=q&lt;=150</p>

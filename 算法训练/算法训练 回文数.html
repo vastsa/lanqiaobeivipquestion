@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 回文数</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p><style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</style></p>
+<p style="margin-left: 0.29in; margin-bottom: 0in;">问题描述</p>
+<p style="margin-left: 0.29in; margin-bottom: 0in">若一个数（首位不为零）从左向右读与从右向左读都一样，我们就将其称之为回文数。</p>
+<p style="margin-bottom: 0in">例如：给定一个<font face="宋体, SimSun">10</font>进制数<font face="宋体, SimSun">56</font>，将<font face="宋体, SimSun">56</font>加<font face="宋体, SimSun">65</font>（即把<font face="宋体, SimSun">56</font>从右向左读），得到<font face="宋体, SimSun">121</font>是一个回文数。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">又如：对于<font face="宋体, SimSun">10</font>进制数<font face="宋体, SimSun">87</font>：</p>
+<p style="margin-bottom: 0in"><font face="宋体, SimSun">STEP1</font>：<font face="宋体, SimSun">87+78  = 165                  STEP2</font>：<font face="宋体, SimSun">165+561 = 726</font></p>
+<p style="margin-bottom: 0in"><font face="宋体, SimSun">STEP3</font>：<font face="宋体, SimSun">726+627 = 1353                STEP4</font>：<font face="宋体, SimSun">1353+3531 = 4884</font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">在这里的一步是指进行了一次<font face="宋体, SimSun">N</font>进制的加法，上例最少用了<font face="宋体, SimSun">4</font>步得到回文数<font face="宋体, SimSun">4884</font>。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">写一个程序，给定一个<font face="DejaVu Serif, serif"><font face="宋体, SimSun">N</font></font>（<font face="DejaVu Serif, serif"><font face="宋体, SimSun">2&lt;=N&lt;=10</font></font>或<font face="DejaVu Serif, serif"><font face="宋体, SimSun">N=16</font></font>）进制数<font face="DejaVu Serif, serif"><font face="宋体, SimSun">M（其中16进制数字为0-9与A-F）</font></font>，求最少经过几步可以得到回文数。</p>
+<p style="margin-bottom: 0in;">如果在<font face="宋体, SimSun">30</font>步以内（包含<font face="宋体, SimSun">30</font>步）不可能得到回文数，则输出&ldquo;Impossible!&rdquo;</p>
+<p style="margin-bottom: 0in;">输入格式</p>
+<p style="margin-bottom: 0in;">两行，N与M</p>
+<p style="margin-bottom: 0in;">输出格式</p>
+<p style="margin-bottom: 0in">如果能在30步以内得到回文数，输出&ldquo;STEP=xx&rdquo;（不含引号），其中xx是步数；否则输出一行&rdquo;Impossible!&rdquo;（不含引号）</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">样例输入</p>
+<p style="margin-bottom: 0in;"><font face="宋体, SimSun">9</font></p>
+<p style="margin-bottom: 0in;"><font face="宋体, SimSun">87</font></p>
+<p style="margin-bottom: 0in;"><font face="宋体, SimSun">样例输出</font><font face="宋体, SimSun"><br />
+</font></p>
+<p style="margin-bottom: 0in;"><font face="宋体, SimSun">STEP=6</font></p>

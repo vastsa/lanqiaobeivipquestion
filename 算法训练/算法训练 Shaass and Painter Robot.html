@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Shaass and Painter Robot</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+给你一个N*M的网格，一开始都是白色的。上面有一个机器人，一开始位于格子（X，Y）上（占据整个格子），面朝某个方向（左上，左下，右上，右下之一）。然后机器人会一直顺着这个方向走下去，每当遇到边界时会遵循光的反射定律改变方向，然后继续走。每当机器人走到一个格子后，它会将这个格子染黑，用掉一个单位颜料。即便这个格子已经被染黑了，也需要耗费一个单位颜料。当机器人意识到这个N*M的网格已经变成黑白相间的时候，它会立即停止行动。现在希望你求出，机器人停下来的时候，已经耗费了多少颜料？或者指出永远不可能停下来。</p>
+<p><img src="http://espresso.codeforces.com/7df2096f6969d97c7028a1bc36952fefb565e8f8.png" alt="" /></p>
+<p>左边的图描述了一次机器人的行动。它从1开始，依次走过1、3、5、4、2、3、6，其中3被染了两次（注意在这条路径中，5这种转折点不被算两次）。右边的图描述了一个不可能停下来的情况。<br />
+【输入格式】</p>
+<p>输入第一行两个数N，M，均&lt;=10^5。含义如上所述。</p>
+<p>第二行先是两个数X、Y，表示机器人一开始的坐标。然后两个字符，表示朝向（UL：左上，UR：右上，DL：左下，DR：右下）</p>
+<p>输入保证起点坐标在某一个边界上。</p>
+<p>【输出格式】</p>
+<p>输出一行一个正整数，表示停下来的时候耗费的颜料数。如果不可能停下来，输出-1。</p>
+<div>&nbsp;</div>
+<p>【样例输入】</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; padding: 0.25em; font-size: 13px; font-family: Consolas, 'Lucida Console', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', Courier; line-height: 1.25em; white-space: pre-wrap; word-wrap: break-word; color: rgb(136, 0, 0); background-color: rgb(239, 239, 239);">
+3 4<br />3 3 DR</pre>
+<p>【样例输出】<br />
+11<br />
+【数据规模和约定】</p>
+<p>对于20%的数据，N、M&lt;=10</p>
+<p>对于100%的数据，N、M&lt;=100000</p>

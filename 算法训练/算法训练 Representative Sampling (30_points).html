@@ -1,0 +1,608 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Representative Sampling (30_points)</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:RelyOnVML />
+<o:AllowPNG />
+</o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:TrackMoves>false</w:TrackMoves>
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:LidThemeOther>
+<w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+<w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:EnableOpenTypeKerning />
+<w:DontFlipMirrorIndents />
+<w:OverrideTableStyleHps />
+<w:UseFELayout />
+</w:Compatibility>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="267">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+</w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.5pt;
+mso-bidi-font-size:11.0pt;
+font-family:"Calibri","sans-serif";
+mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;
+mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;
+mso-bidi-font-family:"Times New Roman";
+mso-bidi-theme-font:minor-bidi;
+mso-font-kerning:1.0pt;}
+</style>
+<![endif]-->
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpFirst"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【题目描述】</span></b></p>
+<p align="left" style="text-align:left;text-indent:
+24.0pt;mso-char-indent-count:2.0" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">来自<span lang="EN-US">ABBYY</span>的小明有一个与&ldquo;细胞与遗传学研究所&rdquo;的合作。最近，研究所用一个新的题目考验<span lang="EN-US">小明</span>。题目如下。</span></p>
+<p align="left" style="text-align:left;text-indent:
+24.0pt;mso-char-indent-count:2.0" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">有由<span lang="EN-US">n</span>个细胞组成的一个集合（不一定不同）每个细胞是一个由小写拉丁字母组成的字符串。科学家给小明提出的问题是从给定集合中选出一个大小为<span lang="EN-US">k</span>的子集，使得所选子集的代表值最大。</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;text-indent:24.0pt;
+mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">小明做了些研究并得出了一个结论，即一个蛋白质集合的代表制可以用一个方便计算的整数来表示。我们假设当前的集合为<span lang="EN-US">{<i>a</i><sub>1</sub>,</span></span><span style="font-size:12.0pt;
+font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">...,</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><i><span lang="EN-US" style="font-size:12.0pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">a<sub>k</sub></span></i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">}</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">，包含了<span lang="EN-US">k</span>个用以表示蛋白质的字符串。那么蛋白质集合的代表值可以用如下的式子来表示：</span></p>
+<p align="center" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:center;text-indent:
+24.0pt;mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt;mso-no-proof:yes">                                                  </span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;text-indent:24.0pt;
+mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">其中<i><span lang="EN-US">f</span></i><span lang="EN-US">(<i>x</i>,</span></span><span style="font-size:12.0pt;font-family:
+&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">y</span></i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">)</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">表示字符串<i style="mso-bidi-font-style:normal"><span lang="EN-US">x</span></i>和<i style="mso-bidi-font-style:normal"><span lang="EN-US">y</span></i>的最长公共前缀的长度，例如：</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;text-indent:24.0pt;
+mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">f</span></i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">(&quot;abc&quot;, &quot;abd&quot;)</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">=</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">2<span style="mso-spacerun:yes">&nbsp; </span></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt">， <i><span lang="EN-US">f</span></i><span lang="EN-US">(&quot;ab&quot;, &quot;bcd&quot;)</span></span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">=</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">0.</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;text-indent:24.0pt;
+mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">因此，蛋白质集合<span lang="EN-US">{&quot;abc&quot;, &quot;abd&quot;, &quot;abe&quot;}</span>的代表值等于<span lang="EN-US">6</span>，集合<span lang="EN-US">{&quot;aaa&quot;, &quot;ba&quot;, &quot;ba&quot;}</span>的代表值等于<span lang="EN-US">2</span>。</span></p>
+<p align="left" style="text-align:left;text-indent:
+24.0pt;mso-char-indent-count:2.0;mso-pagination:widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">在发现了这个之后，小明要求赛事参与者写一个程序选出，给定蛋白质的集合中的大小为<span lang="EN-US">k</span>的子集中，能获得最大可能代表性值得一个子集。帮助他解决这个问题吧！</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【输入格式】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt">输入数据第一行包含<span lang="EN-US">2</span>个正整数<span lang="EN-US">n</span>和<span lang="EN-US">k</span>（<span lang="EN-US">1</span>&le;<i><span lang="EN-US">k</span></i>&le;<i><span lang="EN-US">n</span></i>），由一个空格隔开。接下来的<span lang="EN-US">n</span>行每一行都包含对蛋白质的描述。每个蛋白质都是一个仅有不超过<span lang="EN-US">500</span>个小写拉丁字母组成的非空字符串。有些字符串可能是相等的。</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt">【输出格式】</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:
+0pt">输出一个整数，表示给定蛋白质集合的大小为<span lang="EN-US">k</span>的子集的代表值最大可能是多少。</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&nbsp;</span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【数据规模】</span></b></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">20%</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">的数据保证：<span lang="EN-US">1</span></span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">n</span></i><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">20 </span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">50%</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">的数据保证：<span lang="EN-US">1</span></span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">n</span></i><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">100 </span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">100%</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">的数据保证：<span lang="EN-US">1</span></span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><i><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">n</span></i><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;mso-bidi-font-family:&quot;MS Mincho&quot;;
+mso-font-kerning:0pt">&thinsp;</span><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&le;</span><span style="font-size:12.0pt;font-family:&quot;MS Mincho&quot;;
+mso-bidi-font-family:&quot;MS Mincho&quot;;mso-font-kerning:0pt">&thinsp;</span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">2000 </span></p>
+<p align="left" style="mso-margin-top-alt:auto;
+mso-margin-bottom-alt:auto;mso-add-space:auto;text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:宋体;
+mso-font-kerning:0pt">&nbsp;</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输入<span lang="EN-US">1</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">3 2<br />
+aba<br />
+bzd<br />
+abq</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输出<span lang="EN-US">1</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">2</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">&nbsp;</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输入<span lang="EN-US">2</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">4 3<br />
+eee<br />
+rrr<br />
+ttt<br />
+qqq</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输出<span lang="EN-US">2</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">0</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输入<span lang="EN-US">3</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">4 3<br />
+aaa<br />
+abba<br />
+abbc<br />
+abbd</span></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan" class="MsoNormalCxSpMiddle"><b style="mso-bidi-font-weight:normal"><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:宋体;mso-font-kerning:0pt">【样例输出<span lang="EN-US">3</span>】</span></b></p>
+<p align="left" style="text-align:left;mso-pagination:
+widow-orphan;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt" class="MsoNormalCxSpMiddle"><span lang="EN-US" style="font-size:12.0pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:宋体;mso-font-kerning:0pt">9</span></p>

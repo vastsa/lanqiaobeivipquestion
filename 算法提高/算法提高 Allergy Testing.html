@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 Allergy Testing</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+<span style="font-family: Arial, sans-serif; font-size: small;">Kelly 对 n 种食物中的一种过敏，但她不确定是哪一种。所以呢，她想通过一些实验来确定。 </span></p>
+<p>&nbsp;</p>
+<p><span style="font-family: Arial, sans-serif; font-size: small;">每次实验，</span><span style="font-family: Arial, sans-serif; font-size: small;">Kelly&nbsp;可以选取几种不同的食物然后全吃了，A天之后，她就可以知道是否有过敏反应，如果没有，就说明她对吃的那几种食物都不过敏。 如果她有过敏反应，她就需要等过敏反应褪去（这个过程从刚开始吃算起需要B天），</span></p>
+<p>为了简化她的实验，任何一个实验必需等上一个实验完成（等A天或者B天）后开始，每次实验开始时，她可以根据前面的实验结果来选择这次要吃的食物集合。</p>
+<p><span style="font-family: Arial, sans-serif; font-size: small;">Kelly 想知道在最坏情况下，最少要多少天可以找到那个过敏食物。</span><br />
+【输入格式】<br />
+第一行一个正整数T，表示有T组测试数据。</p>
+<p>接下来T行，每行3个正整数n,A,B。<br />
+【输出格式】<br />
+共T行，第i行用&quot;Case #i: ans&quot;表示第i组数据，ans是第i个数据的答案。<br />
+【样例输入】<font face="bogus font here, monospace" size="2"><span style="background-color: rgb(239, 239, 239);"> </span></font><span style="font-family: Arial, Verdana, sans-serif; font-size: 12px; background-color: rgb(255, 255, 255);"><br type="_moz" />
+</span></p>
+<p>3</p>
+<p>4 5 7</p>
+<p>8 1 1</p>
+<p>1 23 &nbsp;32</p>
+<p>【样例输出】</p>
+<p>Case #1: 12</p>
+<p>Case #2: 3</p>
+<p>Case #3: 0</p>
+<p>【样例说明】</p>
+<p>第一组数据n = 4,A = 5,B = 7。一开始吃1,2。如果5天之后过敏，就再等2天，然后吃1。否则就吃3，然后等5天就行。</p>
+<p>第二组数据，每次对半分。</p>
+<p>第三组数据，不用实验了。<br />
+【数据规模和约定】<br />
+50%的数据满足：1&lt;=A&lt;=B&lt;=100</p>
+<p>100%的数据满足：1&lt;=n&lt;=10^15,1&lt;=A&lt;=B&lt;=10^12,1&lt;=T&lt;=10。</p>

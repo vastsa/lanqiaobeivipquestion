@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 实数相加</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="subtitle">问题描述</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3>计算两个实数相加的结果。 <BR>输入的实数满足如下要求: (1) 
+      小数点前的整数部分最多100位，(2) 小数点后的小数部分最多100位. <BR></FONT></P>
+      <br /></p><p class="subtitle">输入格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3>两行字符串，每行都是一个合法的实数。合法的意思是指: 
+      整数部分的值如果大于零,则最高位数字必定大于零. 如果整数部分的值为零,则整数部分只有一个零. 小数部分尾部可以有任意多的零. 可以没有小数部分, 
+      此时也没有小数点. 如果有小数点, 则至少需要有一位小数部分, 且允许是零.</FONT></P>
+      <br /></p><p class="subtitle">输出格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3>相加结果。注意: 小数部分末尾如果有连续的0, 则它们都是有效数字, 
+      不能舍去. 如果是两个整数相加, 则结果仍为整数而没有小数部分.</FONT></P>
+      <br /></p><p class="subtitle">样例输入</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>样例一:
+0.0000000000000000000000000000000000000111111111000000000000000000
+100000000000000000000000000000000000000000000000000000.0
+
+样例二:
+3
+4
+
+样例三:
+3.9
+2
+
+样例四：
+1.001
+8.99999999999999999999999</PRE></FONT>
+      <P></P>
+      <br /></p><p class="subtitle">样例输出</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>样例一：
+100000000000000000000000000000000000000000000000000000.0000000000000000000000000000000000000111111111000000000000000000
+
+样例二：
+7
+
+样例三:
+5.9
+
+样例四：
+10.00099999999999999999999</PRE></FONT>
+      <P></P>
+      <br /></p>

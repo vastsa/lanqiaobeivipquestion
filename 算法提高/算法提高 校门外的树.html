@@ -1,0 +1,181 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 校门外的树</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p><span style="font-size: larger; ">&nbsp;<span class="Apple-style-span" style="font-family: 宋体; line-height: 20px; ">【问题描述】</span>  </span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">某校大门外长度为<span lang="EN-US">L</span>的马路上有一排树，每两棵相邻的树之间的间隔都是<span lang="EN-US">1</span>米。我们可以把马路看成一个数轴，马路的一端在数轴<span lang="EN-US">0</span>的位置，另一端在<span lang="EN-US">L</span>的位置；数轴上的每个整数点，即<span lang="EN-US">0</span>，<span lang="EN-US">1</span>，<span lang="EN-US">2</span>，<span lang="EN-US">&hellip;&hellip;</span>，<span lang="EN-US">L</span>，都种有一棵树。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【输入文件】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">输入的第一行有两个整数<span lang="EN-US">L</span>（<span lang="EN-US">1 &lt;= L &lt;= 10000</span>）和<span lang="EN-US"> M</span>（<span lang="EN-US">1 &lt;= M &lt;= 100</span>），<span lang="EN-US">L</span>代表马路的长度，<span lang="EN-US">M</span>代表区域的数目，<span lang="EN-US">L</span>和<span lang="EN-US">M</span>之间用一个空格隔开。接下来的<span lang="EN-US">M</span>行每行包含两个不同的整数，用一个空格隔开，表示一个区域的起始点和终止点的坐标。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【输出文件】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">输出包括一行，这一行只包含一个整数，表示马路上剩余的树的数目。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【样例输入】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">500 3</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">150 300</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">100 200</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">470 471</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【样例输出】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">298</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【数据规模】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">对于<span lang="EN-US">20%</span>的数据，区域之间没有重合的部分；</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">对于其它的数据，区域之间有重合的情况。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【问题描述】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">某校大门外长度为<span lang="EN-US">L</span>的马路上有一排树，每两棵相邻的树之间的间隔都是<span lang="EN-US">1</span>米。我们可以把马路看成一个数轴，马路的一端在数轴<span lang="EN-US">0</span>的位置，另一端在<span lang="EN-US">L</span>的位置；数轴上的每个整数点，即<span lang="EN-US">0</span>，<span lang="EN-US">1</span>，<span lang="EN-US">2</span>，<span lang="EN-US">&hellip;&hellip;</span>，<span lang="EN-US">L</span>，都种有一棵树。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">由于马路上有一些区域要用来建地铁。这些区域用它们在数轴上的起始点和终止点表示。已知任一区域的起始点和终止点的坐标都是整数，区域之间可能有重合的部分。现在要把这些区域中的树（包括区域端点处的两棵树）移走。你的任务是计算将这些树都移走后，马路上还有多少棵树。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【输入文件】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">输入文件的第一行有两个整数<span lang="EN-US">L</span>（<span lang="EN-US">1 &lt;= L &lt;= 10000</span>）和<span lang="EN-US"> M</span>（<span lang="EN-US">1 &lt;= M &lt;= 100</span>），<span lang="EN-US">L</span>代表马路的长度，<span lang="EN-US">M</span>代表区域的数目，<span lang="EN-US">L</span>和<span lang="EN-US">M</span>之间用一个空格隔开。接下来的<span lang="EN-US">M</span>行每行包含两个不同的整数，用一个空格隔开，表示一个区域的起始点和终止点的坐标。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【输出文件】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;text-indent:21.0pt;
+mso-char-indent-count:2.0;line-height:15.0pt;mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">输出文件包括一行，这一行只包含一个整数，表示马路上剩余的树的数目。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-bidi-font-family:宋体;
+color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【样例输入】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">500 3</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">150 300</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">100 200</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">470 471</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【样例输出】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; ">298</span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">【数据规模】</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">对于<span lang="EN-US">20%</span>的数据，区域之间没有重合的部分；</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="left" style="text-align:left;line-height:15.0pt;
+mso-pagination:widow-orphan"><span style="font-size: larger; "><span style="font-family: 宋体; color: black; ">对于其它的数据，区域之间有重合的情况。</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="font-size: larger; "><span lang="EN-US" style="font-family: 宋体; color: black; "><o:p>&nbsp;</o:p></span></span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-bidi-font-family:宋体;color:black;mso-font-kerning:0pt"><o:p></o:p></span></p>
+<p><span style="font-size: larger; ">  <span class="Apple-style-span" style="font-family: 宋体; line-height: 20px; ">【试题来源】</span></span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><span style="font-size: larger; "><br type="_moz" />
+</span></p>
+<p class="MsoNormal"><span style="font-size: larger; "><span class="Apple-style-span" style="font-family: 宋体; "><span lang="EN-US">noip2005</span>普及组</span></span></p>

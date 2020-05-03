@@ -1,0 +1,49 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 相邻数对</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【问题描述】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">给定</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个不同的整数，问这些数中有多少对整数，它们的值正好相差</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【输入格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输入的第一行包含一个整数</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，表示给定整数的个数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">第二行包含所给定的</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个整数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【输出格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输出一个整数，表示值正好相差</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">的数对的个数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例输入】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">6<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">10 2 6 3 7 8<o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例输出】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">3<o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例说明】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">值正好相差</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">的数对包括</span><span lang="EN-US">(2, 3), (6, 7), (7, 8)</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【评测用例规模与约定】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span lang="EN-US">1&lt;=n&lt;=1000</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，给定的整数为不超过</span><span lang="EN-US">10000</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的非负整数。</span><span lang="EN-US"><o:p></o:p></span></p>

@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 数组排序去重</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span lang="EN-US"><o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span lang="EN-US"><o:p><font size="3" face="Calibri">&nbsp;</font></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin"><font size="3">【问题描述】</font></span><span lang="EN-US"><br />
+</span><font size="3"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">输入</span><span lang="EN-US"><font face="Calibri">10</font></span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">个整数组成的序列，要求对其进行升序排序，<wbr></wbr>并去掉重复元素。</span></font><span lang="EN-US"><br style="mso-special-character: line-break" />
+<br style="mso-special-character: line-break" />
+</span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin"><font size="3">【输入格式】</font></span><span lang="EN-US"><br />
+<font size="3" face="Calibri">10</font></span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin"><font size="3">个整数。</font></span><span lang="EN-US"><br />
+</span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin"><font size="3">【输出格式】</font></span><span lang="EN-US"><br />
+</span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin"><font size="3">多行输出，每行一个元素。</font></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span lang="EN-US"><br />
+</span><font size="3"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">【样例输入</span><span lang="EN-US"><font face="Calibri">1</font></span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">】</span></font><span lang="EN-US"><br />
+<font size="3" face="Calibri">2 2 3 3 1 1 5 5 5 5<br />
+</font></span><font size="3"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">【样例输出</span><span lang="EN-US"><font face="Calibri">1</font></span><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri; mso-fareast-font-family: 宋体; mso-fareast-theme-font: minor-fareast; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin">】</span></font><span lang="EN-US"><br />
+<font size="3" face="Calibri">1<br />
+2<br />
+3<br />
+5</font></span></p>
+<p>&nbsp;</p>

@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Cowboys</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>问题描述</p>
+<p>一个间不容发的时刻：n个牛仔站立于一个环中，并且每个牛仔都用左轮手枪指着他旁边的人！每个牛仔指着他顺时针或者逆时针方向上的相邻的人。正如很多西部片那样，在这一刻，绳命是入刺的不可惜&hellip;&hellip;对峙的场景每秒都在变化。每秒钟牛仔们都会分析局势，当一对相邻的牛仔发现他们正在互指的时候，就会转过身。一秒内每对这样的牛仔都会转身。所有的转身都同时在一瞬间发生。我们用字母来表示牛仔所指的方向。&ldquo;A&rdquo;表示顺时针方向，&ldquo;B&rdquo;表示逆时针方向。如此，一个仅含&ldquo;A&rdquo;&ldquo;B&rdquo;的字符串便用来表示这个由牛仔构成的环。这是由第一个指着顺时针方向的牛仔做出的记录。例如，牛仔环&ldquo;ABBBABBBA&rdquo;在一秒后会变成&ldquo;BABBBABBA&rdquo;；而牛仔环&ldquo;BABBA&rdquo;会变成&ldquo;ABABB&rdquo;。 这幅图说明了&ldquo;BABBA&rdquo;怎么变成&ldquo;ABABB&rdquo; 一秒过去了，现在用字符串s来表示牛仔们的排列。你的任务是求出一秒前有多少种可能的排列。如果某个排列中一个牛仔指向顺时针，而在另一个排列中他指向逆时针，那么这两个排列就是不同的。</p>
+<p>输入格式</p>
+<p>输入数据包括一个字符串s，它只含有&ldquo;A&rdquo;和&ldquo;B&rdquo;。</p>
+<p>输出格式</p>
+<p>输出你求出来的一秒前的可能排列数。</p>
+<p>数据规模和约定</p>
+<p>s的长度为3到100（包含3和100）</p>
+<p>样例输入</p>
+<p>BABBBABBA</p>
+<p>样例输出</p>
+<p>2</p>
+<p>&nbsp;</p>
+<p>样例输入</p>
+<p>ABABB</p>
+<p>样例输出</p>
+<p>2</p>
+<p>&nbsp;</p>
+<p>样例输入</p>
+<p>ABABAB</p>
+<p>样例输出</p>
+<p>4</p>
+<p>&nbsp;</p>
+<p>样例解释</p>
+<p>测试样例一中，可能的初始排列为：&quot;ABBBABBAB&quot;和 &quot;ABBBABBBA&quot;。</p>
+<p>测试样例二中，可能的初始排列为：&quot;AABBB&quot;和&quot;BABBA&quot;。</p>

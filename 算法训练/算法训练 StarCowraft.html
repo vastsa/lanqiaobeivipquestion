@@ -1,0 +1,49 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 StarCowraft</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<div>StarCowraft II的测试版已经准备好了。农夫John和Bessie正在测试这个游戏，他们在与其他军队啊一对一战斗中尝试不同的策略。StarCowraft II的目标是在战斗中击败敌人的军队。</div>
+<div>每个玩家的军队都在战斗。任何一支军队最多包含三种不同的单位，这三种单位拥有各自的优势，并且通过一些未知的恒定的正实数传递为玩家。cattlebruisers有强度S1, cow templars有强度S2,以及ultracows有强度S3.唯一确定的边界信息，没有单位的强度高达其他单位的100倍以上。</div>
+<div>一支军队的总强度是这支军队中所有的单位的强度之和。如果一支军队拥有三个单位中的cattlebruisers共32个，那么就从cattlebruisers这一种单位中，这只军队可以获得32*S1的强度。</div>
+<div>当两只军队开战时，总强度高的那支军队将会获胜。如果两只军队的总强度相等，那么会随机产生一个获胜者。</div>
+<div>农夫John和Bessie总共测试了n次战斗。在第i次战斗中，John的军队拥有J1_i个cattlebruisers,J2_i个cow templars,以及J3_i个ultracows (0 &lt;= J1_i + J2_i + J3_i &lt;= 1,000).同样的，Bessie的军队拥有B1_i个cattlebruisers,B2_i个cow templars,以及B3_i个ultracows (0 &lt;= B1_i + B2_i + B3_i &lt;= 1,000).当他们的军队打完之后，John和Bessie将胜者的名字记录成'victory letter' V_i:&ldquo;J&rdquo;表示John获得了胜利，&ldquo;B&rdquo;表示Bessie获得了胜利。</div>
+<div>虽然这些胜利的结果是他们拥有的唯一的信息，他们仍然希望如果给出两个对立的军队单位组成，就能够预测战斗的结果。但是对于一些战斗，他们可能无法确定哪一方是必胜的。</div>
+<div>给出n次测试的结果，要求写一个程序来判断m个新的战斗的胜者（如果可能）。</div>
+<div>所有测试的结果都是正确的，数据保证存在一组解满足所有条件。</div>
+<div>下面给出一个例子，我们知道S1=9.0，S2=7.0，S3=4.0。</div>
+<div>---- Farmer John ---- &nbsp; &nbsp;------- Bessie ------ &nbsp; &nbsp;Battle</div>
+<div>&nbsp; &nbsp;J1 &nbsp;J2 &nbsp;J3 J_Strength &nbsp; &nbsp;B1 &nbsp;B2 &nbsp;B3 B_Strength &nbsp; Outcome</div>
+<div>&nbsp; &nbsp; 6 &nbsp; &nbsp;5 &nbsp; &nbsp;4 &nbsp; &nbsp; 105 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; &nbsp;4 &nbsp; &nbsp;7 &nbsp; &nbsp; 101 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; J</div>
+<div>&nbsp; &nbsp; 5 &nbsp; &nbsp;4 &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp;81 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3 &nbsp; &nbsp;5 &nbsp; &nbsp;5 &nbsp; &nbsp; &nbsp;82 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;B</div>
+<div>&nbsp; &nbsp; 9 &nbsp; &nbsp;0 &nbsp; 10 &nbsp; &nbsp;121 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8 &nbsp; &nbsp;2 &nbsp; &nbsp;7 &nbsp; &nbsp; 114 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; J</div>
+<div>通过这三次战斗的结果，我们能预测出之后两次新的战斗的结果：</div>
+<div>---- Farmer John ---- &nbsp; &nbsp;------- Bessie ------ &nbsp; &nbsp;Battle</div>
+<div>&nbsp; &nbsp;J1 &nbsp;J2 &nbsp;J3 J_Strength &nbsp; &nbsp;B1 &nbsp;B2 &nbsp;B3 B_Strength &nbsp; Outcome</div>
+<div>&nbsp; &nbsp; 6 &nbsp; &nbsp;6 &nbsp; &nbsp; 4 &nbsp; &nbsp; 112 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;5 &nbsp; 4 &nbsp; 7 &nbsp; &nbsp;101 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;J</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FJ's army is even stronger than in test battle 1</div>
+<div>&nbsp; &nbsp; 9 &nbsp; &nbsp;0 &nbsp; 10 &nbsp; &nbsp;121 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 8 &nbsp; 2 &nbsp; 6 &nbsp; &nbsp;110 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;J</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Bessie's army is even weaker than in test battle 3</div>
+<div>（以上部分可以查看未格式化的试题）</div>
+<p>【输入格式】</p>
+<p>第1行：两个整数n和m</p>
+<p>第2..n+1行：第i+1行有 V_i, J1_i, J2_i, J3_i, B1_i, B2_i, B3_i七个参数，描述第i次测试。</p>
+<p>接下来m行，每行六个参数J1_i, J2_i, J3_i, B1_i, B2_i, B3_i，描述一次新的战斗。</p>
+<p>【输出格式】<br />
+输出共m行，每行一个字符&mdash;&mdash;&ldquo;J&rdquo;表示John获得了胜利，&ldquo;B&rdquo;表示Bessie获得了胜利，&ldquo;U&rdquo;表示无法确定最后的获胜者<br />
+【样例输入】</p>
+<p>3 3</p>
+<p>J 6 5 4 5 4 7</p>
+<p>B 5 4 2 3 5 5</p>
+<p>J 9 0 10 8 2 7</p>
+<p>6 6 4 5 4 7</p>
+<p>9 0 10 8 2 6</p>
+<p>3 4 8 4 4 6</p>
+<p>【样例输出】</p>
+<p>J</p>
+<p>J</p>
+<p>U</p>
+<p>【数据规模和约定】<br />
+对于50%的数据， n &le; 100</p>
+<p>对于100%的数据，n &le; 300，m &le; 2000&nbsp;</p>

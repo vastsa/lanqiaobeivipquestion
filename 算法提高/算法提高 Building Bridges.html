@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 Building Bridges</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:21.75pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">新奥德卫莱城市委员会计划建造一个连接系统来连接所有市中心的建筑，这样人们从一个建筑去另一个建筑时就不用走到外面了。你要写一个程序来帮忙确定建造方案。</span></p>
+<p class="MsoNormal" style="text-indent:21.75pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">新奥德卫莱市是正方形网状布局，每个建筑物占着一些连通的格子，两个有建筑物的格子如果有角接触就算相连，不需要连接道路。道路只能在正方形的边上建造，并且只能是直线且连接两个建筑。</span></p>
+<p class="MsoNormal" style="text-indent:21.75pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">给你一个建筑示意图，你要算出连接所有建筑的最小道路数。如果这是不可能的，找出最少的无法连接的建筑群数。在可连接所有建筑物的情况下，如果多种方案道路数都是最小的，选择在网格中道路总长度最小的方案。道路可以互相穿过，但在这种情况下道路被判定互不相干，之间无法连接。</span></p>
+<p class="MsoNormal" style="text-indent:21.75pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">下图说明了</span><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">种可能的城市配置。城市</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">包含</span><span lang="EN-US">5</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">个建筑，被</span><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">条道路连接起来，总长度为</span><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。城市</span><span lang="EN-US">2</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">中，因没有建筑共享网格线所以无法建立道路。在城市</span><span lang="EN-US">3</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">中，因为只有</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个建筑所以我们不需要道路。在城市</span><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">中，最好方案是用</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">条长度为</span><span lang="EN-US">1</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的道路连接两个城市，剩下两个不连通的建筑群（一个是两个建筑，一个是一个建筑）。</span></p>
+<p class="MsoNormal"><font face="宋体">左上是城市1&nbsp;</font><span style="font-family: 宋体;">，中上是</span><font face="宋体">建路后的城市1&nbsp;</font><span style="font-family: 宋体;">，右上是</span><font face="宋体">不能建路的城市2</font><span style="font-family: 宋体;">，左下是</span><font face="宋体">不需要建路的城市3</font><span style="font-family: 宋体;">，中下是</span><font face="宋体">城市4</font><span style="font-family: 宋体;">，右下是</span><font face="宋体">建路后的城市4</font><span style="font-family: 宋体;">。</span></p>
+<p class="MsoNormal" style="text-indent:21.75pt"><img src="http://lx.lanqiao.cn/RequireFile.do?fid=YDT57G6M" width="444" height="200" alt="" /></p>
+<p>【输入格式】<br />
+输入包含多座城市，每个城市的描述第一行有2个整数r和c（1&lt;=r,c&lt;=50），表示这个城市的南北距离和东西距离，之后接着r行，每行有c个&ldquo;#&rdquo;或&ldquo;.&rdquo;，每个字符表示网格中的一个格子。&ldquo;#&rdquo;表示那个格子中有建筑，&ldquo;.&rdquo; 表示那个格子中没有建筑。数据的最后一个城市是由两个0组成。<br />
+【输出格式】</p>
+<p>对于每个城市，像样例那样输出两到三行。第一行是城市编号。如果城市只有少于两个建筑，就在第二行输出&ldquo;No bridges are needed.&rdquo;。如果城市有两个及以上个建筑且任意两个建筑都不能被连接，就在第二行输出&ldquo;No bridges are possible.&rdquo;。否则，就在第二行输出&ldquo;N bridges of total length &nbsp;L&rdquo;，其中N是道路数，L是最优方案的道路长度。（如果N是1，就用bridge代替bridges）。如果最终方案剩下了多个建筑群，在第三行输出建筑群数。</p>
+<p>每组数据间用空行隔开。见下面样例。</p>
+<div>&nbsp;</div>
+<p>【样例输入】</p>
+<p>3 5&nbsp;</p>
+<p>#...#&nbsp;</p>
+<p>..#..&nbsp;</p>
+<p>#...#&nbsp;</p>
+<p>3 5&nbsp;</p>
+<p>##...&nbsp;</p>
+<p>.....&nbsp;</p>
+<p>....#&nbsp;</p>
+<p>3 5&nbsp;</p>
+<p>#.###&nbsp;</p>
+<p>#.#.#&nbsp;</p>
+<p>###.#&nbsp;</p>
+<p>3 5&nbsp;</p>
+<p>#.#..&nbsp;</p>
+<p>.....&nbsp;</p>
+<p>....#&nbsp;</p>
+<p>0 0</p>
+<div>&nbsp;</div>
+<p>【样例输出】</p>
+<p>City 1&nbsp;</p>
+<p>4 bridges of total length 4&nbsp;</p>
+<p>&nbsp;</p>
+<p>City 2&nbsp;</p>
+<p>No bridges are possible.&nbsp;</p>
+<p>2 disconnected groups&nbsp;</p>
+<p>&nbsp;</p>
+<p>City 3&nbsp;</p>
+<p>No bridges are needed.&nbsp;</p>
+<p>&nbsp;</p>
+<p>City 4&nbsp;</p>
+<p>1 bridge of total length 1&nbsp;</p>
+<p>2 disconnected groups</p>
+<div>&nbsp;</div>

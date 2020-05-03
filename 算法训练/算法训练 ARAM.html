@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 ARAM</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; 在游戏英雄联盟里，你可以玩一种游戏叫&ldquo;ARAM&rdquo;，这是&ldquo;All Random, All Mid&rdquo;的缩写。这个题目和它有点相似，但并不需要你了解英雄联盟。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; 每次你开始玩&ldquo;ARAM&rdquo;，你会被随机分配为一种&ldquo;champion&rdquo;，总共n种。有一些&ldquo;champion&rdquo;你能更加轻松地取胜。所以如果你不幸分到一个概率低的，你会想得到一个不同的&ldquo;champion&rdquo;。幸运的是，游戏包含&ldquo;Reroll&rdquo;功能。</p>
+<p style="margin: 0px;">&nbsp; &ldquo;Reroll&rdquo;会重新将你随机分配为一种&ldquo;champion&rdquo;，但你不能任意时刻都&ldquo;Reroll&rdquo;。具体地说它需要耗费钱。在你玩&ldquo;ARAM&rdquo;游戏前，你一开始就有R的&ldquo;RD&rdquo;（&ldquo;Reroll dollars&rdquo;）。你能&ldquo;Reroll&rdquo;当且仅当你有至少1RD。进行一次&ldquo;Reroll&rdquo;操作会花费1RD。 每次游戏后，你都会得到1/G的RD（G是个整数），但你不能得到超过R的RD。如果你有R的RD，再玩一盘，你仍然是R的RD。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; 如果你有至少1RD，并且你选择&quot;Reroll&quot;，你会花费1RD并重新随机分配成n个&quot;champion&quot;中的一个。你有可能会和之前分配给同一个。如果你不喜欢这次&quot;Reroll&quot;所得到的，并且你还有至少1RD，你可以再进行一次&quot;Reroll&quot;。只要你有至少1RD，你就能继续&quot;Reroll&quot;。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; 举个例子，如果R=2,G=2，并且你使用了一次reroll在你第一次游戏中，第一次游戏结束后你会有1.5RD。如果你又玩了一个游戏，没有用reroll，你会有2.0RD。如果你再玩一个游戏不用reroll，你仍然是2.0RD（因为任意时刻不允许超过R）。如果你使用了两次reroll在你下一次游戏中，你就会变成0.5RD。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p style="margin: 0px;">你有一张表，记录你用第i个&ldquo;champion&rdquo;的胜率。你会玩10^100盘游戏并选择一种最优秀的策略。求期望的取胜次数比例。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p>【输入格式】</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;第一行一个整数T表示数据组数。接下来T,1&le;T&le;100组数据，每组数据第一行输入三个整数n,R,G,1&le;n&le;1000,1&le;R,G&le;20。接下来一行n个实数p[i],0.0&le;p[i]&le;1.0，表示获胜概率。p[i]会是一个四位小数。</p>
+<p style="margin: 0px;">&nbsp;</p>
+<p style="margin: 0px;">&nbsp; &nbsp; &nbsp; &nbsp;由于原题是提交答案题，所以我把数据规模做了些调整。将在下面说明</p>
+<p style="margin: 0px;">【输出格式】</p>
+<p>&nbsp; &nbsp; 对于每组数据，前面输出Case #数据编号:，然后输出一个实数表示期望的取胜次数所占比例。如果你的答案与标准答案绝对误差或相对误差不超过10^-10，你就会被判定为正确。<br />
+【样例输入】</p>
+<p>3</p>
+<p>2 1 1</p>
+<p>1.0000 0.0000</p>
+<p>3 1 1</p>
+<p>1.0000 0.0000 0.5000</p>
+<p>6 2 3</p>
+<p>0.9000 0.6000 0.5000 0.1000 0.2000 0.8000</p>
+<p>【样例输出】</p>
+<p>Case #1: 0.750000000000</p>
+<p>Case #2: 0.666666666667<br />
+Case #3: 0.618728522337</p>
+<pre class="io-content" style="border: 0px; background-color: rgb(239, 239, 239); padding: 0px; overflow: auto; margin-top: 0px; margin-bottom: 0px; width: 262.3999938964844px;"><span style="background-color: rgb(255, 255, 255);"><font face="Arial, Verdana, sans-serif"> 【数据规模和约定】</font></span></pre>
+<p>对于测试点1~2，有T=100,n,R,G&le;10</p>
+<p>对于测试点3~5，有T=1,n&le;200，R,G&le;3</p>
+<p>对于测试点6~8，有T=10,n&le;200,R,G&le;3</p>
+<p>对于测试点9~10，有T=1,n&le;1000,R,G&le;3</p>
+<p>对于测试点11~14，有T=10,n&le;500,R,G&le;20</p>
+<p>对于测试点15~20，有T=1,n&le;1000,R,G&le;20</p>

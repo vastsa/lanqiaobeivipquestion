@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 筛选号码</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>
+<div style="color: rgb(34, 34, 34); font-family: arial, sans-serif; font-size: 13.333333969116211px; ">
+<div style="font-size: 13.333333969116211px; ">问题描述：</div>
+<div style="font-size: 13.333333969116211px; ">有n个人围成一圈，顺序排号（编号为1到n）。<wbr></wbr>从第1个人开始报数(从1到3报数)，凡报到3的人退出圈子。<wbr></wbr>从下一个人开始继续报数，直到剩下最后一个人，游戏结束。</div>
+<div style="font-size: 13.333333969116211px; ">问最后留下的是原来第几号的那位。</div>
+<div style="font-size: 13.333333969116211px; ">举个例子，8个人围成一圈：</div>
+<div style="font-size: 13.333333969116211px; ">1 2 3 4 5 6 7 8</div>
+<div style="font-size: 13.333333969116211px; ">第1次报数之后，3退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">1 2 4 5 6 7 8<span style="white-space: pre-wrap; ">	</span>（现在从4开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">第2次报数之后，6退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">1 2 4 5 7 8<span style="white-space: pre-wrap; ">		</span>（现在从7开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">第3次报数之后，1退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">2 4 5 7 8<span style="white-space: pre-wrap; ">		</span>（现在从2开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">第4次报数之后，5退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">2 4 7 8<span style="white-space: pre-wrap; ">			</span>（现在从7开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">第5次报数之后，2退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">4 7 8<span style="white-space: pre-wrap; ">			</span>（现在从4开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">第6次报数之后，8退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">4 7<span style="white-space: pre-wrap; ">				</span>（现在从4开始报数）</div>
+<div style="font-size: 13.333333969116211px; ">最后一次报数之后，4退出，剩下：</div>
+<div style="font-size: 13.333333969116211px; ">7.</div>
+<div style="font-size: 13.333333969116211px; ">所以，最后留下来的人编号是7。</div>
+<div style="font-size: 13.333333969116211px; ">输入格式：</div>
+<div style="font-size: 13.333333969116211px; ">一个正整数n，(1&lt;n&lt;10000)</div>
+<div style="font-size: 13.333333969116211px; ">输出格式：</div>
+<div style="font-size: 13.333333969116211px; ">一个正整数，最后留下来的那个人的编号。</div>
+<div style="font-size: 13.333333969116211px; ">样例输入：</div>
+<div style="font-size: 13.333333969116211px; ">8</div>
+<div style="font-size: 13.333333969116211px; ">样例输出：</div>
+<div style="font-size: 13.333333969116211px; ">7</div>
+<div style="font-size: 13.333333969116211px; ">数据范围</div>
+<div style="font-size: 13.333333969116211px; ">对于100%的数据，1&lt;n&lt;10000。</div>
+</div>
+</p>

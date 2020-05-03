@@ -1,0 +1,245 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Wall Bars</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【题目描述】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Manao</span><span style="font-size:
+9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">在一家建筑公司工作。最近，有一项在儿童公园内建设</span><span lang="EN-US" style="font-size:9.0pt">Wall Bar</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的订单。</span><span lang="EN-US" style="font-size:9.0pt">Manao</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">被委托设计一个能使公司最节省资金的建设方案。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">在回顾了</span><span lang="EN-US" style="font-size:9.0pt">Wall Bar </span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的正常规格之后，</span><span lang="EN-US" style="font-size:9.0pt">Manao</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">发现许多要求是模糊的，决定按照公司的利益处理。他的最终设计描述如下：</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">、我们定义单位长度，建筑物中间那根管子高度为</span><span lang="EN-US" style="font-size:9.0pt">n</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>2</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">、在高度为</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">2...n</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的地方，恰好有一根水平的横杆从中间的杆子连向四个方向中的某一个预先固定好的杆子上。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>3</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">、如果两根横杆的距离不超过</span><span lang="EN-US" style="font-size:9.0pt">h</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">，且方向相同，那么一个孩子可以从一个一根横杆爬到另一根上。在地上的孩子，可以爬到任何一根高度在</span><span lang="EN-US" style="font-size:9.0pt">1-h</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">之间的横杠上。在</span><span lang="EN-US" style="font-size:9.0pt">Manao</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">的建筑物上，一个从地面出发的孩子至少能到达一根高度在</span><span lang="EN-US" style="font-size:9.0pt">n-h+1</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">n-h+2...n</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">的横杠。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Manao</span><span style="font-size:
+9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">想知道有多少种设计方案满足上述要求。这个数字可能会非常大，输出其除以</span><span lang="EN-US" style="font-size:9.0pt">1000000009&nbsp;(10^9+&thinsp;9)</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">的余数即可。两个设计方案被认为是不同的，当且仅当在某个高度他们的横杠方向不同。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【输入格式】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">一行，包含两个空格隔开的正整数，</span><span lang="EN-US" style="font-size:9.0pt">n</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">和</span><span lang="EN-US" style="font-size:9.0pt">h</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">。</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【输出格式】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">一行，输出答案</span><span lang="EN-US" style="font-size:9.0pt">mod 1000000009&nbsp;(10^9+&thinsp;9)</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">。</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>5 1</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">2</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4 2</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">2</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>148</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">3</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>4 3</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">3</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>256</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">4</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>5 2</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">4</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>376</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【数据</span><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">规模和约定</span><span style="font-size:
+9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1&le;<i style="mso-bidi-font-style:normal">n</i>&le;1000, 1&le;<i style="mso-bidi-font-style:normal">h</i>&le;<i style="mso-bidi-font-style:
+normal">min</i>(<i style="mso-bidi-font-style:normal">n</i>,30)</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【提示】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">考虑几个</span><span lang="EN-US" style="font-size:9.0pt">h=2</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">的设计方案。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">一个第一层方向为</span><span lang="EN-US" style="font-size:9.0pt">d1,</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">第二层方向为</span><span lang="EN-US" style="font-size:9.0pt">d2...</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">的方案被描述成串</span><span lang="EN-US" style="font-size:9.0pt">d1d2...dn</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">方案</span><span lang="EN-US" style="font-size:9.0pt">1231</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">，孩子无法爬到</span><span lang="EN-US" style="font-size:9.0pt">3</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">或</span><span lang="EN-US" style="font-size:9.0pt">4</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的高度。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">方案</span><span lang="EN-US" style="font-size:9.0pt">414141</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">，孩子可以到达</span><span lang="EN-US" style="font-size:9.0pt">5</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">的高度：先到达高度</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">3</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">后即可。也可以到达</span><span lang="EN-US" style="font-size:9.0pt">6</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的高度，先到达</span><span lang="EN-US" style="font-size:9.0pt">2</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">4</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">即可。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">方案</span><span lang="EN-US" style="font-size:9.0pt">123333</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">，孩子不能到达最上面的两个横杠。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">方案</span><span lang="EN-US" style="font-size:9.0pt">323323</span><span style="font-size:9.0pt;font-family:
+&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">，可以通过</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">3</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">、</span><span lang="EN-US" style="font-size:9.0pt">4</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">到达高度</span><span lang="EN-US" style="font-size:9.0pt">6.</span></p>
+<p class="MsoNormal"><span style="mso-ignore:vglayout">  </span></p>
+<table cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr>
+            <td width="15" height="0">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><img width="390" height="298" src="http://lx.lanqiao.cn/RequireFile.do?fid=6Y7FMHjQ" alt="" /></td>
+        </tr>
+    </tbody>
+</table>
+<p><br clear="ALL" style="mso-ignore:vglayout" />
+<span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">左边是一个正常的</span><span lang="EN-US" style="font-size:9.0pt">Wall Bar</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的样子</span><span lang="EN-US" style="font-size:9.0pt">,</span><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">右边是</span><span lang="EN-US" style="font-size:9.0pt">Manao</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的一种设计方案。</span></p>
+<!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:UseFELayout />
+</w:Compatibility>
+<w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+</w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+</w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1027" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->

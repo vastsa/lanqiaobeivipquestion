@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Yaroslav and Arrangements</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+Yaroslav称数列<span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">a<sub>1</sub></span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">a<sub>2</sub></span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">&hellip; </span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，&thinsp;</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">a<sub>r</sub></span>为良好的，当它满足：<br />
+&nbsp; &nbsp; 1.<span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">| a<sub>1</sub> &ndash; a<sub>2</sub> | = 1</span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">| a<sub>2</sub> &ndash; a<sub>3</sub> | = 1</span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">&hellip;</span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">| a<sub>r-1</sub> &ndash; a<sub>r</sub> | = 1</span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">，</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">| a<sub>r </sub>&ndash; a<sub>1</sub> |</span>= 1<br />
+&nbsp; &nbsp; 2.&nbsp;<img src="http://lx.lanqiao.cn/RequireFile.do?fid=gnbbgMHq" alt="" width="100" height="47" /></p>
+<p>Yaroslav称数列b1，b2，&hellip; ，&thinsp;br为优秀的，当它满足：<br />
+&nbsp; &nbsp; 1.  数列中的元素不下降<br />
+&nbsp; &nbsp; 2.  满足 1 &le; r &le; n 、 1 &le;&nbsp;<span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">b<sub>i</sub>&nbsp;</span>&le; m<br />
+&nbsp; &nbsp; 3.  通过重排数列中的元素可以得到至少一个至多k个不同的良好数列。<br />
+Yaroslav有三个整数n，m，k 。他需要知道有多少个不同的优秀数列。帮助Yaroslav！考虑到答案可能相当大，将答案模1000000007  (<span style="font-family: Arial; font-size: 9pt;">10</span><sup style="font-family: Arial;">9</sup><span style="font-family: Arial; font-size: 9pt;">+7</span>)</p>
+<p>两个数列<span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">{x<sub>n</sub>}</span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">、</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">{y<sub>n</sub>}</span>被认为不同，仅当存在一个位置i，使<span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">x<sub>i</sub></span><span style="font-size: 9pt; font-family: 宋体; background-position: initial initial; background-repeat: initial initial;">&ne;</span><span style="font-size: 9pt; font-family: Arial; background-position: initial initial; background-repeat: initial initial;" lang="EN-US">y<sub>i</sub></span><br />
+【输入格式】<br />
+单独一行三个整数n，m，k<br />
+【输出格式】<br />
+单独一行输出答案<br />
+【样例输入】<br />
+样例1：  1 1 1<br />
+样例2：  3 3 3<br />
+样例3：  28 15 34<br />
+【样例输出】<br />
+样例1：  0<br />
+样例2：  2<br />
+样例3：  54737<br />
+【数据规模和约定】<br />
+30%的数据 &nbsp; n，m，k&le;8<br />
+60%的数据 &nbsp; n，m，k&le;60<br />
+100%的数据 &nbsp; n，m，k&le;100</p>

@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 操作格子</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div class="sec_header">
+问题描述</div>
+<div class="sec_cont">
+	<p>有n个格子，从左到右放成一排，编号为1-n。</p>
+	<p>共有m次操作，有3种操作类型：</p>
+	<p>1.修改一个格子的权值，</p>
+	<p>2.求连续一段格子权值和，</p>
+	<p>3.求连续一段格子的最大值。</p>
+	<p>对于每个2、3操作输出你所求出的结果。</p>
+</div>
+<div class="sec_header">
+输入格式</div>
+<div class="sec_cont">
+	<p>第一行2个整数n，m。</p>
+	<p>接下来一行n个整数表示n个格子的初始权值。</p>
+	<p>接下来m行，每行3个整数p,x,y，p表示操作类型，p=1时表示修改格子x的权值为y，p=2时表示求区间[x,y]内格子权值和，p=3时表示求区间[x,y]内格子最大的权值。</p>
+</div>
+<div class="sec_header">
+输出格式</div>
+<div class="sec_cont">
+	<p>有若干行，行数等于p=2或3的操作总数。</p>
+	<p>每行1个整数，对应了每个p=2或3操作的结果。</p>
+</div>
+<div class="sec_header">
+样例输入</div>
+<div class="sec_text">
+4 3<br />
+1 2 3 4<br />
+2 1 3<br />
+1 4 3<br />
+3 1 4
+</div>
+<div class="sec_header">
+样例输出</div>
+<div class="sec_text">
+6<br />
+3
+	</div>
+<div class="sec_header">
+数据规模与约定</div>
+<div class="sec_cont">
+	<p>对于20%的数据n &lt;= 100，m &lt;= 200。</p>
+	<p>对于50%的数据n &lt;= 5000，m &lt;= 5000。</p>
+	<p>对于100%的数据1 &lt;= n &lt;= 100000，m &lt;= 100000，0 &lt;= 格子权值 &lt;= 10000。</p>
+</div>

@@ -1,0 +1,146 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 明明的随机数</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;<span class="Apple-style-span" style="font-family: 宋体; font-size: 16px; line-height: 24px; ">【问题描述】</span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:21.0pt;line-height:150%"><span style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">N</span><span style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">个</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">1</span><span style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">到</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">1000</span><span style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">之间的随机整数（</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">N</span><span lang="EN-US" style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">&le;</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">100</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成<span lang="EN-US">&ldquo;</span>去重<span lang="EN-US">&rdquo;</span>与<span lang="EN-US">&ldquo;</span>排序<span lang="EN-US">&rdquo;</span>的工作。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">【输入格式】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:10.5pt;line-height:150%"><span style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">输入有</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">2</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">行，第</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">1</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">行为</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">1</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">个正整数，表示所生成的随机数的个数：<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:10.5pt;line-height:150%"><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">N</span><span lang="EN-US" style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:10.5pt;line-height:150%"><span style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">第</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">2</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">行有</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">N</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">个用空格隔开的正整数，为所产生的随机数。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">【输出格式】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;text-indent:10.5pt;line-height:150%"><span style="font-size:
+12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;
+mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">输出也是</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">2</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">行，第</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">1</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">行为</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">1</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">个正整数</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">M</span><span style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体">，表示不相同的随机数的个数。第</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">2</span><span style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">行为</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:&quot;Courier New&quot;">M</span><span style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">个用空格隔开的正整数，为从小到大排好序的不相同的随机数。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">【输入样例】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">&nbsp; 10</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:
+宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:major-fareast;
+mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">&nbsp; 20 40 32 67 40 20 89 300 400 15</span><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体">【输出样例】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">&nbsp; 8</span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:
+宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:major-fareast;
+mso-hansi-theme-font:major-fareast;mso-bidi-font-family:宋体"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span lang="EN-US" style="font-size:12.0pt;
+line-height:150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">&nbsp; 15 20 32 40 67 89 300 400<o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">【题目来源】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:150%"><span style="font-size:12.0pt;line-height:
+150%;font-family:宋体;mso-ascii-theme-font:major-fareast;mso-fareast-theme-font:
+major-fareast;mso-hansi-theme-font:major-fareast;mso-bidi-font-family:&quot;Courier New&quot;">计<span lang="EN-US">13</span>李震摘编自<span lang="EN-US">NOIP06PJ01</span></span><span lang="EN-US" style="font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-theme-font:
+major-fareast;mso-fareast-theme-font:major-fareast;mso-hansi-theme-font:major-fareast;
+mso-bidi-font-family:宋体"><o:p></o:p></span></p>

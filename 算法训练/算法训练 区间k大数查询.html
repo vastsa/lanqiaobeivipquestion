@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 区间k大数查询</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div class="sec_header">
+问题描述</div>
+<div class="sec_cont">
+	<p>给定一个序列，每次询问序列中第l个数到第r个数中第K大的数是哪个。</p>
+</div>
+<div class="sec_header">
+输入格式</div>
+<div class="sec_cont">
+	<p>第一行包含一个数n，表示序列长度。</p>
+	<p>第二行包含n个正整数，表示给定的序列。</p>
+	<p>第三个包含一个正整数m，表示询问个数。</p>
+<p>接下来m行，每行三个数l,r,K，表示询问序列从左往右第l个数到第r个数中，从大往小第K大的数是哪个。序列元素从1开始标号。</p>
+</div>
+<div class="sec_header">
+输出格式</div>
+<div class="sec_cont">
+	总共输出m行，每行一个数，表示询问的答案。
+</div>
+<div class="sec_header">
+样例输入</div>
+<div class="sec_text">
+5<br />
+1 2 3 4 5<br />
+2<br />
+1 5 2<br />
+2 3 2
+</div>
+<div class="sec_header">
+样例输出</div>
+<div class="sec_text">
+4<br />
+2
+	</div>
+<div class="sec_header">
+数据规模与约定</div>
+<div class="sec_cont">
+<p>对于30%的数据，n,m&lt;=100；</p>
+<p>对于100%的数据，n,m&lt;=1000；</p>
+<p>保证k&lt;=(r-l+1)，序列中的数&lt;=10<sup>6</sup>。</p>
+</div>

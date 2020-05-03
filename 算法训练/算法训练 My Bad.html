@@ -1,0 +1,370 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 My Bad</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">一个逻辑电路将其输入通过不同的门映射到输出，在电路中没有回路。输入和输出是一个逻辑值的有序集合，逻辑值被表示为<span lang="EN-US">1</span>和<span lang="EN-US">0</span>。我们所考虑的电路由与门（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">and gate</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">，只有在两个输入都是<span lang="EN-US">1</span>的时候，输出才为<span lang="EN-US">1</span>）、或门（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">or gate</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">，只要两个输入中有一个是<span lang="EN-US">1</span>，输出就是<span lang="EN-US">1</span>）、异或门（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">exclusive or</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">（<span lang="EN-US">xor</span>）<span lang="EN-US">gate</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">，在两个输入中仅有一个是<span lang="EN-US">1</span>，输出才是<span lang="EN-US">1</span>）和非门（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">not gate</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">，单值输入，输出是输入的补）组成。下图给出两个电路。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><img src="http://lx.lanqiao.cn/RequireFile.do?fid=LmrJA5Yt" width="560" height="181" alt="" /></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">不幸的是，在实际中，门有时会出故障。虽然故障会以多种不同的方式发生，但本题将门会出现的故障限于如下三种形式之一：<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">）总是与正确的输出相反；<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">）总是产生<span lang="EN-US">0</span>；<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt;text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">3</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">）总是产生<span lang="EN-US">1</span>；<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">在本题给出的电路中，最多只有一个门出故障。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">请编写一个程序，对一个电路进行分析，对多组输入和输出进行实验，看电路运行是正确的还是不正确的。如果至少有一组输入产生了错误的输出，程序要确定唯一的出故障的门，以及这个门出故障的方式。但这也可能是无法判断的。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">输入由多组测试数据组成，每组测试用例描述了一个电路及其输入和输出。每个测试数据按序给出下述部分。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">1.&nbsp; </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">一行给出<span lang="EN-US">3</span>个正整数：在电路中输入的数量（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">N &le; 8</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">），门的数量（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">G &le; 19</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">）和输出的数量（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">U &le; 19</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">）。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">2.&nbsp; </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">每行一个门，第一行描述</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">g</span><sub><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">1</span></sub><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">门，如果有若干个门，则下一行描述</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">g</span><sub><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast">2</span></sub><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">门，以此类推。每行给出门类型（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">a = and</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">，<span lang="EN-US">n = not</span>，<span lang="EN-US">o = or</span>，<span lang="EN-US">x = exclusive or</span></span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">）和对这个门的所有输入的标识符，对这个门的输入来自电路输入（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">i<sub>1</sub>, i<sub>2</sub>, &hellip;</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">）或来自另一个门的输出（</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">g<sub>1</sub>, g<sub>2</sub>, &hellip;</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast">）。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">3.&nbsp; </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">一行给出与</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">U</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">个输出</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">u<sub>1</sub>, u<sub>2</sub>, &hellip;.</span><span style="mso-bidi-font-size:10.5pt;font-family:
+宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">所</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">关联的门的编号。例如，如果有三个输出，</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">u<sub>1</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">来自</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">g<sub>5</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">u<sub>2</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">来自</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">g<sub>1</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">，</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">u<sub>3</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">来自</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">g<sub>4</sub></span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">，那么这一行为：<span lang="EN-US">5 1 4</span>。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">4.&nbsp; </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">一行给出一个整数，表示对电路的进行实验的次数（</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">B</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">）。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">5.&nbsp; </span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">最后给出</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">B</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">行，每行<span lang="EN-US">(N+U)</span>个值（<span lang="EN-US">1</span>和<span lang="EN-US">0</span>），给出实验的输入值和相应的输出值。不存在有两个相同输入的情况。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">输入中的标识符或数字以空格分开，输入以包含<span lang="EN-US">3</span>个<span lang="EN-US">0</span>的一行结束。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p>【输出格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">对于输入数据中的每个电路，输出测试数据的编号（从<span lang="EN-US">1</span>开始），然后输出一个冒号和一个空格，再输出电路分析，内容为如下之一（用<span lang="EN-US">#</span>代替相应的门的编号）：<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast">&nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">No faults detected<o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">Gate # is failing; output inverted<o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">Gate # is failing; output stuck at 0<o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">Gate # is failing; output stuck at 1<o:p></o:p></span></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:
+minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;">Unable to totally classify the failure<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast">在图<span lang="EN-US">1</span>和图<span lang="EN-US">2 </span>中给出的电路图是第一个和最后一个测试数据。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p>【样例输入】</p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2 2 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o i1 i2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">n g1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 0 0<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">0 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2 1 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">a i1 i2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2 1 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">a i1 i2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 1 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 1 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">n i1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">0 0<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">3 4 4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">n g4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">a i1 i2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">o i2 i3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">x i3 i1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">2 3 4 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">0 1 0 0 1 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">0 1 1 0 1 1 0<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">1 1 1 0 1 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">0 0 0 0 0 0 1<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">0 0 0</span><br />
+【样例输出】</p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">Case 1: No faults detected<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">Case 2: Unable to totally classify the failure<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">Case 3: Gate 1 is failing; output stuck at 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-theme-font:minor-fareast;mso-fareast-font-family:宋体;
+mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;">Case 4: Gate 1 is failing; output inverted<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:10.5pt;font-family:宋体;mso-ascii-theme-font:
+minor-fareast;mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">Case 5: Gate 2 is failing; output stuck at 0</span><br />
+【数据规模和约定】<br />
+N&lt;=8;G,U&lt;=19</p>

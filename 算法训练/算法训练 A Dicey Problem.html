@@ -1,0 +1,179 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 A Dicey Problem</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">图</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">中</span><span lang="EN-US">3*3</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的网格是一个骰子地图。</span> <span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">一个标准的六面骰子需要在地图上移动（图</span><span lang="EN-US">2</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">是一个标准六面骰子的展开图）。</span> <span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">每张地图有一个规定的初始位置和一个初始的骰子放置方式。在图</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">中，初始位置是第一行第二列</span><span lang="EN-US">&mdash;&mdash;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">写着</span><span lang="EN-US">&ldquo;2&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的位置。假设你从地图的底边上观察，骰子的初始放置方式是底面（贴在地图上的那一面）是</span><span lang="EN-US">&rdquo;2&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，顶面（与底面相对的那一面）是</span><span lang="EN-US">&ldquo;5&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，</span><span lang="EN-US">&rdquo;1&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">面向你。</span></p>
+<p class="MsoNormal" style="text-indent: 21pt; text-align: center; "><img src="http://lx.lanqiao.cn/RequireFile.do?fid=EdNgNjNJ" width="550" height="241" alt="" /></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">你可以通过沿着骰子的一条边转动来将它移动到地图上水平或是竖直方向上相邻的格子上。假设当前骰子顶面的数字为</span><span lang="EN-US">x</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，那么你只能将它移动到写着</span><span lang="EN-US">x</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">的格子上，或者画着星星图案的格子上。我们的最终目标是找到一条路径，使得骰子能从起点出发，最后又回到起点。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">举个例子，在图</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">所示的地图中，一开始你有两种可行的移动方式&mdash;&mdash;向下或者向左。由于此时骰子顶面所示的数字为</span><span lang="EN-US">&rdquo;5&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，当前格子下方的格子上写的数字也是</span><span lang="EN-US">&rdquo;5&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，因此向下移动骰子是可行的；因为当前位置左边的格子画着星星图案，因此向左移动是可行的。如果第一步选择向下移动，那么骰子朝上一面的图案会变成</span><span lang="EN-US">&rdquo;6&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，此时你可以向右或者向下移动骰子。如果第一步选择向左移动，那么骰子顶面的数字会变成</span><span lang="EN-US">3</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，这种情况下，任何移动方式都是不可行的。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">我们用</span> <span lang="EN-US">(</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">行号</span><span lang="EN-US">, </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">列号</span><span lang="EN-US">) </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的方式来标记格子。行号从</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">开始，从上向下递增；列号从</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">开始，从左向右递增。这样，在上述例子中一个可行的解可以表示为：</span><span lang="EN-US">(1,2), (2,2), (2,3), (3,3), (3,2), (3,1), (2,1), (1,1), (1,2)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">。图</span><span lang="EN-US">3</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">中展示了一个更加困难的例子。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-align: center; "><img src="http://lx.lanqiao.cn/RequireFile.do?fid=Y5MHE3AA" width="474" height="300" alt="" /></p>
+<p class="MsoNormal"><span lang="EN-US"><o:p></o:p></span></p>
+<p>&nbsp;</p>
+<p><span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</span><span style="font-family: 宋体; ">在本题中，你需要编写程序对输入中给定的地图进行求解。每张地图可能存在一个唯一的解或者无解。也就是说，对于某一张地图，如果有解，你可以认为它只有一个解。对于每张地图，你需要输出一解或者一个信息表示无解。</span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">第一行包含</span><span lang="EN-US">6</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">个用空格分隔的整数</span><span lang="EN-US">R, C, x0, y0, T, F</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，分别表示地图的行数、列数、初始位置行号、初始位置列号、初始状态下顶面的数字、初始状态下面向你的数字。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">接下来的</span><span lang="EN-US">R</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">行，每行包含</span><span lang="EN-US">C</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">个空格分隔的整数，定义了这个地图。如果某个数是</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，则表示对应的格子为空（不可以被走到）；如果某个数是</span><span lang="EN-US">-1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">，则表示对应单元格是画着星星图案的单元格；其余情况下，这个数表示对应格子上写的数字。</span><span lang="EN-US" style="font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p>【输出格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin">若该地图无解</span><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+mso-hansi-theme-font:minor-latin;mso-ansi-language:NL">，</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">则输出一行</span><span lang="NL">&ldquo;No Solution Possible&rdquo; (</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">不包含引号</span><span lang="NL">)</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Calibri;mso-hansi-theme-font:minor-latin">。</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin;mso-ansi-language:NL">否则，你应该输出一个逗号分隔的位置序列，表示骰子依次经过的位置。注意你输出的第一个位置和最后一个位置应该是相同的（起始位置已在输入中规定），位置的格式如上文所示。除了最后一行外，每行应该包含九个位置。另外你的输出中不应包含空格。</span><span lang="NL"><o:p></o:p></span></p>
+<p>【样例输入】</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">3 3 1 2 5 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">-1 2 4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">5 5 6<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">6 -1 -1<o:p></o:p></span></p>
+<p>【样例输出】<br />
+<span lang="EN-US" style="font-size:9.0pt;font-family:
+&quot;Courier New&quot;;mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">(1,2),(2,2),(2,3),(3,3),(3,2),(3,1),(2,1),(1,1),(1,2)</span></p>
+<p>&nbsp;</p>
+<p>【样例输入】</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">4 7 2 6 3 6<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">6 4 6 0 2 6 4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">1 2 -1 5 3 6 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">5 3 4 5 6 4 2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">4 1 2 0 3 -1 6<o:p></o:p></span></p>
+<p>&nbsp;</p>
+<p>【样例输出】</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">(2,6),(2,5),(2,4),(2,3),(2,2),(3,2),(4,2),(4,1),(3,1),<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">(2,1),(2,2),(2,3),(2,4),(2,5),(1,5),(1,6),(1,7),(2,7),<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">(3,7),(4,7),(4,6),(3,6),(2,6)<o:p></o:p></span></p>
+<p>&nbsp;</p>
+<p>【样例输入】</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">3 3 1 1 2 4<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">2 2 3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi">4 5 6<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:9.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">-1 -1 -1</span></p>
+<p>&nbsp;</p>
+<p>【样例输出】</p>
+<h1 style="margin-left:0cm;text-indent:0cm"><span lang="NL" style="font-size:
+9.0pt;font-family:&quot;Courier New&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+font-weight:normal">No Solution Possible<o:p></o:p></span></h1>
+<p>【数据规模和约定】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">20%</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的数据，</span><span lang="EN-US">R*C&le;30<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">100%</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">的数据，</span><span lang="EN-US">R,C&le;10</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Calibri;mso-hansi-theme-font:minor-latin">，保证初始状态合法。</span><span lang="EN-US" style="font-size:10.0pt;mso-bidi-font-size:11.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi"><o:p></o:p></span></p>
+<p>&nbsp;</p>

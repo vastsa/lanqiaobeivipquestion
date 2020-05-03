@@ -1,0 +1,77 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 The Fortified Forest</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="MsoNormal"><a name="SECTION0001000000000000000000"><b><span lang="EN-US">&nbsp;The Fortified Forest</span></b></a><b><span lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><b><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【问题描述】</span><span lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">从前，在一个遥远的地方，住着一个国王。这个国王拥有为数不多的罕见而珍贵的树木，这些都是他的祖先在四处旅游时收集来的。为了保护这些树木不被小偷偷走，国王下令绕它们建造高栅栏。他的男巫将负责执行。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">唉，男巫很快发现唯一适合用来建造栅栏的材料正是这些树木本身。换句话说，需要砍掉一些树木做成木材，才能在剩下的树周围建起栅栏。当然，为了防止被砍头，男巫想要最小化被砍的树木的总价值。男巫登上了他的魔塔，呆在那里直到找到了最佳的解决方案。最终栅栏被建成了，人们永远幸福地生活着。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">你需要写一个程序来解决男巫遇到的问题。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【输入格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输入包含多组测试数据，每组测试数据描述一个假设的森林。每组测试数据，第一行一个整数</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">2&lt;=n&lt;=15</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，表示森林中树木的数量。这些树木依次编号为</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">到</span><span lang="EN-US">n</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">。接下来</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">行，每一行包含</span><span lang="EN-US">4</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个整数</span><span lang="EN-US">xi</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">yi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">vi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">li</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，分别描述了一棵树的位置（</span><span lang="EN-US">xi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">yi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">），价值</span><span lang="EN-US">vi</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，砍倒后可以做成的栅栏的长度。</span><span lang="EN-US">vi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">li</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">在</span><span lang="EN-US">0</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">到</span><span lang="EN-US">10000</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">之间。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输入最后一行一个</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">表示结束。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【输出格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">对于每组测试数据，计算这样一个树的子集，使得用这些树做成的木材可以将剩下的树封闭在一个栅栏中。找到满足条件的价值和最小的子集。如果存在多个最小价值和的子集，选择一个树木的数量最少的。为了简单起见，认为树的直径为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输出格式如下所示，测试数据的组数（</span><span lang="EN-US">1,2</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">...</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">），要被砍倒的数的编号和剩下的栅栏的长度（精确到两位小数）。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">每两组测试数据之间输出一个空行。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输入】</span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US">6<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;0&nbsp; 0&nbsp; 8&nbsp; 3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;1&nbsp; 4&nbsp; 3&nbsp; 2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;2&nbsp; 1&nbsp; 7&nbsp; 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;4&nbsp; 1&nbsp; 2&nbsp; 3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;3&nbsp; 5&nbsp; 4&nbsp; 6<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;2&nbsp; 3&nbsp; 9&nbsp; 8<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;3&nbsp; 0 10&nbsp; 2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;5&nbsp; 5 20 25<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;7 -3 30 32<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">0<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【样例输出】</span><b><span lang="EN-US"><o:p></o:p></span></b></p>
+<p class="MsoNormal"><span lang="EN-US">Forest 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Cut these trees: 2 4 5<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Extra wood: 3.16<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US">Forest 2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Cut these trees: 2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Extra wood: 15.00<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【数据规模和约定】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">测试数据组数</span><span lang="EN-US">&lt;=10</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。数据保证解唯一。</span><span lang="EN-US"><o:p></o:p></span></p>

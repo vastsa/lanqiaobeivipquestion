@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 石子游戏</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">石子游戏的规则如下：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">地上有</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">堆石子，每次操作可选取两堆石子（石子个数分别为</span><span lang="EN-US">x</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">和</span><span lang="EN-US">y</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">）并将它们合并，操作的得分记为</span><span lang="EN-US">(x+1)&times;(y+1)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">，对地上的石子堆进行操作直到只剩下一堆石子时停止游戏。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">请问在整个游戏过程中操作的总得分的最大值是多少？</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输入格式】<br />
+<span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">输入数据的第一行为整数</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:
+1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:
+AR-SA">n</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">，表示地上的石子堆数；第二行至第</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;
+mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:
+1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:
+AR-SA">n+1</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">行是每堆石子的个数。</span><br />
+【输出格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">程序输出一行，为游戏总得分的最大值。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【样例输入】</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:14.0pt">10<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">5105<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">19400<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">27309<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">19892<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">27814<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">25129<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">19272<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">12517<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">25419<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">4053<o:p></o:p></span></p>
+<p>【样例输出】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="font-size:14.0pt">15212676150</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【数据规模和约定】<br />
+<span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:
+11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:宋体;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">1</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">&le;</span><span lang="EN-US" style="font-size:10.5pt;
+mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">n</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">&le;</span><span lang="EN-US" style="font-size:10.5pt;
+mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">1000</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">，</span><span lang="EN-US" style="font-size:10.5pt;
+mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">1</span><span style="font-size:10.5pt;mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">&le;一堆中石子数&le;</span><span lang="EN-US" style="font-size:10.5pt;
+mso-bidi-font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:
+宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">50000</span></p>

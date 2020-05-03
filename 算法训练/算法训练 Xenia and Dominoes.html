@@ -1,0 +1,54 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Xenia and Dominoes</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>【问题描述】</div>
+<div>Xenia非常喜欢拼图。她特别喜欢由多米诺骨牌组成的拼图。图片中就是一个这样的拼图。</div>
+<div>&nbsp;</div>
+<div style="text-align: center;"><img src="http://lx.lanqiao.cn/RequireFile.do?fid=4dBFmjH5" width="524" height="145" alt="" /></div>
+<div>&nbsp;</div>
+<div>一个拼图是一个3 &times; n的桌子，除掉一些禁止块(forbidden cells)（图中的黑色正方形），并包含多米诺骨牌。一个拼图被称作合法当它符合以下条件：</div>
+<div>&nbsp;</div>
+<div>每个多米诺骨牌覆盖正好两个非禁止块；</div>
+<div>没有两个多米诺骨牌覆盖桌子上的同一块区域；</div>
+<div>有且仅有一个非禁止块没被任何多米诺骨牌覆盖（图中的圆点）。</div>
+<div>&nbsp;</div>
+<div>要完成一个拼图，你需要用若干步把空格子从开始位置移动某个指定位置。一步移动是在保证拼图合法的情况下，把一个多米诺骨牌移到空格子里。横向的多米诺骨牌只能横向移动，纵向的多米诺骨牌只能纵向移动。你不能旋转多米诺骨牌。图中表示了一个合法的移动。</div>
+<div>&nbsp;</div>
+<div>Xenia有一个3 &times; n的带禁止块和一个圆圈标记(circle-marked)的格子的桌子。Xenia还有很多完全一样的多米诺骨牌。现在Xenia想知道，如果她把多米诺骨牌放在桌子上，能有多少种不同的合法的拼图。同时，Xenia要求圆圈标记的格子没有被覆盖。这个拼图还必须至少能移动一次。</div>
+<div>&nbsp;</div>
+<div>帮助Xenia统计上述拼图的种数。这个数字可能很大，输出它对1000000007(10^9+7)取模的余数。</div>
+<div>&nbsp;</div>
+<div>【输入格式】</div>
+<div>第一行一个整数n - 拼图的大小。接下来3行，每行n个字符，描述这个桌子。第i行的第j个字符为&quot;X&quot;表示对应的格子为禁止块；为&quot;.&quot;表示非禁止块；为&quot;O&quot;表示它是圆圈标记的。</div>
+<div>&nbsp;</div>
+<div>保证有且仅有一个格子是圆圈标记的。保证所有与圆圈标记的各种相邻的格子都是非禁止块。</div>
+<div>&nbsp;</div>
+<div>【输出格式】</div>
+<div>输出一个整数 - 问题的答案对1000000007(10^9 + 7)取模的余数。</div>
+<div>&nbsp;</div>
+<div>【样例输入】</div>
+<div>5</div>
+<div>....X</div>
+<div>.O...</div>
+<div>...X.</div>
+<div>&nbsp;</div>
+<div>【样例输出】</div>
+<div>1</div>
+<div>&nbsp;</div>
+<div>【样例输入2】</div>
+<div>5</div>
+<div>.....</div>
+<div>.O...</div>
+<div>.....</div>
+<div>&nbsp;</div>
+<div>【样例输出2】</div>
+<div>2</div>
+<div>&nbsp;</div>
+<div>【数据规模和约定】</div>
+<div>3&lt;=n&lt;=10^4</div>
+<div>&nbsp;</div>
+<div>【提示】</div>
+<div>两个拼图被认为是不同的当存在一对格子在一个拼图中有一个多米诺骨牌而在另一个中没有。</div>
+<div>&nbsp;</div>

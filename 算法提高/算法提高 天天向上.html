@@ -1,0 +1,71 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 天天向上</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span lang="EN-US" style="font-size:12.0pt">A</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">同学的学习成绩十分不稳定，于是老师对他说：“只要你连续</span><span lang="EN-US" style="font-size:12.0pt">4</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">天成绩有进步，那我就奖励给你一朵小红花。”可是这对于</span><span lang="EN-US" style="font-size:12.0pt">A</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">同学太困难了。于是，老师对他放宽了要求：“只要你有</span><span lang="EN-US" style="font-size:12.0pt">4</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">天成绩是递增的，我就奖励你一朵小红花。”即只要对于第</span><span lang="EN-US" style="font-size:12.0pt">i</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">、</span><span lang="EN-US" style="font-size:12.0pt">j</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">、</span><span lang="EN-US" style="font-size:12.0pt">k</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">、</span><span lang="EN-US" style="font-size:12.0pt">l</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">四天，满足</span><span lang="EN-US" style="font-size:12.0pt">i&lt;j&lt;k&lt;l</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">并且对于成绩</span><span lang="EN-US" style="font-size:12.0pt">wi&lt;wj&lt;wk&lt;wl</span><span style="font-size:
+12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，那么就可以得到一朵小红花的奖励。现让你求出，</span><span lang="EN-US" style="font-size:12.0pt">A</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">同学可以得到多少朵小红花。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">第一行一个整数</span><span lang="EN-US" style="font-size:12.0pt">n</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，表示总共有</span><span lang="EN-US" style="font-size:12.0pt">n</span><span style="font-size:12.0pt;font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">天。第二行</span><span lang="EN-US" style="font-size:12.0pt">n</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个数，表示每天的成绩</span><span lang="EN-US" style="font-size:12.0pt">wi</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">。</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p>【输出格式】</p>
+<p><span style="font-size:12.0pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;
+mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:
+EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">一个数，表示总共可以得到多少朵小红花。</span></p>
+<p><br>
+【样例输入】</p>
+<p>&nbsp;</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span lang="EN-US" style="font-size:12.0pt">6<o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span lang="EN-US" style="font-size:12.0pt">1 3 2 3 4 5<o:p></o:p></span></p>
+<p>【样例输出】</p>
+<p>6</p>
+<p>【数据规模和约定】</p>
+<p class="MsoNormal" style="text-indent:24.0pt"><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">对于</span><span lang="EN-US" style="font-size:12.0pt">40%</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，</span><span lang="EN-US" style="font-size:12.0pt">n&lt;=50</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">；</span><span lang="EN-US" style="font-size:12.0pt"><o:p></o:p></span></p>
+<p><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">对于</span><span lang="EN-US" style="font-size:12.0pt;
+font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:宋体;mso-font-kerning:
+1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:
+AR-SA">100%</span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family:
+&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:
+ZH-CN;mso-bidi-language:AR-SA">的数据，</span><span lang="EN-US" style="font-size:
+12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;mso-fareast-font-family:宋体;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">n&lt;=2000</span><span style="font-size:12.0pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-font-kerning:1.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">，</span><span lang="EN-US" style="font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:宋体;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">0&lt;=wi&lt;=10<sup>9</sup></span><span style="font-size:12.0pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">。</span></p>

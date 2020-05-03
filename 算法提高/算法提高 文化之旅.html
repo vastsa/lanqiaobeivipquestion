@@ -1,0 +1,809 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 文化之旅</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<div class="WordSection1" style="layout-grid:15.6pt">
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【问题描述】</span></p>
+</div>
+<p><span lang="EN-US" style="font-size:10.5pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:宋体;mso-font-kerning:1.0pt;mso-ansi-language:EN-US;
+mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA"><br clear="all" style="page-break-before:auto;mso-break-type:section-break" />
+</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">有一位使者要游历各国，他每到一个国家，都能学到一种文化，但他不愿意学习任何一种文化超过一次（即如果他学习了某种文化，则他就不能到达其他有这种文化的国家）。不同的国家可能有相同的文化。不同文化的国家对其他文化的看法不同，有些文化会排斥外来文化（即如果他学习了某种文化，则他不能到达排斥这种文化的其他国家）。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">现给定各个国家间的地理关系，各个国家的文化，每种文化对其他文化的看法，以及这位使者游历的起点和终点（在起点和终点也会学习当地的文化），国家间的道路距离，试求从起点到终点最少需走多少路。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输入】</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="text-indent: 21pt; font-family: 宋体;">第一行为五个整数</span><span lang="EN-US" style="text-indent: 21pt;">N</span><span style="text-indent: 21pt; font-family: 宋体;">，</span><span lang="EN-US" style="text-indent: 21pt;">K</span><span style="text-indent: 21pt; font-family: 宋体;">，</span><span lang="EN-US" style="text-indent: 21pt;">M</span><span style="text-indent: 21pt; font-family: 宋体;">，</span><span lang="EN-US" style="text-indent: 21pt;">S</span><span style="text-indent: 21pt; font-family: 宋体;">，</span><span lang="EN-US" style="text-indent: 21pt;">T</span><span style="text-indent: 21pt; font-family: 宋体;">，每两个整数之间用一个空格隔开，依次代表国家个数（国家编号为</span><span lang="EN-US" style="text-indent: 21pt;">1</span><span style="text-indent: 21pt; font-family: 宋体;">到</span><span lang="EN-US" style="text-indent: 21pt;">N</span><span style="text-indent: 21pt; font-family: 宋体;">），文化种数（文化编号为</span><span lang="EN-US" style="text-indent: 21pt;">1</span><span style="text-indent: 21pt; font-family: 宋体;">到</span><span lang="EN-US" style="text-indent: 21pt;">K</span><span style="text-indent: 21pt; font-family: 宋体;">），道路的条数，以及起点和终点的编号（保证</span><span lang="EN-US" style="text-indent: 21pt;">S</span><span style="text-indent: 21pt; font-family: 宋体;">不等于</span><span lang="EN-US" style="text-indent: 21pt;">T</span><span style="text-indent: 21pt; font-family: 宋体;">）；</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">第二行为</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">个整数，每两个整数之间用一个空格隔开，其中第</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">个数</span><span lang="EN-US">C<sub>i</sub></span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，表示国家</span><span lang="EN-US">i</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">的文化为</span><span lang="EN-US">C<sub>i</sub></span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">接下来的</span><span lang="EN-US">K</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">行，每行</span><span lang="EN-US">K</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">个整数，每两个整数之间用一个空格隔开，记第</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">行的第</span><span lang="EN-US">j</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">个数为</span><span lang="EN-US">a<sub>ij</sub></span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">a<sub>ij</sub>= 1</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表示文化</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">排斥外来文化</span><span lang="EN-US">j</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">（</span><span lang="EN-US">i</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">等于</span><span lang="EN-US">j</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">时表示排斥相同文化的外来人），</span><span lang="EN-US">a<sub>ij</sub>= 0</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">表示不排斥（注意</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">排斥</span><span lang="EN-US">j</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">并不保证</span><span lang="EN-US">j</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">一定也排斥</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">）。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">接下来的</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">行，每行三个整数</span><span lang="EN-US">u</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">v</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">d</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，每两个整数之间用一个空格隔开，表示国家</span><span lang="EN-US">u</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">与国家</span><span lang="EN-US">v</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">有一条距离为</span><span lang="EN-US">d</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">的可双向通行的道路（保证</span><span lang="EN-US">u</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">不等于</span><span lang="EN-US">v</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，两个国家之间可能有多条道路）。</span></p>
+<p class="MsoNormal" style="text-indent:21.75pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输出】</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">输出只有一行，一个整数，表示使者从起点国家到达终点国家最少需要走的距离数（如果无解则输出</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt;font-family:&quot;Courier New&quot;">-1</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">）。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输入样例</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">2 2 1 1 2</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">1 2</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">0 1</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">1 0</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">1 2 10</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输出样例</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">】</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">-1<br />
+</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【输入输出样例说明】</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">由于到国家</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">必须要经过国家</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，而国家</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的文明却排斥国家</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1</span><span style="mso-bidi-font-size:10.5pt;
+font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">的文明，所以不可能到达国家</span><span lang="EN-US" style="mso-bidi-font-size:
+10.5pt">2</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输入样例</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">2 2 1 1 2</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">1 2</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">0 1</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">0 0</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:&quot;Courier New&quot;">1 2 10</span></p>
+<p><span style="mso-bidi-font-size:10.5pt;font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">【输出样例</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">2</span><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">】</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;"><br />
+10<br />
+【输入输出样例说明】</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="mso-bidi-font-size:
+10.5pt;font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">路线为</span><span lang="EN-US" style="mso-bidi-font-size:10.5pt">1 -&gt; 2</span><span style="mso-bidi-font-size:10.5pt;font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">【数据范围】</span><span lang="EN-US"><br />
+<span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">对于</span><span lang="EN-US">20%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，有</span><span lang="EN-US">2&le;N&le;8</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">K&le;5</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">；</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">对于</span><span lang="EN-US">30%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，有</span><span lang="EN-US">2&le;N&le;10</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">K&le;5</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">；</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">对于</span><span lang="EN-US">50%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，有</span><span lang="EN-US">2&le;N&le;20</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">K&le;8</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">；</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">对于</span><span lang="EN-US">70%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，有</span><span lang="EN-US">2&le;N&le;100</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">K&le;10</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">；</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">对于</span><span lang="EN-US">100%</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的数据，有</span><span lang="EN-US">2&le;N&le;100</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">1&le;K&le;100</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，</span><span lang="EN-US">1&le;M&le;</span><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:12.0pt;font-family:&quot;Times New Roman&quot;,&quot;serif&quot;;
+mso-fareast-font-family:宋体;position:relative;top:4.0pt;mso-text-raise:-4.0pt;
+mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;mso-bidi-language:AR-SA">                                                  </span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">N^2，</span><span lang="EN-US">1&le;k<sub>i</sub>&le;K</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">1&le;u, v&le;N</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">1&le;d&le;1000</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Times New Roman&quot;;mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">S&ne;T</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，</span><span lang="EN-US">1 &le;S, T&le;N</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">。</span></p>
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:RelyOnVML />
+<o:AllowPNG />
+</o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:LidThemeOther>
+<w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+<w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:EnableOpenTypeKerning />
+<w:DontFlipMirrorIndents />
+<w:OverrideTableStyleHps />
+<w:UseFELayout />
+</w:Compatibility>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+LatentStyleCount="371">
+<w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 6" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 7" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 8" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index 9" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" Name="toc 9" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Normal Indent" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="footnote text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="annotation text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="header" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="footer" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="index heading" />
+<w:LsdException Locked="false" Priority="35" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="table of figures" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="envelope address" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="envelope return" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="footnote reference" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="annotation reference" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="line number" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="page number" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="endnote reference" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="endnote text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="table of authorities" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="macro" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="toa heading" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Bullet" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Number" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Bullet 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Bullet 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Bullet 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Bullet 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Number 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Number 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Number 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Number 5" />
+<w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Closing" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Signature" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="true"
+UnhideWhenUsed="true" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text Indent" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Continue" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Continue 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Continue 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Continue 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="List Continue 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Message Header" />
+<w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Salutation" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Date" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text First Indent" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text First Indent 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Note Heading" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text Indent 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Body Text Indent 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Block Text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Hyperlink" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="FollowedHyperlink" />
+<w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Document Map" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Plain Text" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="E-mail Signature" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Top of Form" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Bottom of Form" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Normal (Web)" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Acronym" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Address" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Cite" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Code" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Definition" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Keyboard" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Preformatted" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Sample" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Typewriter" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="HTML Variable" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Normal Table" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="annotation subject" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="No List" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Outline List 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Outline List 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Outline List 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Simple 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Simple 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Simple 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Classic 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Classic 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Classic 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Classic 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Colorful 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Colorful 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Colorful 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Columns 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Columns 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Columns 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Columns 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Columns 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 6" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 7" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Grid 8" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 4" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 5" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 6" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 7" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table List 8" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table 3D effects 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table 3D effects 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table 3D effects 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Contemporary" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Elegant" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Professional" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Subtle 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Subtle 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Web 1" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Web 2" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Web 3" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Balloon Text" />
+<w:LsdException Locked="false" Priority="39" Name="Table Grid" />
+<w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+Name="Table Theme" />
+<w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" SemiHidden="true" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" QFormat="true"
+Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" QFormat="true"
+Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" QFormat="true"
+Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" QFormat="true"
+Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" QFormat="true"
+Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" QFormat="true"
+Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" SemiHidden="true"
+UnhideWhenUsed="true" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" SemiHidden="true"
+UnhideWhenUsed="true" QFormat="true" Name="TOC Heading" />
+<w:LsdException Locked="false" Priority="41" Name="Plain Table 1" />
+<w:LsdException Locked="false" Priority="42" Name="Plain Table 2" />
+<w:LsdException Locked="false" Priority="43" Name="Plain Table 3" />
+<w:LsdException Locked="false" Priority="44" Name="Plain Table 4" />
+<w:LsdException Locked="false" Priority="45" Name="Plain Table 5" />
+<w:LsdException Locked="false" Priority="40" Name="Grid Table Light" />
+<w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark" />
+<w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful" />
+<w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 1" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 1" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 1" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 2" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 2" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 2" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 3" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 3" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 3" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 4" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 4" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 4" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 5" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 5" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 5" />
+<w:LsdException Locked="false" Priority="46"
+Name="Grid Table 1 Light Accent 6" />
+<w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6" />
+<w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6" />
+<w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6" />
+<w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6" />
+<w:LsdException Locked="false" Priority="51"
+Name="Grid Table 6 Colorful Accent 6" />
+<w:LsdException Locked="false" Priority="52"
+Name="Grid Table 7 Colorful Accent 6" />
+<w:LsdException Locked="false" Priority="46" Name="List Table 1 Light" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark" />
+<w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful" />
+<w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 1" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 1" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 1" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 2" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 2" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 2" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 3" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 3" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 3" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 4" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 4" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 4" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 5" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 5" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 5" />
+<w:LsdException Locked="false" Priority="46"
+Name="List Table 1 Light Accent 6" />
+<w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6" />
+<w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6" />
+<w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6" />
+<w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6" />
+<w:LsdException Locked="false" Priority="51"
+Name="List Table 6 Colorful Accent 6" />
+<w:LsdException Locked="false" Priority="52"
+Name="List Table 7 Colorful Accent 6" />
+</w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:11.0pt;
+font-family:"Times New Roman","serif";}
+</style>
+<![endif]-->

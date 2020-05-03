@@ -1,0 +1,175 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 纪念品分组</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>问题描述</p>
+<p style="text-indent: 21pt;" class="MsoNormal"><span style="font-family: 宋体;">元旦快到了，校学生会让乐乐负责新年晚会的纪念品发放工作。为使得参加晚会的同学所获得的纪念品价值 相对均衡，他要把购来的纪念品根据价格进行分组，但每组最多只能包括两件纪念品，并且每组纪念品的价格之和不能超过一个给定的整数。为了保证在尽量短的时 间内发完所有纪念品，乐乐希望分组的数目最少。</span><span lang="EN-US" style=""><o:p></o:p></span></p>
+<p><span style="font-family: 宋体;">你的任务是写一个程序，找出所有分组方案中分组数最少的一种，输出最少的分组数目。</span></p>
+<p>输入格式<br />
+<span style="font-family: 宋体;">输入</span><span style="font-family: 宋体;">包含</span><i style=""><span lang="EN-US" style="">n</span></i><span lang="EN-US" style="">+2</span><span style="font-family: 宋体;">行：</span><span lang="EN-US" style=""><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style=""><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 宋体;">第</span><span lang="EN-US" style="">1</span><span style="font-family: 宋体;">行包括一个整数</span><i><span lang="EN-US" style="">w</span></i><span style="font-family: 宋体;">，为每组纪念品价格之和的上限。</span><span lang="EN-US" style=""><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style=""><span style="">&nbsp;&nbsp;&nbsp; </span></span><span style="font-family: 宋体;">第</span><span lang="EN-US" style="">2</span><span style="font-family: 宋体;">行为一个整数</span><i><span lang="EN-US" style="">n</span></i><span style="font-family: 宋体;">，表示购来的纪念品的总件数。</span><span lang="EN-US" style=""><o:p></o:p></span></p>
+<p><span lang="EN-US" style=""><span style="">&nbsp;</span><span style="">&nbsp;&nbsp; </span></span><span style="font-family: 宋体;">第</span><span lang="EN-US" style="">3~<i style="">n</i>+2</span><span style="font-family: 宋体;">行每行包含一个正整数</span><i style=""><span lang="EN-US" style="">p<sub>i</sub></span></i><span lang="EN-US" style=""> (5  &lt;= <i style="">p<sub>i</sub></i> &lt;= <i style="">w</i>)</span><span style="font-family: 宋体;">，表示所对应纪念品的价格。</span></p>
+<p><br />
+输出格式<br />
+<span style="font-family: 宋体;">输出</span><span style="font-family: 宋体;">仅一行，包含一个整数，即最少的分组数目。</span><span lang="EN-US" style=""><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style=""><o:p>&nbsp;</o:p></span></p>
+<p><br />
+样例输入</p>
+<p class="MsoNormal"><span lang="EN-US" style="font-family: &quot;Courier New&quot;;">100<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">9<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">90<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">20<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">20<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">30<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">50<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">60<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">70<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="">80<o:p></o:p></span></p>
+<p><span lang="EN-US" style="">90</span></p>
+<p><br />
+样例输出<br />
+6<br />
+数据规模和约定<br />
+<span lang="EN-US" style="">50%</span><span style="font-family: 宋体;">的数据满足：</span><span lang="EN-US" style="">1 &lt;= <i style="">n</i> &lt;= 15<o:p></o:p></span></p>
+<p style="line-height: 12pt;" class="MsoNormal"><span lang="EN-US" style=""><span style="">&nbsp;&nbsp;&nbsp; </span>100%</span><span style="font-family: 宋体;">的数据满足：</span><span lang="EN-US" style="">1 &lt;= <i>n</i> &lt;= 30000, 80 &lt;= <i>w</i> &lt;= 200</span></p>
+<p>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="Word.Document" name="ProgId">
+<meta content="Microsoft Word 11" name="Generator">
+<meta content="Microsoft Word 11" name="Originator">
+<link href="file:///C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\msohtml1\01\clip_filelist.xml" rel="File-List" /><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:UseFELayout />
+</w:Compatibility>
+<w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+</w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+</w:LatentStyles>
+</xml><![endif]--><style type="text/css">
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimHei;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	mso-font-kerning:1.0pt;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;}
+table.MsoTableGrid
+{mso-style-name:网格型;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+border:solid windowtext 1.0pt;
+mso-border-alt:solid windowtext .5pt;
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-border-insideh:.5pt solid windowtext;
+mso-border-insidev:.5pt solid windowtext;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+text-align:justify;
+text-justify:inter-ideograph;
+mso-pagination:none;
+font-size:10.0pt;
+font-family:"Times New Roman";
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;}
+</style>
+<![endif]--><span lang="EN-US" style=""><span lang="EN-US" style=""><o:p></o:p></span><span lang="EN-US" style=""><span lang="EN-US" style=""><span style="">&nbsp;&nbsp;</span></span><span lang="EN-US" style=""><o:p></o:p></span></span></span></meta>
+</meta>
+</meta>
+</meta>
+</p>

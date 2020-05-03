@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 邮票</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="subtitle">问题描述</p><p class="probcontent">
+      <P><FONT face="Times New Roman" 
+      size=3>给定一个信封，有N（1≤N≤100）个位置可以贴邮票，每个位置只能贴一张邮票。我们现在有M(M&lt;=100)种不同邮资的邮票，面值为X1,X2….Xm分（Xi是整数，1≤Xi≤255），每种都有N张。 
+      <BR><BR>显然，信封上能贴的邮资最小值是min(X1, X2, …, Xm)，最大值是 N*max(X1, X2, …, 
+      Xm)。由所有贴法得到的邮资值可形成一个集合（集合中没有重复数值），要求求出这个集合中是否存在从1到某个值的连续邮资序列，输出这个序列的最大值。 
+      <BR><BR>例如，N=4，M=2，面值分别为4分，1分，于是形成1，2，3，4，5，6，7，8，9，10，12，13，16的序列，而从1开始的连续邮资序列为1，2，3，4，5，6，7，8，9，10，所以连续邮资序列的最大值为10分。 
+      <BR></FONT></P>
+      <br /></p><p class="subtitle">输入格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" 
+      size=3>第一行：最多允许粘贴的邮票张数N；第二行：邮票种数M；第三行：空格隔开的M个数字，表示邮票的面值Xi。注意：Xi序列不一定是大小有序的！</FONT></P>
+      <br /></p><p class="subtitle">输出格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" 
+      size=3>从1开始的连续邮资序列的最大值MAX。若不存在从1分开始的序列（即输入的邮票中没有1分面额的邮票），则输出0. 
+      <BR></FONT></P>
+      <br /></p><p class="subtitle">样例输入</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>样例一：
+4
+2
+4 1
+
+样例二：
+10
+5
+2 4 6 8 10
+</PRE></FONT>
+      <P></P>
+      <br /></p><p class="subtitle">样例输出</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>样例一：
+10
+
+样例二：
+0</PRE></FONT>
+      <P></P>
+      <br /></p>

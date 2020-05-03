@@ -1,0 +1,6 @@
+<head>
+    <meta charset="UTF-8">
+<title>历届试题 发现环</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>问题描述</div><div>小明的实验室有N台电脑，编号1~N。原本这N台电脑之间有N-1条数据链接相连，恰好构成一个树形网络。在树形网络上，任意两台电脑之间有唯一的路径相连。</div><div><br></div><div>不过在最近一次维护网络时，管理员误操作使得某两台电脑之间增加了一条数据链接，于是网络中出现了环路。环路上的电脑由于两两之间不再是只有一条路径，使得这些电脑上的数据传输出现了BUG。</div><div><br></div><div>为了恢复正常传输。小明需要找到所有在环路上的电脑，你能帮助他吗？</div><div><br></div><div>输入格式</div><div>第一行包含一个整数N。</div><div>以下N行每行两个整数a和b，表示a和b之间有一条数据链接相连。</div><div><br></div><div>对于30%的数据，1 &lt;= N &lt;= 1000</div><div>对于100%的数据, 1 &lt;= N &lt;= 100000， 1 &lt;= a, b &lt;= N</div><div><br></div><div>输入保证合法。</div><div><br></div><div>输出格式</div><div>按从小到大的顺序输出在环路上的电脑的编号，中间由一个空格分隔。</div><div><br></div><div><br></div><div>样例输入</div><div>5</div><div>1 2</div><div>3 1</div><div>2 4</div><div>2 5</div><div>5 3</div><div><br></div><div>样例输出</div><div>1 2 3 5</div><div><br></div><div><br></div>

@@ -1,0 +1,152 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Colorado Potato Beetle</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:UseFELayout />
+</w:Compatibility>
+<w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+</w:WordDocument>
+</xml><![endif]-->
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【题目描述】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">有一个农场和大小为</span><span class="tex-span"><span lang="EN-US">(10<sup>10</sup></span></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span><span lang="EN-US">+</span></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;
+mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span></span><span class="tex-span"><span lang="EN-US" style="font-family:宋体;mso-bidi-font-family:宋体">1)</span></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span></span><span class="tex-span"><span style="font-family:宋体;mso-bidi-font-family:宋体">&times;</span></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span></span><span class="tex-span"><span lang="EN-US" style="font-family:宋体;mso-bidi-font-family:
+宋体">(10</span><sup><span lang="EN-US">10</span></sup></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span><span lang="EN-US">+</span></span><span class="tex-span"><span style="font-family:&quot;MS Gothic&quot;;
+mso-bidi-font-family:&quot;MS Gothic&quot;">&thinsp;</span></span><span class="tex-span"><span lang="EN-US" style="font-family:宋体;mso-bidi-font-family:宋体">1</span><span lang="EN-US">)</span></span><span class="tex-span"><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">平方米的巨大的土豆种植地。这块田地被分成正方形的小块，每块占地一平方米。</span></span></p>
+<p class="MsoNormal"><span class="tex-span"><span lang="EN-US" style="mso-fareast-font-family:
+宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">知道科罗拉多土豆甲虫将要入侵，并且会破坏收成。</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">想在一些土地上喷上杀虫剂。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">所以，</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">去了田里，站在田地中间的那个小块中间并将这个格子撒上杀虫剂。现在，他将要通过一系列的移动来在更多田地喷洒杀虫剂。每次移动的时候，</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">会在上下左右四个方向中选择一个并移动整数米。当他移动的时候，他会在走过的每个格子上喷洒杀虫剂。也就是说，和</span><span lang="EN-US">Old MacDonal</span><span lang="EN-US" style="mso-fareast-font-family:
+宋体">d</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">的移动轨迹有任何交点的小块都会被撒上杀虫剂。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">当</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">停止喷洒杀虫剂后，他将他所有的移动记录在一张纸上。现在，他想知道，有多少小块不会受到科罗拉多甲虫入侵的影响。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">我们知道，科罗拉多甲虫的入侵按照以下顺序展开。一开始，一些土地边缘的小块被入侵。接着，任何没有撒过杀虫剂且有一个相邻（与其有公共边的）小块被感染的尚未被感染的土地也会被感染。帮助</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">计算有多少小块不会受到科罗拉多甲虫的感染。</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【输入格式】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span class="tex-span"><span style="font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">第一行包含一个正整数</span><span lang="EN-US">n</span></span><span class="tex-span"><span style="font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">，表示</span></span><span class="tex-span"><span lang="EN-US" style="mso-fareast-font-family:宋体">Old MacDonald</span></span><span class="tex-span"><span style="font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">的移动步数。</span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">接下来</span><span lang="EN-US" style="mso-fareast-font-family:宋体">n</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">行包含了对</span><span lang="EN-US">Old MacDonald</span><span style="font-family:宋体;mso-ascii-font-family:
+&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">移动的描述。其中的第</span><span lang="EN-US" style="mso-fareast-font-family:宋体">i</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">行描述第</span><span lang="EN-US" style="mso-fareast-font-family:宋体">i</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">次移动。每次移动通过&ldquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">di xi</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:
+&quot;Liberation Serif&quot;">&rdquo;的形式给出。</span><span lang="EN-US" style="mso-fareast-font-family:
+宋体">di</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">是一个字母描述移动的方向，（&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">L</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">,</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">R</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">,</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">U</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">,</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;</span><span lang="EN-US" style="mso-fareast-font-family:宋体">D</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">&rdquo;分别表示左右上下），</span><span lang="EN-US" style="mso-fareast-font-family:宋体">xi</span><span style="font-family:
+宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">表示这次移动的距离。</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【输出格式】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">一行，不会被科罗拉多甲虫感染的土地数量。</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US">5<br />
+R 8<br />
+U 9<br />
+L 9<br />
+D 8<br />
+L 2</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;mso-fareast-font-family:
+宋体">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">1</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体">101</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输入</span><span lang="EN-US" style="font-size:9.0pt">2</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<pre><span lang="EN-US">7<br /> R 10<br /> D 2<br /> L 7<br /> U 9<br /> D 2<br /> R 3<br /> D 10</span></pre>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt;mso-fareast-font-family:
+宋体">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【样例输出</span><span lang="EN-US" style="font-size:9.0pt">2</span><span style="font-size:9.0pt;
+font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体">52</span></p>
+<p class="MsoNormal"><span style="font-size:9.0pt;font-family:&quot;Droid Sans Fallback&quot;;
+mso-ascii-font-family:&quot;Liberation Serif&quot;;mso-hansi-font-family:&quot;Liberation Serif&quot;">【数据</span><span style="font-size:9.0pt;font-family:宋体;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">规模和约定</span><span style="font-size:
+9.0pt;font-family:&quot;Droid Sans Fallback&quot;;mso-ascii-font-family:&quot;Liberation Serif&quot;;
+mso-hansi-font-family:&quot;Liberation Serif&quot;">】</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:9.0pt"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span lang="EN-US" style="mso-fareast-font-family:宋体">1&le;n&le;1000, 1&le;x&le;1000000</span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-fareast-font-family:宋体">&nbsp;</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+</w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";
+mso-ansi-language:#0400;
+mso-fareast-language:#0400;
+mso-bidi-language:#0400;}
+</style>
+<![endif]-->

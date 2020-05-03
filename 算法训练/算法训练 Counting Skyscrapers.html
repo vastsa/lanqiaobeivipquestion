@@ -1,0 +1,134 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Counting Skyscrapers</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p>大街上建好了一排摩天大楼。摩天大楼的数量是在 2 到 314!（314的阶乘，一个非常大的数）中均匀随机选择的。每座摩天大楼的高度（即楼层数）是被独立地随机选择的：对于每个正整数 i，楼层数为 i 的概率为 2<sup>-i</sup>。如果一座摩天大楼有 i 层，那么它的楼层被编号为 0 到 i - 1。</p>
+<p>为了加快中转运输的效率，摩天大楼间修建了一些滑索。一座摩天大楼的第 i 层和另一座摩天大楼的第 i 层之间有滑索当且仅当两楼之间没有摩天大楼有第 i 层。</p>
+<p>Alice和Bob想数一数有多少座摩天大楼。</p>
+<p>Alice是个严谨认真的人，她想知道摩天大楼数量的准确值。于是她把计数器初始化为 1，从最左边的摩天大楼开始往右走，每次走到一个摩天大楼就把计数器加上 1，直到她到达最右边的摩天大楼。</p>
+<p>Bob很没耐心，他想尽快完成任务。于是他把计数器初始化为 1，从最左边的摩天大楼开始利用滑索从一座摩天大楼滑到另一座。因为恐高，每次他会忽略那些高度（即所在楼层编号）大于 h 的滑索，然后在剩下的往右滑的滑索中选一个最高的。由于Bob使用滑索时滑得太快以至于他无法数清经过了多少座摩天大楼，所以他直接将计数器加上 2<sup>i</sup>，其中 i 是他当前所在的楼层编号。他会一直持续这个过程直到他到达最右边的摩天大楼。</p>
+<p>考虑下面这个例子。这里有 6 栋楼，高度从左到右分别为 1, 4, 3, 4, 1, 2，并且 h = 2。Alice的计数器初始为 1 然后加了 5 次 1 得到结果是 6。Bob的计数器初始为 1 然后依次加上 1, 4, 4, 2 得到结果 12。注意Bob会忽略最高的那个滑索因为他恐高（h = 2）。</p>
+<p><img src="http://lx.lanqiao.cn/RequireFile.do?fid=L4qBMrQ8" width="416" height="241" alt="example" /></p>
+<p>Bob的计数器的值在这张图的最上面，Alice的计数器的值在这张图最下面。图中的横线是滑索，绿色虚线表示Bob的路线，粉色虚线表示Alice的路线。摩天大楼上的数字是楼层编号，Bob经过的滑索上的数字是他计数器在此处的增加量。</p>
+<p>当Alice和Bob到达最右边的摩天大楼时，他们会比较计数器的值。现在给出Alice的计数器的值或者Bob的计数器的值，请你求出另一人的计数器的值的期望。</p>
+<p>【输入格式】<br />
+第一行是一个名字，为&quot;Alice&quot;或&quot;Bob&quot;。第二行包括两个整数 n 和 h （n &ge; 2, h &ge; 0）。如果名字是&quot;Alice&quot;，那么 n 表示Alice到达最右边的摩天大楼时她的计数器的值，否则 n 表示Bob到达最右边的摩天大楼时他的计数器的值。h 表示Bob愿意使用的滑索的最高楼层编号。<br />
+【输出格式】<br />
+如果给出的是Bob的计数器的值，输出一个实数表示Alice的计数器的期望值；如果给出的是Alice的计数器的值，输出一个实数表示Bob的计数器的期望值。<br />
+你的答案被认为是正确的当且仅当你的答案与标准答案的绝对误差或相对误差不超过 10<sup>-9</sup>。</p>
+<p>【样例输入一】</p>
+<p>Alice</p>
+<p>3 1</p>
+<p>【样例输出一】</p>
+<p>3.500000000</p>
+<p>【对于样例一的解释】</p>
+<p>Bob的计数器有 62.5% 的概率是 3, 有 25% 的概率是 4, 有 12.5% 的概率是 5。</p>
+<p>【样例输入二】</p>
+<p>Bob</p>
+<p>2 30</p>
+<p>【样例输出二】&nbsp;</p>
+<p>2.000000000</p>
+<p>【样例输入三】</p>
+<p>Alice</p>
+<p>2572 10</p>
+<p>【样例输出三】</p>
+<p><span style="font-family: monospace; font-size: medium; white-space: pre-wrap;">3439.031415943</span></p>
+<p>【数据规模和约定】</p>
+<table border="1" cellpadding="1" cellspacing="1">
+    <tbody>
+        <tr>
+            <td>#</td>
+            <td>who</td>
+            <td>n</td>
+            <td>h</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td rowspan="10">Alice</td>
+            <td>&le; 30000</td>
+            <td>= 0</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td rowspan="2">&le; 15</td>
+            <td rowspan="2">= 1</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>&le; 50</td>
+            <td>&le; 30</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>&le; 100</td>
+            <td>&le; 30</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td rowspan="2">&le; 1000</td>
+            <td rowspan="2">&le; 30</td>
+        </tr>
+        <tr>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td rowspan="3">&le; 30000</td>
+            <td rowspan="3">&le; 30</td>
+        </tr>
+        <tr>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td rowspan="10">Bob</td>
+            <td>&le; 30000</td>
+            <td>= 0</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td rowspan="2">&le; 15</td>
+            <td rowspan="2">= 1</td>
+        </tr>
+        <tr>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>&le; 50</td>
+            <td>&le; 30</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>&le; 100</td>
+            <td>&le; 30</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td rowspan="2">&le; 1000</td>
+            <td rowspan="2">&le; 30</td>
+        </tr>
+        <tr>
+            <td>17</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td rowspan="3">&le; 30000</td>
+            <td rowspan="3">&le; 30</td>
+        </tr>
+        <tr>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>20</td>
+        </tr>
+    </tbody>
+</table>

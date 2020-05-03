@@ -1,0 +1,93 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 A Major Problem</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&nbsp; &nbsp; 在西方音乐中，用大写字母</span><span lang="EN-US">A</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">到</span><span lang="EN-US">G</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">来表示在乐谱中被使用的</span><span lang="EN-US">12</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">个音符，它们后面可能连有升调符号&ldquo;</span><span lang="EN-US">#</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&rdquo;和降调符号&ldquo;</span><span lang="EN-US">b</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&rdquo;，而且如下面展示的那样循环排列。斜杠用来描述相同音符。</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C/B# C#/Db D D#/Eb E/Fb F/E# F#/Gb G G#/Ab A A#/Bb B/Cb C/B# &hellip;</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">上表中任意两个相邻音符构成一个半音。恰被一个音符隔开的两个音符构成一个全音。一个大调音阶由八个音符组成。它由上述之一的音符开始并且紧跟着连续的&ldquo;全音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">全音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">半音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">全音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">全音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">全音</span><span lang="EN-US">-</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">半音&rdquo;。分别由</span><span lang="EN-US">C</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">和</span><span lang="EN-US">Db</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">开始的两个大调音阶，将由下面的音符组成：</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C D E F G A B C</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Db Eb F Gb Ab Bb C Db</span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">下面的规则同样适用于大调音阶：</span></p>
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span lang="EN-US">1.<span style="font-size: 7pt; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span lang="EN-US">A</span><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">到</span><span lang="EN-US">G</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">的每个字母将在音阶中出现恰好一次，同时第一个字母将例外地在音阶最后重复出现一次。</span></p>
+<p class="MsoListParagraph" style="margin-left:39.0pt;text-indent:-18.0pt;
+mso-char-indent-count:0;mso-list:l0 level1 lfo1"><!--[if !supportLists]--><span lang="EN-US">2.<span style="font-size: 7pt; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">音阶当中不允许同时出现升调或降调记号。</span></p>
+<p class="MsoNormal" style="margin-left:21.0pt"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">大调音阶的首个音符被认为是这个音阶的曲调。比方说，上面的两个音阶分别是</span><span lang="EN-US">C</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">和</span><span lang="EN-US">Db</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">大调音阶。更换两个音阶的音符就是交换对应位置的音符那么简单。举个例子，</span><span lang="EN-US">C</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">大调音阶中的</span><span lang="EN-US">F</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">会和</span><span lang="EN-US">Db</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">大调音阶中的</span><span lang="EN-US">Gb</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">交换因为它们在各自音阶中的位置相同。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">你需要写一个程序，在不同音阶中交换音符。</span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">输入包含多组数据，每行一组。每行开头是一个源曲调，紧跟着一个目标曲调，接下来是一串需要从源曲调大调音阶交换至目标曲调大调音阶的音符。每行由单个星号结束。每行中的音符和星号都由单个空格隔开。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">输入的最后一行只包含一个星号，并不作为测试数据。</span></p>
+<p>【输出格式】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">每组测试数据可能对应一行或多行输出。如果源调和目标调都是有效的，那么输出的第一行应该是&ldquo;</span><span lang="EN-US">Transposing from X to Y:</span><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&rdquo;，</span><span lang="EN-US">X</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">代表源调，</span><span lang="EN-US">Y</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">代表目标调。假如源调或者目标调中有一个是无效的，那么输出&ldquo;</span><span lang="EN-US">Key of X/Y is not a valid major key</span><span style="font-family:
+宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&rdquo;，</span><span lang="EN-US">X/Y</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">表示无效的曲调，改行剩下的输入将被忽略。假如两者皆无效，只需输出源调。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">对于包含了有效的源调和目标调的数据，在第一行的输出后，每个被交换的音符都对应一行输出。假如输入的音符在源调的大调音阶中是个有效音符，那么输出&ldquo;</span><span lang="EN-US">M transposes to N</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">&rdquo;，</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">表示源调中的音符，</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">是目标调中对应位置的音符。假如输入的音符在源大调音阶中无效，那么输出&ldquo;</span><span lang="EN-US">M is not a valid note in the X major scale</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&rdquo;，</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">代表输入音符，</span><span lang="EN-US">X</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">代表源音调。不管是有效还是无效音符，都要保持一致的缩进格式。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">各组数据的输出之间应该用一个空行隔开。你的输出格式应该要和下面的标准输出相同。</span></p>
+<p class="MsoNormal" style="text-indent:21.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-indent:21.0pt">输入和输出的标准格式请参考未格式化的试题。</p>
+<p>【样例输入】</p>
+<pre>
+C Db F *
+<br type="_moz" /></pre>
+<pre>
+Db C Gb *
+<br type="_moz" /></pre>
+<pre>
+C B# A B *
+<br type="_moz" /></pre>
+<pre>
+C D A A# B Bb C *
+<br type="_moz" /></pre>
+<pre>
+A# Bb C *
+<br type="_moz" /></pre>
+<pre>
+*</pre>
+<p>【样例输出】</p>
+<pre>
+Transposing from C to Db:
+  F transposes to Gb
+
+Transposing from Db to C:
+  Gb transposes to F
+
+Key of B# is not a valid major key
+
+Transposing from C to D:
+  A transposes to B
+  A# is not a valid note in the C major scale
+  B transposes to C#
+  Bb is not a valid note in the C major scale
+  C transposes to D
+
+Key of A# is not a valid major key</pre>
+<p>【数据规模和约定】<br />
+数据组数不超过100组并且保证输入音符合法。</p>

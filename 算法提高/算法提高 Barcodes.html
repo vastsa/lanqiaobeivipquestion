@@ -1,0 +1,91 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 Barcodes</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+Code-11是一种主要用来将标签编码为条形码的编码方式。被编码的字符被限制为0-9和'-'号，以及一种特殊的符号：开始和结束标志（开始标志出现在Code-11编码的最前面而结束标志出现在最后面）。</p>
+<p>Code-11的编码会独立的编码每一个字符。一个字符会由5个相邻的区域来编码。每个区域可能是深色和浅色中的一种，相邻的两个区域的颜色一定不同，每次编码的第一个区域的颜色一定是深色的。每个区域的宽度也不是一定的，我们将宽度总共分为两种，用0表示一个窄的区域，用1表示一个宽的区域。</p>
+<table width="200" border="1" cellpadding="1" cellspacing="1">
+    <tbody>
+        <tr>
+            <td style="text-align: center;">字符</td>
+            <td style="text-align: center;">编码</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">0</td>
+            <td style="text-align: center;">00001</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">1</td>
+            <td style="text-align: center;">10001</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">2</td>
+            <td style="text-align: center;">01001</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">3</td>
+            <td style="text-align: center;">11000</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">4</td>
+            <td style="text-align: center;">00101</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">5</td>
+            <td style="text-align: center;">10100</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">6</td>
+            <td style="text-align: center;">01100</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">7</td>
+            <td style="text-align: center;">00011</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">8</td>
+            <td style="text-align: center;">10010</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">9</td>
+            <td style="text-align: center;">10000</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">-</td>
+            <td style="text-align: center;">00100</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">开始/结束标志</td>
+            <td style="text-align: center;">00110</td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<p>因此，字符1被编码后就会表示成为深色的宽区域，浅色的窄区域，深色的窄区域，浅色的窄区域，深色的宽区域这五个区域。并且，在编码后两个相邻的字符各自编码出来的五个区域之间需要用一个浅色的窄区域将它们隔开。这个浅色的窄区域的唯一功能就是分割两个字符编码出来的区域。</p>
+<p>Code-11这种编码方式可以简化我们的编码和解码过程，因为他仅需要区分窄区域和宽区域，并且提高了对低打印水平的容忍度。</p>
+<p>为了能够检验编码中出现的错误，Code-11在编码时会用到两个检验字符C和K，并且会把C和K插入到原串的末尾再进行编码（在结束标志之前）。假设需要被编码的串有n个字符，分别是c1、c2&hellip;&hellip;cn，那么检验字符C的值就应该是sigma( ( ( n - i ) mod 10 + 1 ) * w ( c [i] ) ) mod 11(1&lt;=i&lt;=n)。其中，w(c[i])是字符c[i]的权重。如果c[i]是0、1、2、&hellip;&hellip;9这些字符，那么c[i]的权重就是0、1、2、&hellip;&hellip;9。如果c[i]是'-'，那么c[i]的权重就是10。（注意mod的运算优先级比+高）</p>
+<p>与此对应的检验字符K的值是sigma( ( ( n - i + 1) mod 9 +1 ) * w ( c [i] ) ) mod 11(1&lt;=i&lt;=n+1)，其中c[n+1]即为检验字符C。举个例子，假设需要被编码的字符串是123-45，那么我们有C=5和K=2，所以最终需要被编码的字符串是123-4552，并且有一个开始标志和结束标志分别在头部和尾部。</p>
+<p>一般的简单的条形码读取器会包含数百个小型的CCD传感器，这些CCD传感器会识别出深色和浅色区域以及每一块的宽度。利用这些信息，解码器就会将解码得到被编码之前的信息。由于条形码的方向不是固定的，所以无论读取器是正着扫描的条形码还是倒着扫描的，解码器都需要能够解码。</p>
+<p>你的任务是解码一个被Code-11编码过的条形码。你能够知道每一块区域的宽度，并且宽的区域的宽度是窄的区域的宽度的两倍。但是由于打印设备的不完美，所以读取的区域宽度可能跟实际的宽度有5%的误差。在数据当中不会有编码前长度为0的字符串。</p>
+<p>【输入格式】<br />
+第一行一个正整数N，代表被编码后的条形码的区域个数。</p>
+<p>接下来N个正整数，每行最多十个正整数，代表条形码每个区域的宽度。<br />
+【输出格式】<br />
+如果该条形码无法被成功解码，输出&quot;bad code&quot;。</p>
+<p>如果该条形码能被成功解码但是检验字符C的值不正确，输出&quot;bad C&quot;。</p>
+<p>如果该条形码能被成功解码且检验字符C的值正确但检验字符K的值不正确，输出&quot;bad K&quot;。</p>
+<p>如果该条形码能被成功解码且两个检验字符均是正确的，输出不包含检验字符和起始结束标志的原字符串。<br />
+【样例输入】</p>
+<p>59&nbsp;</p>
+<p>10 20 20 10 10 10 20 10 10 20&nbsp;</p>
+<p>10 10 10 10 20 10 20 10 10 10&nbsp;</p>
+<p>20 10 20 10 20 10 20 10 10 10&nbsp;</p>
+<p>10 10 20 10 10 10 10 10 10 20&nbsp;</p>
+<p>20 10 20 10 10 20 10 10 20 10&nbsp;</p>
+<p>10 10 20 10 10 20 20 10 10</p>
+<p>【样例输出】<br />
+123-45<br />
+【数据规模和约定】<br />
+对于100%的数据，N&lt;=150，所有的宽度&lt;=250。</p>

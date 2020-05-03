@@ -1,0 +1,22 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 士兵排队问题</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="MsoNormal"><span style="font-family:宋体">【试题】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体">有Ｎ个士兵<span lang="EN-US">(</span></span><span lang="EN-US" style="font-size:12.0pt;font-family:
+宋体">1</span><span lang="EN-US" style="font-family:宋体">&le;</span><span style="font-family:宋体">Ｎ<span lang="EN-US">&le;</span></span><span lang="EN-US" style="font-size:12.0pt;font-family:宋体">26</span><span lang="EN-US" style="font-family:宋体">)</span><span style="font-family:宋体">，编号依次为Ａ<span lang="EN-US">,</span>Ｂ<span lang="EN-US">,</span>Ｃ<span lang="EN-US">,</span>&hellip;，队列训练时，指挥官要把一些士兵从高到矮一次排成一行，但现在指挥官不能直接获得每个人的身高信息，只能获得&ldquo;<span lang="EN-US">P1</span>比<span lang="EN-US">P2</span>高&rdquo;这样的比较结果<span lang="EN-US">(P1</span>、<span lang="EN-US">P2&isin;</span>Ａ<span lang="EN-US">,</span>Ｂ<span lang="EN-US">,</span>Ｃ<span lang="EN-US">,</span>&hellip;<span lang="EN-US">,</span>Ｚ<span lang="EN-US">,</span>记为<span lang="EN-US"> P1&gt;P2)</span>，如<span lang="EN-US">&rdquo;</span>Ａ<span lang="EN-US">&gt;</span>Ｂ<span lang="EN-US">&rdquo;</span>表示Ａ比Ｂ高。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体">请编一程序，根据所得到的比较结果求出一种符合条件的排队方案。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-family:宋体"><span>&nbsp;&nbsp;&nbsp; </span></span><span style="font-family:宋体">（注：比较结果中没有涉及的士兵不参加排队）<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="font-family:宋体">【输入要求】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体">比较结果从文本文件中读入（文件由键盘输入），每个比较结果在文本文件中占一行。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="font-family:宋体">【输出要求】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体">若输入数据无解，打印&ldquo;<span lang="EN-US">No Answer!&rdquo;</span>信息，否则从高到矮一次输出每一个士兵的编号，中间无分割符，并把结果写入文本文件中，文件由键盘输入：<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><font class="Apple-style-span" face="宋体">【样例输入】</font></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><font class="Apple-style-span" face="宋体"><br />
+</font></p>
+<p class="MsoNormal" style="text-indent:21.0pt">A&gt;B</p>
+<p class="MsoNormal" style="text-indent:21.0pt">B&gt;D</p>
+<p class="MsoNormal" style="text-indent:21.0pt">F&gt;D</p>
+<p class="MsoNormal"><font class="Apple-style-span" face="宋体">【样例输出】</font></p>
+<p class="MsoNormal"><font class="Apple-style-span" face="宋体">AFBD</font></p>

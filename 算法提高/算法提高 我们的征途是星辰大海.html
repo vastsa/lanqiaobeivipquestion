@@ -1,0 +1,505 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 我们的征途是星辰大海</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;</p>
+<!--[if gte mso 9]><xml>
+<o:DocumentProperties>
+<o:Author>Administrator</o:Author>
+<o:Revision>0</o:Revision>
+<o:TotalTime>0</o:TotalTime>
+<o:Created>2010-12-17T01:59:00Z</o:Created>
+<o:LastSaved>2010-12-17T01:59:00Z</o:LastSaved>
+<o:Pages>1</o:Pages>
+<o:Words>114</o:Words>
+<o:Characters>650</o:Characters>
+<o:Company>tsinghua</o:Company>
+<o:Lines>5</o:Lines>
+<o:Paragraphs>1</o:Paragraphs>
+<o:CharactersWithSpaces>763</o:CharactersWithSpaces>
+<o:Version>14.0</o:Version>
+</o:DocumentProperties>
+<o:OfficeDocumentSettings>
+<o:AllowPNG />
+</o:OfficeDocumentSettings>
+</xml><![endif]-->  <!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:DrawingGridVerticalSpacing>10 pt</w:DrawingGridVerticalSpacing>
+<w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+<w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:LidThemeOther>
+<w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+<w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+<w:Compatibility>
+<w:SpaceForUL />
+<w:BalanceSingleByteDoubleByteWidth />
+<w:DoNotLeaveBackslashAlone />
+<w:ULTrailSpace />
+<w:DoNotExpandShiftReturn />
+<w:AdjustLineHeightInTable />
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:EnableOpenTypeKerning />
+<w:DontFlipMirrorIndents />
+<w:OverrideTableStyleHps />
+<w:UseFELayout />
+</w:Compatibility>
+<w:NoLineBreaksAfter Lang="JA">$([{£¥·‘“〈《「『【〔〖〝﹙﹛﹝＄（．［｛￡￥</w:NoLineBreaksAfter>
+<w:NoLineBreaksBefore Lang="JA">!%),.:;&gt;?]}¢¨°·ˇˉ―‖’”…‰′″›℃∶、。〃〉》」』】〕〗〞︶︺︾﹀﹄﹚﹜﹞！＂％＇），．：；？］｀｜｝～￠</w:NoLineBreaksBefore>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="276">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+</w:LatentStyles>
+</xml><![endif]-->  <!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:普通表格;
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-parent:"";
+mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+mso-para-margin:0cm;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Cambria;
+mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;
+mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin;
+mso-font-kerning:1.0pt;}
+</style>
+<![endif]-->    <!--StartFragment-->
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">最新的火星探测机器人</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">被困在了一个二维迷宫里，迷宫由一个个方格组成。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">共有四种方格：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lsquo;.&rsquo; &nbsp;</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">代表空地，</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">可以穿过它</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">&lsquo;#&rsquo; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">代表障碍物，不可穿越，不可停留</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">&lsquo;S&rsquo; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">代表</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">的起始位置</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span lang="EN-US">&lsquo;T&rsquo;&nbsp; </span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin">代表</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">的目的地</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">NASA</span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin">将会发送一系列的命令给</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">，格式如下：&ldquo;</span><span lang="EN-US">LRUD</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&rdquo;分别代表向左，向右，向上，向下走一步。由于地球和火星之间最近时也有</span><span lang="EN-US">55000000km</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">！所以我们必须提前判断这一系列的指令会让</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">最终处在什么样的状态，请编程完成它。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">输入</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">第一行是一个整数</span><span lang="EN-US">T</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">，代表有几个测试样例</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">每个测试样例第一行是一个整数</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">（</span><span lang="EN-US">1&lt;=N&lt;=50</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">））代表迷宫的大小（</span><span lang="EN-US">N*N</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">）。随后的</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">行每行由</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">个字符串组成，代表迷宫。接下来的一行是一个整数</span><span lang="EN-US">Q</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">，代表有多少次询问，接下来的</span><span lang="EN-US">Q</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">行每行是一个仅由&ldquo;</span><span lang="EN-US">LRUD</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">&rdquo;四个字母的组成的字符串，字符转长度小于</span><span lang="EN-US">1000.<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">输出</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">对于每个询问输出单独的一行：</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&ldquo;</span><span lang="EN-US">I get there!</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&rdquo;：执行给出的命令后</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">最终到达了终点。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&ldquo;</span><b><span lang="EN-US" style="font-size:11.5pt">I have no idea!</span></b><span style="font-family:
+宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin">&rdquo;：执行给出的命令后</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">未能到达终点。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&ldquo;</span><span style="font-family: 'Courier New'; font-size: 15px;">I am dizzy!</span><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin">&rdquo;：</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">在执行命令的过程中撞到了障碍物。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">&ldquo;</span><b><span lang="EN-US" style="font-size:11.5pt">I am out!</span></b><span style="font-family:宋体;
+mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Cambria;
+mso-hansi-theme-font:minor-latin">&rdquo;：代表</span><span lang="EN-US">curiosity</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;mso-ascii-theme-font:minor-latin;
+mso-fareast-font-family:宋体;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:
+Cambria;mso-hansi-theme-font:minor-latin">在执行命令的过程中走出了迷宫的边界。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="Default"><b><span lang="EN-US" style="font-size:13.5pt">Sample Input </span></b><span lang="EN-US" style="font-size:13.5pt"><o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">2 <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">2 <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">S. <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">#T <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">2 <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">RD <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">DR <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">3 <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">S<span class="GRcorrect" grcontextid=".:0" grmarkguid="4bbd50bc-8a84-4a2b-9595-9a9aa86a1b43" gruiphraseguid="96262738-e4a2-4087-8b9d-9957ff76e6a9">.</span># <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">.#. <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;"><span class="GRcorrect" grcontextid=".:0" grmarkguid="8cc8ebbf-3dfe-49ee-b494-a5600eb1f0fb" gruiphraseguid="6d580f3f-6681-4c2d-acb7-40d7aa6454e5">.</span>T# <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">3 <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">RL <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">DDD <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">DDRR<o:p></o:p></span></p>
+<p class="Default"><b><span lang="EN-US" style="font-size:13.5pt">Sample Output</span></b><span lang="EN-US" style="font-size:13.5pt"><o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">I get there! <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">I am dizzy! <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">I have no idea! <o:p></o:p></span></p>
+<p class="Default"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">I am out! <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="font-size:11.0pt;font-family:&quot;Courier New&quot;;
+mso-bidi-font-family:&quot;Courier New&quot;">I get there!</span><span lang="EN-US"><o:p></o:p></span></p>
+<!--EndFragment-->
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Race</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<div>TOC是一个长方形的城市，有着N*M个方格状的街区。</div>
+<div>若干建筑物，双向直线的道路以及交叉路口组成了TOC。</div>
+<div>每个建筑物：占恰好的一个街区。</div>
+<div>每条道路：所有道路的宽度都为1个街区，并且道路都是水平的或竖直的。</div>
+<div>每个交叉路口：占一个街区，位于道路的交汇处。</div>
+<div>我们称两个街区是相邻的，当且仅当它们之间存在着公共边。</div>
+<div>没有两条道路或两个交叉路口是相邻的。</div>
+<div>&nbsp;</div>
+<div>在每年的狂欢节中，TOP总会按照一条特殊的路线游行。</div>
+<div>TOP会从一个街区出发，接下来经过若干个交叉路口，最终在一个街区停下。</div>
+<div>TOP知道从某一个街区到其相邻的街区所花费的时间。</div>
+<div>同时，从交叉路口需要花费1分钟来到达相邻的街区。</div>
+<div>TOP不能经过有建筑物的地方。</div>
+<div>&nbsp;</div>
+<div>我们知道TOP的初始与结束位置，也知道TOP途中经过的交叉路口的顺序。</div>
+<div>但他完成游行之后，他会一直呆在结束位置。</div>
+<div>你的问题是，找出在他出发了K分钟之后，位于哪个位置。</div>
+<div>TOP总会沿着最短的道路经过给定的交叉路口，而到达终点。</div>
+<div>&nbsp;</div>
+<div>注意到TOP可能会访问某些格子多于一次。</div>
+<p>【输入格式】</p>
+<div>第一行包含三个整数m,n,k，接下来的m行代表这座城市的地图。</div>
+<div>每一行都会包含着n个字符，每个字符代表着一个街区。</div>
+<div>*字符&lsquo;#&rsquo;代表一座建筑物。</div>
+<div>*字符&lsquo;1&rsquo;，&lsquo;2&rsquo;，...，&lsquo;9&rsquo;代表道路，其中的数字代表TOP从这个街区到其相邻的街区所花费的时间。</div>
+<div>*字符&lsquo;a&rsquo;，&lsquo;b&rsquo;，...，&lsquo;z&rsquo;代表这个交叉路口的名字。每个交叉路口的名字是唯一的。</div>
+<div>&nbsp;</div>
+<div>第i行的第j个街区用坐标表示为(i,j)。</div>
+<div>接下来的一行，包含两个整数rs,cs,字符串s,和另外的两个整数re,ce。</div>
+<div>TOP游行的从(rs,cs)出发，连续地经过s中的交叉路口，最后在(re,ce)结束。</div>
+<div>&nbsp;</div>
+<div>数据保证存在一条合法的游行路径。</div>
+<p>【输出格式】<br />
+第一行输出两个整数rf,cf，(rf,cf)代表在K分钟之后位于的位置。<br />
+【样例输入】</p>
+<div>3 10 6</div>
+<div>##########</div>
+<div>#z1a1311b#</div>
+<div>##########</div>
+<div>2 3 ab 2 8</div>
+<p>【样例输出】<br />
+2 7<br />
+【数据规模和约定】<br />
+对于100%的数据，3&lt;=m,n&lt;=100,1&lt;=k&lt;=100000。</p>

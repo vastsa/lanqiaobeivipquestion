@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 Suffix-Replacement Grammars</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<div>和程序员一样，你也听说过正则表达式和上下文无关文法吧。有很多种方法生成小写字母的字符串集合（从另一方面叫做形式语言）。还有更多其他不为人知的方法生成语言，比如树邻接语法、上下文有关文法和无限制语法。这个问题用一种新的方法生成语言：后缀替换法。</div>
+<div>一个后缀替换法由起始字符串S和一些后缀替换规则组成。每个规则是由X&rarr;Y的形式给出，其中X和Y是等长的由字母构成的字符串。这个规则表示如果你现在的字符串后缀（最右的字符）是X，你就可以用Y替代它。这个规则可以无限次使用。</div>
+<div>举个例子，假如有4个规则A&rarr;B,AB&rarr;BA,AA&rarr;CC,CC&rarr;BB，你就可以通过三步把AA变成BB：AA&rarr;AB（用A&rarr;B规则），AB&rarr;BA（用AB&rarr;BA规则），BA&rarr;BB（用A&rarr;B规则），但你也可以用两步更快的完成：AA&rarr;CC（用AA&rarr;CC规则），CC&rarr;BB（用CC&rarr;BB规则）。</div>
+<div>你要写一个程序通过后缀替换规则和字符串T确定起始字符串S能否变成T，如果可能，求最小步数。</div>
+<div>&nbsp;</div>
+<p>【输入格式】<br />
+输入文件包含多组数据，每组数据第一行包括2个等长字符串S和T（S和T长度在1到20之间，由空格隔开），以及一个整数NR(0&lt;=NR&lt;=100)，代表规则数，之后NR行每行包含两个等长字符串X和Y（X和Y长度在1到20之间，由空格隔开），代表X&rarr;Y是一种规则。字符串区分大小写，文件最后一行由一个点结尾。<br />
+【输出格式】<br />
+对于每组数据，输出数据编号（从1开始）和从S到T的最少步数，如果无法转换，就输出&ldquo;No solution&rdquo;。按照示例的格式输出。<br />
+【样例输入】</p>
+<div>AA BB 4&nbsp;</div>
+<div>A B&nbsp;</div>
+<div>AB BA&nbsp;</div>
+<div>AA CC&nbsp;</div>
+<div>CC BB&nbsp;</div>
+<div>A B 3&nbsp;</div>
+<div>A C&nbsp;</div>
+<div>B C&nbsp;</div>
+<div>c B&nbsp;</div>
+<div>.</div>
+<div>&nbsp;</div>
+<p>【样例输出】</p>
+<p class="MsoNormal"><span lang="EN-US">Case 1: 2 </span></p>
+<p class="MsoNormal"><span lang="EN-US">Case 2: No solution</span></p>

@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Bit Compressor</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>
+<div>【问题描述】</div>
+<div>数据压缩的目的是为了减少存储和交换数据时出现的冗余。这增加了有效数据的比重并提高了传输速率。有一种压缩二进制串的方法是这样的：</div>
+<div>将连续的n个1替换为n的二进制表示（注：替换发生当且仅当这种替换减少了二进制串的总长度）</div>
+<div>（译者注：连续的n个1的左右必须是0或者是串的开头、结尾）</div>
+<div>比如：11111111001001111111111111110011会被压缩成10000010011110011。原串长为32,被压缩后串长为17.</div>
+<div>这种方法的弊端在于，有时候解压缩算法会得到不止一个可能的原串，使得我们无法确定原串究竟是什么。请你写一个程序来判定我们能否利用压缩后的信息来确定原串。给出原串长L，原串中1的个数N，以及压缩后的串。</div>
+<div>L&lt;=16 Kbytes，压缩后的串长度&lt;=40 bits。</div>
+<div>【输入格式】</div>
+<div>第一行两个整数L,N，含义同问题描述</div>
+<div>第二行一个二进制串，表示压缩后的串</div>
+<div>【输出格式】</div>
+<div>输出&quot;YES&quot;或&quot;NO&quot;或&quot;NOT UNIQUE&quot;（不包含引号）</div>
+<div>分别表示：</div>
+<div>YES：原串唯一</div>
+<div>NO：原串不存在</div>
+<div>NOT UNIQUE：原串存在但不唯一</div>
+<div>【样例输入】</div>
+<div>样例1：</div>
+<div>32 26</div>
+<div>10000010011110011</div>
+<div>样例2：</div>
+<div>9 7</div>
+<div>1010101</div>
+<div>样例3：</div>
+<div>14 14</div>
+<div>111111</div>
+<div>【样例输出】</div>
+<div>样例1：YES</div>
+<div>样例2：NOT UNIQUE</div>
+<div>样例3：NO</div>
+</div>
+<div>&nbsp;</div>

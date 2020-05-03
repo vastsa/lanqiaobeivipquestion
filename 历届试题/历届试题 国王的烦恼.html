@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+<title>历届试题 国王的烦恼</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>【问题描述】</div>
+<div>&nbsp; &nbsp; C国由n个小岛组成，为了方便小岛之间联络，C国在小岛间建立了m座大桥，每座大桥连接两座小岛。两个小岛间可能存在多座桥连接。然而，由于海水冲刷，有一些大桥面临着不能使用的危险。</div>
+<div>&nbsp;</div>
+<div>&nbsp; &nbsp; 如果两个小岛间的所有大桥都不能使用，则这两座小岛就不能直接到达了。然而，只要这两座小岛的居民能通过其他的桥或者其他的小岛互相到达，他们就会安然无事。但是，如果前一天两个小岛之间还有方法可以到达，后一天却不能到达了，居民们就会一起抗议。</div>
+<div>&nbsp;</div>
+<div>&nbsp; &nbsp; 现在C国的国王已经知道了每座桥能使用的天数，超过这个天数就不能使用了。现在他想知道居民们会有多少天进行抗议。</div>
+<div>&nbsp;</div>
+<div>【输入格式】</div>
+<div>&nbsp; &nbsp; 输入的第一行包含两个整数n, m，分别表示小岛的个数和桥的数量。</div>
+<div>&nbsp; &nbsp; 接下来m行，每行三个整数a, b, t，分别表示该座桥连接a号和b号两个小岛，能使用t天。小岛的编号从1开始递增。</div>
+<div>&nbsp;</div>
+<div>【输出格式】</div>
+<div>&nbsp; &nbsp; 输出一个整数，表示居民们会抗议的天数。</div>
+<div>&nbsp;</div>
+<div>【样例输入】</div>
+<div>4 4</div>
+<div>1 2 2</div>
+<div>1 3 2</div>
+<div>2 3 1</div>
+<div>3 4 3</div>
+<div>&nbsp;</div>
+<div>【样例输出】</div>
+<div>2</div>
+<div>&nbsp;</div>
+<div>【样例说明】</div>
+<div>&nbsp; &nbsp; 第一天后2和3之间的桥不能使用，不影响。</div>
+<div>&nbsp; &nbsp; 第二天后1和2之间，以及1和3之间的桥不能使用，居民们会抗议。</div>
+<div>&nbsp; &nbsp; 第三天后3和4之间的桥不能使用，居民们会抗议。</div>
+<div>&nbsp;</div>
+<div>【数据规模与约定】</div>
+<div>&nbsp; &nbsp; 对于30%的数据，1&lt;=n&lt;=20，1&lt;=m&lt;=100；</div>
+<div>&nbsp; &nbsp; 对于50%的数据，1&lt;=n&lt;=500，1&lt;=m&lt;=10000；</div>
+<div>&nbsp; &nbsp; 对于100%的数据，1&lt;=n&lt;=10000，1&lt;=m&lt;=100000，1&lt;=a, b&lt;=n， 1&lt;=t&lt;=100000。</div>
+<div>&nbsp;</div>

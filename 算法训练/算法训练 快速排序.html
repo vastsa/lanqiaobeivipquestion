@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 快速排序</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="subtitle">问题描述</p>
+<p class="probcontent">快速排序是最经常使用的一种排序方式，对于给定的n个数组成的一个数组，请使用快速排序对其进行排序。</p>
+<div class="pdcont" style="margin: 0px; padding: 0px; font-family: 'Times New Roman', 宋体; font-size: 14px; color: rgb(32, 0, 0);">现给定一序列，请用<span style="color: rgb(0, 0, 0); font-family: Arial, Verdana, sans-serif; font-size: 12px;">快速</span>排序将其按升序排序并输出。</div>
+<div class="pdsec" style="margin: 8px 0px 4px; padding: 4px 0px 4px 6px; font-family: 微软雅黑, 黑体, 华文细黑; font-size: 16px; font-weight: bold; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; border-radius: 4px 4px 0px 0px; background-color: rgb(248, 248, 255);">输入格式</div>
+<div class="pdcont" style="margin: 0px; padding: 0px; font-family: 'Times New Roman', 宋体; font-size: 14px; color: rgb(32, 0, 0);">　　第一行一个数N。<br style="margin: 0px; padding: 0px;" />
+第2~N+1行每行一个数，表示给定序列。</div>
+<div class="pdsec" style="margin: 8px 0px 4px; padding: 4px 0px 4px 6px; font-family: 微软雅黑, 黑体, 华文细黑; font-size: 16px; font-weight: bold; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; border-radius: 4px 4px 0px 0px; background-color: rgb(248, 248, 255);">输出格式</div>
+<div class="pdcont" style="margin: 0px; padding: 0px; font-family: 'Times New Roman', 宋体; font-size: 14px; color: rgb(32, 0, 0);">　　共N行，每行一个数，表示所求序列。</div>
+<div class="pdsec" style="margin: 8px 0px 4px; padding: 4px 0px 4px 6px; font-family: 微软雅黑, 黑体, 华文细黑; font-size: 16px; font-weight: bold; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; border-radius: 4px 4px 0px 0px; background-color: rgb(248, 248, 255);">样例输入</div>
+<div class="pddata" style="margin: 0px; padding: 0px 0px 0px 24pt; font-family: 'Courier New', FixedSys; font-size: 12pt; color: rgb(32, 0, 0);">5<br style="margin: 0px; padding: 0px;" />
+1<br style="margin: 0px; padding: 0px;" />
+4<br style="margin: 0px; padding: 0px;" />
+2<br style="margin: 0px; padding: 0px;" />
+3<br style="margin: 0px; padding: 0px;" />
+4</div>
+<div class="pdsec" style="margin: 8px 0px 4px; padding: 4px 0px 4px 6px; font-family: 微软雅黑, 黑体, 华文细黑; font-size: 16px; font-weight: bold; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; border-radius: 4px 4px 0px 0px; background-color: rgb(248, 248, 255);">样例输出</div>
+<div class="pddata" style="margin: 0px; padding: 0px 0px 0px 24pt; font-family: 'Courier New', FixedSys; font-size: 12pt; color: rgb(32, 0, 0);">1<br style="margin: 0px; padding: 0px;" />
+2<br style="margin: 0px; padding: 0px;" />
+3<br style="margin: 0px; padding: 0px;" />
+4<br style="margin: 0px; padding: 0px;" />
+4</div>
+<div class="pdsec" style="margin: 8px 0px 4px; padding: 4px 0px 4px 6px; font-family: 微软雅黑, 黑体, 华文细黑; font-size: 16px; font-weight: bold; border-bottom-color: rgb(187, 187, 187); border-bottom-width: 1px; border-bottom-style: solid; border-radius: 4px 4px 0px 0px; background-color: rgb(248, 248, 255);">数据规模和约定</div>
+<div class="pdcont" style="margin: 0px; padding: 0px; font-family: 'Times New Roman', 宋体; font-size: 14px; color: rgb(32, 0, 0);">　　共10组数据。<br style="margin: 0px; padding: 0px;" />
+对100%的数据，N&lt;=10^5，所有数均为非负数且在int范围内。</div>

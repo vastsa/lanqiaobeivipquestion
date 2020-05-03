@@ -1,0 +1,39 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 学霸的迷宫</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;【问题描述】</p>
+<div>学霸抢走了大家的作业，班长为了帮同学们找回作业，决定去找学霸决斗。但学霸为了不要别人打扰，住在一个城堡里，城堡外面是一个二维的格子迷宫，要进城堡必须得先通过迷宫。因为班长还有妹子要陪，磨刀不误砍柴功，他为了节约时间，从线人那里搞到了迷宫的地图，准备提前计算最短的路线。可是他现在正向妹子解释这件事情，于是就委托你帮他找一条最短的路线。</div>
+<div>【输入格式】</div>
+<div>第一行两个整数n， m，为迷宫的长宽。</div>
+<div>接下来n行，每行m个数，数之间没有间隔，为0或1中的一个。0表示这个格子可以通过，1表示不可以。假设你现在已经在迷宫坐标(1,1)的地方，即左上角，迷宫的出口在(n,m)。每次移动时只能向上下左右4个方向移动到另外一个可以通过的格子里，每次移动算一步。数据保证(1,1)，(n,m)可以通过。</div>
+<div>【输出格式】</div>
+<div>第一行一个数为需要的最少步数K。</div>
+<div>第二行K个字符，每个字符&isin;{U,D,L,R},分别表示上下左右。如果有多条长度相同的最短路径，选择在此表示方法下字典序最小的一个。</div>
+<div>【样例输入】</div>
+<div>Input Sample 1:</div>
+<div>3 3</div>
+<div>001</div>
+<div>100</div>
+<div>110</div>
+<div>&nbsp;</div>
+<div>Input Sample 2:</div>
+<div>3 3</div>
+<div>000</div>
+<div>000</div>
+<div>000</div>
+<div>&nbsp;</div>
+<div>【样例输出】</div>
+<div>Output Sample 1:</div>
+<div>4</div>
+<div>RDRD</div>
+<div>&nbsp;</div>
+<div>Output Sample 2:</div>
+<div>4</div>
+<div>DDRR</div>
+<div>&nbsp;</div>
+<div>【数据规模】</div>
+<div>有20%的数据满足：1&lt;=n,m&lt;=10</div>
+<div>有50%的数据满足：1&lt;=n,m&lt;=50</div>
+<div>有100%的数据满足：1&lt;=n,m&lt;=500。</div>

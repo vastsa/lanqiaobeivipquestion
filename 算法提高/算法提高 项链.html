@@ -1,0 +1,28 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 项链</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="subtitle">问题描述</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3>由 n(1≤n≤100) 
+      个珠子组成的一个项链，珠子有红、蓝、白三种颜色，各种颜色的珠子的安排顺序由键盘输入的字符串任意给定。蓝色用小写字母b表示,红色用小写字母r表示, 
+      白色用小写字母w表示. <BR><BR>假定从项链的某处将其剪断，把它摆成一条直线。先从左端向右收集同色珠子，遇到第一个异色珠子时停止. 
+      收集过程中, 白色是一种特殊颜色, 既可以看成红色也可以看成蓝色。然后再从剩余珠子的右端向左重复上述过程。 
+      <BR><BR>例如：对下图一所示的项链, 如果从图一中标记的位置0处剪断, 
+      则按顺时针顺序得到wbbbwwrrbwbrrwb（如图二所示）。这时从左端开始收集可以得到wbbbww, 
+      共6个珠子；然后从剩余珠子右端开始收集得到wb，共2个珠子。这种剪法共可收集到6+2=8个珠子。 如果从图一中标记的位置4处剪断, 
+      则按顺时针顺序得到wwrrbwbrrwbwbbb（如图二所示）。这时从左端收集可以得到wwrr,共4个珠子；然后从剩余珠子右端收集可以得到wbwbbb，共6个珠子。这种剪法共可收集到4+6=10个珠子。 
+      <BR><BR>要求: 在项链中选择合适的剪断位置, 使得从左右两端收集到的珠子数目之和最大，输出收集到的珠子数的最大值M。 <BR><IMG 
+      height=500 src=""> <BR><IMG height=280 src=""></FONT></P>
+      <br /></p><p class="subtitle">输入格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" 
+      size=3>由小写字母b,r,w组成的字符串。此字符串记录了一个首尾相接的项链从某处断开后，按顺时针顺序得到的珠子的直线排列。</FONT></P>
+      <br /></p><p class="subtitle">输出格式</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3>收集到的珠子数的最大值 M</FONT></P>
+      <br /></p><p class="subtitle">样例输入</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>wbbbwwrrbwbrrwb</PRE></FONT>
+      <P></P>
+      <br /></p><p class="subtitle">样例输出</p><p class="probcontent">
+      <P><FONT face="Times New Roman" size=3><PRE>10</PRE></FONT>
+      <P></P>
+      <br /></p>

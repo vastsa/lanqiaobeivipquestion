@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Doubly-sorted Grid</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>&nbsp;</div>
+<div>【问题描述】</div>
+<div>一个长方形的网格每个格子里有一个小写英文字母。我们称这个网格是双排序(doubly sorted)的，当每一行从左到右都是不下降的，每一列从上到下也是不下降的。在下面的例子中，前两个网格是双排序的，而后两个不是。</div>
+<div>&nbsp;</div>
+<div>
+<div>abc<span class="Apple-tab-span" style="white-space:pre">		</span>ace<span class="Apple-tab-span" style="white-space:pre">		</span>aceg<span class="Apple-tab-span" style="white-space:pre">		</span>base</div>
+<div>def<span class="Apple-tab-span" style="white-space:pre">		</span>ade<span class="Apple-tab-span" style="white-space:pre">		</span>cdef<span class="Apple-tab-span" style="white-space:pre">		</span>base</div>
+<div>ghi<span class="Apple-tab-span" style="white-space:pre">		</span>bdg<span class="Apple-tab-span" style="white-space:pre">		</span>xxyy<span class="Apple-tab-span" style="white-space:pre">		</span>base</div>
+</div>
+<div>&nbsp;</div>
+<div>给你一个部分格子填了英文字母的网格。你的任务是计算有多少种方式把剩下的格子填满，使所得网格是双排序的。答案可能很大，你只要输出方案数对10007取模的余数。</div>
+<div>&nbsp;</div>
+<div>【输入格式】</div>
+<div>第一行一个整数T，表示数据组数。接下来有T组数据。每组数据的第一行有两个整数R和C，表示网格的行数和列数。接下来R行，每行有一个长度为C的字符串，表示部分填写的网格。每个字符是一个小写英文字母，或'.'（表示这个格子没有被填写）。</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>【输出格式】</div>
+<div>对每组数据，输出一行。这行包含&quot;Case #X: y&quot;，X是这组数据的编号（从1开始），y是可能的双排序网格的个数，模10007。</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>【样例输入】&nbsp;</div>
+<div>3</div>
+<div>2 2</div>
+<div>ad</div>
+<div>c.</div>
+<div>3 3</div>
+<div>.a.</div>
+<div>a.z</div>
+<div>.z.</div>
+<div>4 4</div>
+<div>....</div>
+<div>.g..</div>
+<div>.cj.</div>
+<div>....</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>【样例输出】</div>
+<div>Case #1: 23</div>
+<div>Case #2: 7569</div>
+<div>Case #3: 0</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>【数据规模和约定】</div>
+<div>1 &le; T &le; 3</div>
+<div>1 &le; R, C &le; 10</div>
+<div>网格中每个字符都是'.'或一个小写英文字母。</div>
+<div>对于MAX(R,C)=10的数据T&lt;=2。</div>
+<div>&nbsp;</div>

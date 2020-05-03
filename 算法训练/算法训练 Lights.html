@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Lights</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div>【问题描述】</div>
+<div>在一个正方形的空旷的房间里，有两个点光源：一个是红色的，另一个是绿色的。</div>
+<div>房间里还有n个圆柱。</div>
+<div>&nbsp;</div>
+<div>光线沿直线传播并且会被墙壁和圆柱所吸收。由于光线无法穿过圆柱，房间会产生阴影区域。</div>
+<div>房间里有些区域没有光线到达，是黑色的。</div>
+<div>有些区域只有红光到达，是红色的。</div>
+<div>有些区域只有绿光到达，是绿色的。</div>
+<div>还有些区域既有红光到达也有绿光到达，是黄色的。</div>
+<div>&nbsp;</div>
+<div>请你统计房间里四种颜色每一种的总面积分别是多少。</div>
+<div>注意，所求面积不包括圆柱所占的面积。</div>
+<div>&nbsp;</div>
+<div>【输入格式】</div>
+<div>第一行两个整数x1、y1，表示红光的光源为（x1，y1）。</div>
+<div>第一行两个整数x2、y2，表示绿光的光源为（x2，y2）。</div>
+<div>第三行一个整数n，为圆柱的个数。</div>
+<div>接下来n行，每行三个整数x、y、r，描述一个圆柱，圆形在（x，y）半径为r。</div>
+<div>&nbsp;</div>
+<div>房间是0&le;x,y&le;100所描述的正方形区域，四条边为墙壁。圆柱、墙壁、光源是相互分离的，互相不会相交或者触碰。</div>
+<div>&nbsp;</div>
+<div>【输出格式】</div>
+<div>第一行一个实数表示黑色面积。</div>
+<div>第二行一个实数表示红色面积。</div>
+<div>第三行一个实数表示绿色面积。</div>
+<div>第四行一个实数表示黄色面积。</div>
+<div>&nbsp;</div>
+<div>你的输出被认为正确，当且仅当你和标准输出的绝对误差或者相对误差不超过1e-5。</div>
+<div>&nbsp;</div>
+<div>【样例输入】</div>
+<div>5 50</div>
+<div>95 50</div>
+<div>1</div>
+<div>50 50 10</div>
+<div>&nbsp;</div>
+<div>【样例输出】</div>
+<div>0.7656121</div>
+<div>1437.986</div>
+<div>1437.986</div>
+<div>6809.104</div>
+<div>&nbsp;</div>
+<div>【样例说明】</div>
+<div><img src="http://lx.lanqiao.cn/RequireFile.do?fid=n7JMjTjA" width="283" height="283" alt="" /></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>【数据规模和约定】</div>
+<div>对于40%的数据：n=1。</div>
+<div>对于100%的数据：0&le;n&le;50，0&le;x,y&le;100。</div>
+<div>&nbsp;</div>
+<p>&nbsp;</p>

@@ -1,0 +1,57 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Princess and Her Shadow</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【题目背景】</p>
+<p>Vlada 公主喜欢在草坪和森林中游玩。在一个美好的晴天，公主正漫步于森林中。突然她惊讶地发现她的影子消失了！&ldquo;啊呀！&rdquo;，思索片刻公主便开始在森林寻找她的影子。</p>
+<p>正常情况下影子只会懒散地睡在公主脚下。但是在这么热的夏天，影子也厌倦了这种生活，于是她决定和 Vlada 玩玩。</p>
+<p>【问题描述】 &nbsp;</p>
+<p>她们所在的森林可以被表示为平面上一系列的整数方格。在这里，公主和影子只能沿上下左右一格一格移动。一些格子长有树木，而影子和公主都不允许进入这样的格子。不幸的是，现在是森林的困难时期，所以这里几乎没有树。。。</p>
+<p>最开始公主在 (v<sub>x</sub>,v<sub>y</sub>) ，而影子藏在 (s<sub>x</sub>,s<sub>y</sub>)&nbsp;。公主，影子和树木都在不同的格子上。</p>
+<p>影子在捉弄公主。一旦公主移动一格，只要可行，影子也在同一方向移动一格（如果这个格子没有树木）；否则，影子不移动。影子是虚无的，所以她们并不互相干扰。</p>
+<p>如果在某次移动后影子和公主在同一格子，那么我们说影子被抓住了。 Vlada 正设法抓住影子！你可以吗？</p>
+<p>【输入格式】<br />
+输入数据第一行包含她们的坐标&nbsp;v<sub>x</sub>,v<sub>y</sub>,s<sub>x</sub>,s<sub>y</sub>&nbsp;和树的数量&nbsp;m(0&le;m&le;400)&nbsp;。接下来 m 行表示树的坐标。</p>
+<p>所有坐标都是 -100 到 100 间的整数（包括100和-100）。公主和影子和树木都在不同的格子上。<br />
+【输出格式】<br />
+如果不可能抓到，输出&quot;-1&quot;（没有引号）。<br />
+否则输出一个只包含&quot;L&quot;,&quot;R&quot;,&quot;D&quot;,&quot;U&quot;的字母序列，表示公主的移动方案，要求最后能够抓住影子。（L&mdash;&mdash;左移，R&mdash;&mdash;右移，U&mdash;&mdash;上，D&mdash;&mdash;下；x轴的正方向是右，y轴的是上）</p>
+<p>移动步数不能超过10<sup>6</sup>。公主的移动必须是正确的，即不能让公主走到长有树木的格子上。最后一回合之前公主和影子可以在同一位置。</p>
+<p>【样例输入1】<br />
+0 0 1 0 1<br />
+0 1<br />
+【样例输出1】<br />
+LLUR<br />
+【样例输入2】<br />
+5 0 3 0 8<br />
+2 -1<br />
+2 0<br />
+2 1<br />
+3 -1<br />
+4 1<br />
+4 0<br />
+3 1<br />
+4 -1<br />
+【样例输出2】<br />
+-1<br />
+【样例输入3】<br />
+3 2 1 1 3<br />
+0 1<br />
+1 0<br />
+0 0<br />
+【样例输出3】<br />
+DLL</p>
+<p>【样例解释】</p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">蓝色点代表中心</span><span lang="EN-US">(0,0)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">方格的左下角。</span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">粉色代表公主，灰色代表影子，黑色代表树。:</span></p>
+<p class="MsoNormal">样例1：<img src="http://espresso.codeforces.com/53914ec8dc41cae8614795afdc5111a23466c10c.png" alt="" /></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">样例2：<img src="http://espresso.codeforces.com/d51249e4e9ecb6f53745fe586efaa9e1bba72448.png" alt="" /></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">样例3：<img src="http://espresso.codeforces.com/93aebd1309873c9c7295360a8ff0741f152eb16f.png" alt="" /></p>
+<p>【数据规模和约定】</p>
+<p>m(0&le;m&le;400)</p>
+<p>读入的坐标绝对值&lt;=100</p>

@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Liars and Serge</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span>有n个人坐在一张长桌边上。对于每个人，我们知道他总是说真话或是说谎。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span></div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span>小塞尔吉问他们：你们中有几位总是说真话呢？桌子上的每个人都知道关于桌子上的所有人的所有事情（某个人说真话或是说谎）。诚实的人总是回答正确的答案，而说谎的人会回答1到n之间除了正确答案以外的任意一个整数。每个说谎的人都会选择他自己的答案，并不会考虑其他说谎的人的答案，所以两个说谎的人可能会给出不一样的答案。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span></div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span>塞尔吉除了知道这些人对于他的问题所给的答案之外，并不知道其他的信息。他拿来一张纸并写下n个整数a<sub>1</sub>,a<sub>2</sub>,...,a<sub>n</sub>，其中a<sub>i</sub>表示第i个人的答案。得到这个序列后，塞尔吉断定，桌上至少k个人明显说谎了。</div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span></div>
+<div><span class="Apple-tab-span" style="white-space:pre">		</span>塞尔吉想，有多少种不同的答案（长度为n的答案序列a）可以得出桌上恰好k个人明显说谎了。由于可能有相当多种符合描述的答案，统计答案对777777777取模后的值即可。</div>
+<p>【输入格式】<br />
+第一行包括两个整数n,k,(1&lt;=k&lt;=n&lt;=2<sup>8</sup>)。保证n是2的整数次幂。<br />
+【输出格式】<br />
+输出一个整数&mdash;&mdash;答案对777777777取模后的值。<br />
+【样例输入】<br />
+样例输入1:<br />
+1 1 <br />
+样例输入2:<br />
+2 1 <br />
+【样例输出】<br />
+样例输出1:<br />
+0<br />
+样例输出2:<br />
+2<br />
+【数据规模和约定】<br />
+对于20%的数据有n&lt;=8。<br />
+对于50%的数据有n&lt;=128。<br />
+对于100%的数据有1&lt;=k&lt;=n&lt;=2<sup>8</sup>。</p>

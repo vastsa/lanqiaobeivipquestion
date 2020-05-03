@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Tournament-graph</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;<span style="font-family: 宋体;">【问题描述】</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">你要构造一个有<span lang="EN-US">N</span>个结点的竞赛图，使得对任意两个结点<span lang="EN-US">u</span>和<span lang="EN-US">v</span>（<span lang="EN-US">u</span>&ne;<span lang="EN-US">v</span>），从<span lang="EN-US">u</span>到<span lang="EN-US">v</span>的最短距离不超过<span lang="EN-US">2</span>。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">竞赛图就是基图为无向完全图的有向图（每对结点之间有一条有向边相连，且无自环）。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【输入格式】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">输入只有一个正整数<span lang="EN-US">N</span>（<span lang="EN-US">3</span>&le;<span lang="EN-US">N</span>&le;<span lang="EN-US">1000</span>），表示要求的竞赛图的结点数。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【输出格式】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">如果满足要求的竞赛图不存在，则输出<span lang="EN-US">-1</span>。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">否则输出一个<span lang="EN-US">N</span>行<span lang="EN-US">N</span>列的<span lang="EN-US">01</span>矩阵（<span lang="EN-US">0</span>表示没有边，<span lang="EN-US">1</span>表示有边），要符合竞赛图的条件。<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【样例输入一】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">3<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【样例输出一】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">0 1 0<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">0 0 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">1 0 0<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【样例输入二】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">4<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【样例输出二】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span lang="EN-US" style="mso-bidi-font-size:10.5pt;
+font-family:宋体">-1<o:p></o:p></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">【数据规模与约定】<span lang="EN-US"><o:p></o:p></span></span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">对于40%的数据，N&le;10；</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">对于70%的数据，N&le;300；</span></p>
+<p class="MsoNormal"><span style="mso-bidi-font-size:10.5pt;font-family:宋体">对于<span lang="EN-US">100%</span>的数据，<span lang="EN-US">N</span>&le;<span lang="EN-US">1000</span>。<span lang="EN-US"><o:p></o:p></span></span></p>

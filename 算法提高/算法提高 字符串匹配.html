@@ -1,0 +1,60 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 字符串匹配</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【问题描述】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">给出一个字符串和多行文字，在这些文字中找到字符串出现的那些行。你的程序还需支持大小写敏感选项：当选项打开时，表示同一个字母的大写和小写看作不同的字符；当选项关闭时，表示同一个字母的大写和小写看作相同的字符。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【输入格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输入的第一行包含一个字符串</span><span lang="EN-US">S</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，由大小写英文字母组成。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">第二行包含一个数字，表示大小写敏感的选项，当数字为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">时表示大小写不敏感，当数字为</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">时表示大小写敏感。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">第三行包含一个整数</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">，表示给出的文字的行数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">接下来</span><span lang="EN-US">n</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;mso-hansi-font-family:
+&quot;Times New Roman&quot;">行，每行包含一个字符串，字符串由大小写英文字母组成，不含空格和其他字符。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【输出格式】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">输出多行，每行包含一个字符串，按出现的顺序依次给出那些包含了字符串</span><span lang="EN-US">S</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">的行。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例输入】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">Hello<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">1<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">5<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HelloWorld<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HiHiHelloHiHi<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">GrepIsAGreatTool<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HELLO<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HELLOisNOTHello<o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例输出】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HelloWorld<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HiHiHelloHiHi<o:p></o:p></span></p>
+<p class="NOI1"><span lang="EN-US">HELLOisNOTHello<o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【样例说明】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">在上面的样例中，第四个字符串虽然也是</span><span lang="EN-US">Hello</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，但是大小写不正确。如果将输入的第二行改为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:&quot;Times New Roman&quot;;
+mso-hansi-font-family:&quot;Times New Roman&quot;">，则第四个字符串应该输出。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI"><span style="font-family:黑体;mso-ascii-font-family:Arial;
+mso-ascii-theme-font:major-latin;mso-hansi-font-family:Arial;mso-hansi-theme-font:
+major-latin">【评测用例规模与约定】</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="NOI0"><span lang="EN-US" style="font-family:宋体;mso-bidi-font-family:宋体">1&lt;=n&lt;=100</span><span style="font-family:宋体;mso-bidi-font-family:宋体">，每个字符串的长度不超过<span lang="EN-US">100</span>。</span><span lang="EN-US"><o:p></o:p></span></p>

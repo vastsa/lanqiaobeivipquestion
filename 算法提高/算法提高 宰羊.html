@@ -1,0 +1,53 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 宰羊</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:18.0pt;mso-char-indent-count:1.5">炫炫回了<span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">内蒙，肯定要吃羊肉啦，所有他家要宰羊吃。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:18.0pt;mso-char-indent-count:1.5">炫炫<span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">家有</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">只羊，羊圈排成一排，标号</span><span lang="EN-US">1~N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。</span>炫炫<span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">每天吃掉一只羊（这食量！其实是放生啦），吃掉的羊的邻居会以为它被放生了，然后又会告诉他们的邻居，这样一直传播下去，除非某个邻居已经被&ldquo;放生&rdquo;了。每一天，所有知道某羊被&ldquo;放生&rdquo;了这个消息的羊都会很不满，如果不给他们巧克力的话，他们就会很造反，</span>炫炫<span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">已经知道他要吃掉哪些羊，他可以任意安排吃的顺序，然后使巧克力的用量最小，请求出这个最小值。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输入格式】</p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:12.0pt;mso-char-indent-count:1.0"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">本题有多组数据，第一行为数据组数</span><span lang="EN-US">T</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:12.0pt;mso-char-indent-count:1.0"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">对于每组数据</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:12.0pt;mso-char-indent-count:1.0"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">第一行：两个用空格隔开的整数：</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">和</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">，表示羊的数量和需要吃掉的数量</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:12.0pt;mso-char-indent-count:1.0"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">第二行：有</span><span lang="EN-US">M</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">个数，表示要吃那些羊。</span><span lang="EN-US"><br />
+<br />
+&nbsp; &nbsp;<o:p></o:p></span></p>
+<p>【输出格式】</p>
+<p class="MsoNormal" style="margin-left:9.0pt;mso-para-margin-left:.75gd;
+text-indent:12.0pt;mso-char-indent-count:1.0"><span lang="EN-US">T</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">行，为每组数据的答案。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【样例输入】</p>
+<p class="MsoNormal"><span lang="EN-US">2<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">8 1<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">3<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">20 3<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">3 6 14</span><br />
+【样例输出】</p>
+<p class="MsoNormal"><span lang="EN-US">7<o:p></o:p></span></p>
+<p><span lang="EN-US" style="font-size:12.0pt;mso-bidi-font-size:11.0pt;font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-fareast-font-family:宋体;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:ZH-CN;
+mso-bidi-language:AR-SA">35</span><br />
+【数据规模和约定】</p>
+<p class="MsoNormal" style="margin-left:21.0pt"><span class="1"><span lang="EN-US">T=10<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="margin-left:21.0pt"><span class="1"><span lang="EN-US">N&lt;=10000<o:p></o:p></span></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span class="1"><span lang="EN-US">M&lt;=100<o:p></o:p></span></span></p>

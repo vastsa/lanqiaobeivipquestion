@@ -1,0 +1,88 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Grand Prix</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">你现在是一个丘陵地区公路赛的主设计师。赛道由</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">段直道连接而成。第</span><span lang="EN-US">K</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">段的结尾与第</span><span lang="EN-US">K+1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">段的开头相连。现在计划让这</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">段赛道都在一个平面上，所以可以在二维的笛卡尔坐标系确定端点。第一段直道从原点开始。图一表示了一个有六条直道的赛道。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal">&nbsp;<img src="http://lx.lanqiao.cn/RequireFile.do?fid=r6bhHRLM" width="476" height="265" alt="" /></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">图一</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">真实的比赛是在一座山上进行。简单起见，我们认为山坡和水平面夹角为</span><span lang="EN-US">&theta;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。如图二所示。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">山坡的平面和水平面相交在</span><span lang="EN-US">y</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">轴。每一个二维坐标</span><span lang="EN-US">(xi, yi)</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">对应一个三维坐标</span><span lang="EN-US">(xi', yi', zi')</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。其中</span><span lang="EN-US">zi&rsquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">表示第</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">条直线终点的高度。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal">&nbsp;<img src="http://lx.lanqiao.cn/RequireFile.do?fid=eJt9byfQ" width="496" height="414" alt="" /></p>
+<p class="MsoNormal" align="center" style="text-align:center"><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">图二</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">原点的高度为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。</span><span lang="EN-US"> <o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">举办这次特别的公路赛的目的是为了让新手司机练习，所以我们规定：一个合乎要求的赛道不包含任何下山的直道。也就是说，如果第</span><span lang="EN-US">k</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">段直道的终点是</span><span lang="EN-US">zk&rsquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">，那么对于所有第</span><span lang="EN-US">k</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">段以后的直道终点高度，一定不小于</span><span lang="EN-US">zk&rsquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。也可以记作当</span><span lang="EN-US">m</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&ge;</span><span lang="EN-US">k</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">，</span><span lang="EN-US">zk&rsquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&le;</span><span lang="EN-US">zm&rsquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">如果一个已设计好的赛道包含了下山的直道，它也许可以通过在平面上以原点为旋转中心旋转一定角度，被转化为一个没有下山直道的赛道，但并没有改变相邻两条直道直间的夹角。然而，也有可能存在设计好的赛道不论怎么旋转都无法成为合法赛道的情况。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">在这道题中，你必须确定一个被设计了的赛道是否合法（也就是说，它不包含任意的下山直道）。如果不合法，你必须找出旋转赛道来使它合法的最小角度，或者发现它不可能有解。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>&nbsp;</p>
+<p>【输入格式】&nbsp;</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">输入数据包括多组测试数据。每个数据点描述了一个赛道和该山坡的坡度。每个测试点的第一行包含两个正整数</span><span lang="EN-US">N(1 </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&le;</span><span lang="EN-US"> N </span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&le;</span><span lang="EN-US"> 10000)</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">和&theta;</span><span lang="EN-US">(0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&ordm;</span> <span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
+Calibri">&le;</span> <span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&theta;</span> <span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">&le;</span><span lang="EN-US"> 45</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">&ordm;</span><span lang="EN-US">)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">表示直道的个数，&theta;表示山坡和水平面的夹角，接下来</span><span lang="EN-US">N</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">行每行包含一对整数</span><span lang="EN-US">(xi, yi)</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">，表示第</span><span lang="EN-US">i</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">条直道的重点。第一条直道的起点就是原点，第</span><span lang="EN-US">k+1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">条直道的起点就是第</span><span lang="EN-US">k</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">条直道的终点。没有直道的长度为</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">最后一个测试点后接一行，包含两个整数</span><span lang="EN-US">0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p>【输出格式】&nbsp;</p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">对于每个测试点，先输出一行表示测试点编号（从</span><span lang="EN-US">1</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">开始）。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">如果原方案不经旋转就可以符合要求，则输出</span><span lang="EN-US">&ldquo;Acceptable as proposed&rdquo;</span><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">如果原方案不符合要求，但是可以由原点旋转而变得合法，则输出</span><span lang="EN-US">&ldquo;Acceptable after clockwise rotation of X degrees&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">或&ldquo;</span><span lang="EN-US">Acceptable after counterclockwise rotation of X degrees&rdquo;</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">。注意</span><span lang="EN-US">X&gt;0</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">。（我们认为，一个顺时针方向的旋转将把</span><span lang="EN-US">y</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">轴正方向向着</span><span lang="EN-US">x</span><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">轴正方向旋转）。如果顺时针和逆时针旋转都存在合法的方案，那么挑选旋转角度小的作为答案。如果两种旋转角度相等，那么任何一种答案都将被接受。答案保留两位小数。</span><span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal" style="text-indent:21.0pt"><span style="font-family:宋体;
+mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri">如果原方案如何旋转都无法变为合法解，就输出&ldquo;</span><span lang="EN-US">Unacceptable</span><span style="font-family:宋体;mso-ascii-font-family:
+Calibri;mso-hansi-font-family:Calibri">&rdquo;</span> <span lang="EN-US"><o:p></o:p></span></p>
+<p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Calibri;
+mso-hansi-font-family:Calibri">&nbsp; &nbsp; &nbsp;每个数据输出后打印一个空行。</span> <span lang="EN-US"><o:p></o:p></span></p>
+<p>【样例输入】&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US">2 45 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">10 10 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">0 1 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">2 0 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">1 1 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">2 0 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">3 45 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">10 10 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">1 10 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">5 6 <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">0 0&nbsp;<o:p></o:p></span></p>
+<p>【样例输出】&nbsp;</p>
+<p class="MsoNormal"><span lang="EN-US">Case 1: Acceptable after clockwise rotation of 131.99 degrees <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Case 2: Acceptable as proposed <o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">&nbsp;<o:p></o:p></span></p>
+<p class="MsoNormal"><span lang="EN-US">Case 3: Unacceptable</span></p>
+<p class="MsoNormal"><span lang="EN-US"><o:p></o:p></span><br />
+&nbsp;</p>

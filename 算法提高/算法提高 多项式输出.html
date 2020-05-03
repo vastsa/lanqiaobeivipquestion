@@ -1,0 +1,45 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 多项式输出</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p class="subtitle">问题描述</p>
+<p class="probcontent">一元n 次多项式可用如下的表达式表示：<br />
+f(x)=a[n]x^n+a[n-1]x^(n-1)+...+a[1]x+a[0], a[n]!=0<br />
+其中，a[i]x^i称为i 次项， a[i]称为i 次项的系数。给出一个一元多项式各项的次数和系数，请按照如下规定的格式要求输出该多项式：<br />
+1. 多项式中自变量为x，从左到右按照次数递减顺序给出多项式。<br />
+2. 多项式中只包含系数不为0 的项。<br />
+3. 如果多项式n 次项系数为正，则多项式开头不出现&ldquo;+&rdquo;号，如果多项式n 次项系数为负，则多项式以&ldquo;-&rdquo;号开头。<br />
+4. 对于不是最高次的项，以&ldquo;+&rdquo;号或者&ldquo;-&rdquo;号连接此项与前一项，分别表示此项系数为正或者系数为负。紧跟一个正整数，表示此项系数的绝对值（如果一个高于0 次的项，其系数的绝对值为1，则无需输出1）。如果x 的指数大于1，则接下来紧跟的指数部分的形式为&ldquo;x^b&rdquo;，其中b 为x 的指数；如果x 的指数为1，则接下来紧跟的指数部分形式为&ldquo;x&rdquo;；如果x 的指数为0，则仅需输出系数即可。<br />
+5. 多项式中，多项式的开头、结尾不含多余的空格。 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">输入格式</p>
+<p class="probcontent">输入共有2 行<br />
+第一行1 个整数，n，表示一元多项式的次数。<br />
+第二行有n+1 个整数，其中第i 个整数表示第n-i+1 次项的系数，每两个整数之间用空格隔开。<br />
+1 &le; n &le; 100，多项式各次项系数的绝对值均不超过100。 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">输出格式</p>
+<p class="probcontent">输出共1 行，按题目所述格式输出多项式。 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">样例输入1</p>
+<p class="probcontent">5<br />
+100 -1 1 -3 0 10 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">样例输出1</p>
+<p class="probcontent">100x^5-x^4+x^3-3x^2+10 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">样例输入2</p>
+<p class="probcontent">3<br />
+-50 0 0 1 <br />
+<br />
+&nbsp;</p>
+<p class="subtitle">样例输出2</p>
+<p class="probcontent">-50x^3+1 <br />
+<br />
+&nbsp;</p>

@@ -1,0 +1,29 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 黑白无常</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <div class="pdsec">问题描述</div>
+<div class="pdcont">某寝室的同学们在学术完之后准备玩一个游戏：游戏是这样的，每个人头上都被贴了一张白色或者黑色的纸，现在每个人都会说一句话&ldquo;我看到x张白色纸条和y张黑色的纸条&rdquo;，又已知每个头上贴着白色纸的人说的是真话、每个头上贴着黑色纸的人说的是谎话，现在要求你判断哪些人头上贴着的是白色的纸条，如果无解输出&ldquo;NoSolution.&rdquo;；如果有多组解，则把每个答案中贴白条的人的编号按照大小排列后组成一个数（比如第一个人和第三个人头上贴着的是白纸条，那么这个数就是13；如果第6、7、8个人都贴的是白纸条，那么这个数就是678）输出最小的那个数（如果全部都是黑纸条也满足情况的话，那么输出0）</div>
+<div class="pdsec">输入格式</div>
+<div class="pdcont">第一行为一个整数n，接下来n行中的第i行有两个整数x和y，分别表示第i个人说&ldquo;我看到x张白色纸条和y张黑色的纸条&rdquo;。</div>
+<div class="pdsec">输出格式</div>
+<div class="pdcont">一行。如果无解输出&ldquo;NoSolution.&rdquo;。否则输出答案中数值（具体见问题描述）最小的那个，如果全部都是黑纸条也满足情况的话，那么输出0</div>
+<div class="pdsec">样例输入</div>
+<div class="pddata">2<br />
+1 0<br />
+1 0</div>
+<div class="pdsec">样例输出</div>
+<div class="pddata">0<br />
+<div class="pdsec">样例输入</div>
+<div class="pddata">5<br />
+3 1<br />
+0 4<br />
+1 3<br />
+4 0<br />
+1 3</div>
+<div class="pdsec">样例输出</div>
+<div class="pddata">35</div>
+</div>
+<div class="pdsec">数据规模和约定</div>
+<p>n&lt;=8</p>

@@ -1,0 +1,52 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 乘积最大</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p><style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</style></p>
+<p style="margin-bottom: 0in"><b>问题描述</b><font face="Times New Roman, serif"><b>   </b></font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="text-indent: 0.3in; margin-bottom: 0in">今年是国际数学联盟确定的&ldquo;<font face="宋体">2000&mdash;&mdash;</font>世界数学年&rdquo;，又恰逢我国著名数学家华罗庚先生诞辰<font face="宋体">90</font>周年。在华罗庚先生的家乡江苏金坛，组织了一场别开生面的数学智力竞赛的活动，你的一个好朋友<font face="宋体">XZ</font>也有幸得以参加。活动中，主持人给所有参加活动的选手出了这样一道题目：</p>
+<p style="text-indent: 0.3in; margin-bottom: 0in">&nbsp;</p>
+<p style="text-indent: 0.3in; margin-bottom: 0in">设有一个长度为<font face="宋体">N</font>的数字串，要求选手使用<font face="宋体">K</font>个乘号将它分成<font face="宋体">K+1</font>个部分，找出一种分法，使得这<font face="宋体">K+1</font>个部分的乘积能够为最大。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">同时，为了帮助选手能够正确理解题意，主持人还举了如下的一个例子：</p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">&nbsp;</p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">有一个数字串：<font face="宋体">312</font>， 当<font face="宋体">N=3</font>，<font face="宋体">K=1</font>时会有以下两种分法：</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<ol>
+    <li>
+    <p style="margin-bottom: 0in"><font face="宋体">3*12=36</font></p>
+    </li>
+    <li>
+    <p style="margin-bottom: 0in"><font face="宋体">31*2=62</font></p>
+    </li>
+</ol>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">这时，符合题目要求的结果是：<font face="Times New Roman, serif">31*2=62</font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">现在，请你帮助你的好朋友<font face="Times New Roman, serif">XZ</font>设计一个程序，求得正确的答案。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in"><b>输</b><b>入格式</b><font face="Times New Roman, serif"><b>   </b></font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">程序的输入共有两行：</p>
+<p style="margin-bottom: 0in">第一行共有<font face="宋体"><font face="Times New Roman, serif">2</font></font>个自然数<font face="宋体"><font face="Times New Roman, serif">N</font></font>，<font face="宋体"><font face="Times New Roman, serif">K</font></font>（<font face="宋体"><font face="Times New Roman, serif">6</font><font face="宋体">&le;</font>N&le;40</font>，<font face="宋体">1&le;K&le;6</font>）</p>
+<p style="margin-bottom: 0in">第二行是一个长度为<font face="宋体">N</font>的数字串。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in"><b>输</b><b>出格式</b><font face="Times New Roman, serif"><b>   </b></font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">输出所求得的最大乘积（一个自然数）。</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in"><b>样</b><b>例</b>输入</p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in"><font face="DejaVu Serif, serif">4  2</font></p>
+<p style="margin-bottom: 0in"><font face="DejaVu Serif, serif">1231</font></p>
+<p style="margin-bottom: 0in">&nbsp;</p>
+<p style="margin-bottom: 0in">样例输出</p>
+<p style="margin-bottom: 0in"><font face="Times New Roman, serif">62</font></p>

@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法提高 Lift and Throw</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p style="text-indent: 0.74cm; margin-bottom: 0cm; line-height: 100%">【问题描述】</p>
+<p style="text-indent: 0.74cm; margin-bottom: 0cm; line-height: 100%">在<font face="Calibri, serif"><span lang="en-US">x</span></font>轴上有 <font face="Calibri, serif"><span lang="en-US">3 </span></font>个人，第 <font face="Calibri, serif"><span lang="en-US">i </span></font>个人的位置为 <font face="Calibri, serif"><span lang="en-US">xi</span></font>。最初他们的位置均不同。</p>
+<p style="text-indent: 0.74cm; margin-bottom: 0cm; line-height: 100%">每个人可以进行下列三种操作至多各一次：移动；将另一个人举起来；将举起的人扔出一段距离。</p>
+<p style="text-indent: 0.74cm; margin-bottom: 0cm; line-height: 100%">操作须遵守下列规则：</p>
+<p style="text-indent: 0.74cm; margin-bottom: 0cm; line-height: 100%">1. 每个人只能移动到（或被投掷到）此时没有被人占据的位置而且必须是整数点；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">2. 第 <font face="Calibri, serif"><span lang="en-US">i 	</span></font>个人一次移动的距离不超过 <font face="Calibri, serif"><span lang="en-US">mi</span></font>；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">3. 被举起的人不能进行任何操作；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">4. 正在举着别人的人不能移动；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">5. 当且仅当两个人 	<font face="Calibri, serif"><span lang="en-US">A </span></font>与 <font face="Calibri, serif"><span lang="en-US">B 	</span></font>相邻（即距离等于<font face="Calibri, serif"><span lang="en-US">1</span></font>），且 	<font face="Calibri, serif"><span lang="en-US">B </span></font>没有被其他人举起，且 	<font face="Calibri, serif"><span lang="en-US">A</span></font>能操作时，<font face="Calibri, serif"><span lang="en-US">A 	</span></font>可以举起 <font face="Calibri, serif"><span lang="en-US">B</span></font>，此时 	<font face="Calibri, serif"><span lang="en-US">B </span></font>自动移动到 	<font face="Calibri, serif"><span lang="en-US">A </span></font>所在的位置；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">6. 第 <font face="Calibri, serif"><span lang="en-US">i 	</span></font>个人的投掷距离不能超过 <font face="Calibri, serif"><span lang="en-US">ti</span></font>；</p>
+<p style="margin-bottom: 0cm; line-height: 100%">7. 可以出现 <font face="Calibri, serif"><span lang="en-US">A 	</span></font>举起 <font face="Calibri, serif"><span lang="en-US">B 	</span></font>的同时 <font face="Calibri, serif"><span lang="en-US">C 	</span></font>举起 <font face="Calibri, serif"><span lang="en-US">A 	</span></font>的情况。此时 <font face="Calibri, serif"><span lang="en-US">B 	</span></font>和 <font face="Calibri, serif"><span lang="en-US">A 	</span></font>都不能操作。</p>
+<p>&nbsp;请你计算，根据上述规则，这三个人能够到达的位置坐标的最大值<font size="2" style="font-size: 11pt">。</font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><br />
+【输入格式】</p>
+<p style="margin-bottom: 0cm; line-height: 100%">输入共三行，每行描述一个人的信息。</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">	</font></span></font>每一行为三个整数 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">xi, mi, ti (0 &lt;= xi, mi, ti &lt;= 10)</font></span></font>，依次表示这个人的初始坐标，最大移动距离，最大投掷距离。<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">ti = 0 </font></span></font>表示将别人举起来后无法扔出。</p>
+<p style="margin-bottom: 0cm; line-height: 100%">【输出格式】</p>
+<p style="margin-bottom: 0cm; line-height: 100%">输出一行，为一个整数，表示三个人的任何一个能到达的坐标的最大值。&nbsp;</p>
+<p style="margin-bottom: 0cm; line-height: 100%">【样例输入】</p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">9 3 3</font></span></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">	4 3 1</font></span></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%"><font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">	2 3 3</font></span></font></p>
+<p>【样例输出】</p>
+<p style="margin-bottom: 0cm; line-height: 100%">15<br />
+【样例解释】</p>
+<p style="margin-bottom: 0cm; line-height: 100%">初始时刻 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">A </font></span></font>在位置 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">9</font></span></font>，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">B </font></span></font>在 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">4</font></span></font>，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>在 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">2.</font></span></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%">　　第一步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">A </font></span></font>移动到 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">6</font></span></font>，注意移动时可以经过别的人；</p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第二步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>移动到位置 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">5</font></span></font>；</p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第三步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>举起 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">B</font></span></font>；</p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第四步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">A </font></span></font>举起 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C</font></span></font>；</p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第五步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">A </font></span></font>用尽全力把 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>扔到位置 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">9</font></span></font>，注意 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">B </font></span></font>仍然被 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>举着；</p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第六步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">C </font></span></font>用尽全力把 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">B </font></span></font>扔到到位置 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">12;</font></span></font></p>
+<p style="text-indent: 0.71cm; margin-bottom: 0cm; line-height: 100%">第七步，<font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">B </font></span></font>移动到位置 <font face="Calibri, serif"><span lang="en-US"><font face="Times New Roman, serif">15.</font></span></font></p>

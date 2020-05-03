@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 字符串编辑</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <h3>【问题描述】</h3>
+<div class="probcontent">从键盘输入一个字符串（长度&lt;=40个字符），并以字符 &rsquo;.&rsquo; 结束。编辑功能有：</div>
+<div class="probcontent">1    D：删除一个字符，命令的方式为： D  a  其中a为被删除的字符，例如：D  s  表示删除字符 &rsquo;s&rsquo; ，若字符串中有多个 &lsquo;s&rsquo;，则删除第一次出现的。<br />
+2    I：插入一个字符，命令的格式为：I  a1  a2  其中a1表示插入到指定字符前面，a2表示将要插入的字符。例如：I  s  d  表示在指定字符 &rsquo;s&rsquo; 的前面插入字符 &lsquo;d&rsquo; ，若原串中有多个 &lsquo;s&rsquo; ，则插入在最后一个字符的前面。<br />
+3   R：替换一个字符，命令格式为：R  a1  a2  其中a1为被替换的字符，a2为替换的字符，若在原串中有多个a1则应全部替换。<br />
+在编辑过程中，若出现被改的字符不存在时，则给出提示信息。</div>
+<h3>【输入】</h3>
+<div class="probcontent">输入共两行，第一行为原串(以&rsquo;.&rsquo;结束)，第二行为命令（输入方式参见&ldquo;问题描述&rdquo; 。</div>
+<h3>【输出】</h3>
+<div class="probcontent">输出共一行，为修改后的字符串或输出指定字符不存在的提示信息。</div>
+<h3>【输入样例】</h3>
+<div class="probexample">
+<p>This is a book.<br />
+D s</p>
+</div>
+<h3>【输出样例】</h3>
+<div class="probexample">
+<p>Thi is a book.</p>
+<p>【输入输出样例解释】</p>
+</div>
+<p>命令为删去s，第一个在字符中出现的s在This中，即得到结果。</p>

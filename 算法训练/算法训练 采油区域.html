@@ -1,0 +1,301 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 采油区域</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <h1 style="text-align: center; margin: 17pt 0cm 16.5pt" align="center"><span style="font-family: 黑体">采油区域<span lang="EN-US"><o:p></o:p></span></span></h1>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">Siruseri</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">政府决定将石油资源丰富的</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">Navalur</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">省的土地拍卖给私人承包商以建立油井。被拍卖的整块土地为一个矩形区域，被划分为</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">M</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">&times;</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">N</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">个小块。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">Siruseri</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">地质调查局有关于</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">Navalur</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">土地石油储量的估测数据。这些数据表示为</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">M</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">&times;</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">N</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">个非负整数，即对每一小块土地石油储量的估计值。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">为了避免出现垄断，政府规定每一个承包商只能承包一个由</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">&times;</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">块相连的土地构成的正方形区域。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">AoE</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">石油联合公司由三个承包商组成，他们想选择三块互不相交的</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">&times;</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的区域使得总的收益最大。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">例如，假设石油储量的估计值如下：</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><o:p><font face="Times New Roman">&nbsp;</font></o:p></span></p>
+<div align="center">
+<table style="border-collapse: collapse; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt" class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+        <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 1">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 2">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 3">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 4">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 5">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 6">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">8<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 7">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+        <tr style="mso-yfti-irow: 8; mso-yfti-lastrow: yes">
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">1<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.85pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+            <td style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 5.4pt; width: 17.9pt; padding-right: 5.4pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm" valign="top" width="24">
+            <p style="text-align: center; margin: 0cm 0cm 0pt" class="MsoNormal" align="center"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">9<o:p></o:p></font></span></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><o:p><font face="Times New Roman">&nbsp;</font></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">如果</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">K</span></i><span style="font-size: 12pt" lang="EN-US"> = 2, AoE</span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">公司可以承包的区域的石油储量总和为</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">100, </font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">如果</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">K</span></i><span style="font-size: 12pt" lang="EN-US"> = 3, AoE</span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">公司可以承包的区域的石油储量总和为</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">208</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<p style="text-indent: 24pt; margin: 0cm 0cm 0pt; mso-char-indent-count: 2.0" class="MsoNormal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">AoE</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">公司雇佣你来写一个程序，帮助计算出他们可以承包的区域的石油储量之和的最大值。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<h3 style="margin: 13pt 0cm"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><font size="5">输入格式</font></span></h3>
+<p style="line-height: 17pt; text-indent: 24pt; margin: 6pt 0cm 0pt; mso-char-indent-count: 2.0; mso-para-margin-top: .5gd; mso-line-height-rule: exactly" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">输入第一行包含三个整数</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">M</span></i><span style="font-size: 12pt" lang="EN-US">, <i style="mso-bidi-font-style: normal">N</i>, <i style="mso-bidi-font-style: normal">K</i></span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，其中</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">M</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">和</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">N</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">是矩形区域的行数和列数，</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">是每一个承包商承包的正方形的大小（边长的块数）。接下来</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">M</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">行，每行有</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">N</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">个非负整数表示这一行每一小块土地的石油储量的估计值。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<h3 style="margin: 13pt 0cm"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><font size="5">输出格式</font></span></h3>
+<p style="line-height: 17pt; text-indent: 24pt; margin: 6pt 0cm 0pt; mso-char-indent-count: 2.0; mso-para-margin-top: .5gd; mso-line-height-rule: exactly" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">输出只包含一个整数，表示</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">AoE</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">公司可以承包的区域的石油储量之和的最大值。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<h3 style="margin: 13pt 0cm"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><font size="5">数据范围</font></span></h3>
+<p style="line-height: 17pt; text-indent: 24pt; margin: 6pt 0cm 0pt; mso-char-indent-count: 2.0; mso-para-margin-top: .5gd; mso-line-height-rule: exactly" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">数据保证</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">K</span></i><span style="font-size: 12pt" lang="EN-US">&le;<i style="mso-bidi-font-style: normal">M</i></span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">且</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">K</span></i><span style="font-size: 12pt" lang="EN-US">&le;<i style="mso-bidi-font-style: normal">N</i></span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">并且至少有三个</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">&times;</span><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">K</font></span></i><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的互不相交的正方形区域。其中</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">30%</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的输入数据，</span><font face="Times New Roman"><i style="mso-bidi-font-style: normal"><span style="font-size: 12pt" lang="EN-US">M</span></i><span style="font-size: 12pt" lang="EN-US">, <i style="mso-bidi-font-style: normal">N</i>&le; 12</span></font><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。所有的输入数据</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">, <i style="mso-bidi-font-style: normal">M</i>, <i style="mso-bidi-font-style: normal">N</i>&le; 1500</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。每一小块土地的石油储量的估计值是非负整数且</span><span style="font-size: 12pt" lang="EN-US"><font face="Times New Roman">&le; 500</font></span><span style="font-family: 宋体; font-size: 12pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">。</span><span style="font-size: 12pt" lang="EN-US"><o:p></o:p></span></p>
+<h3 style="margin: 13pt 0cm"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><font size="5">输入样例</font></span></h3>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">9 9 3<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 1 1 1 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 1 1 1 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 8 8 8 8 8 1 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 8 8 8 8 8 1 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 8 8 8 8 8 1 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 8 8 8 1 1<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 1 1 8 8 8<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 1 1 9 9 9<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">1 1 1 1 1 1 9 9 9<o:p></o:p></span></p>
+<h3 style="margin: 13pt 0cm"><span style="font-family: 宋体; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri"><font size="5">输出样例</font></span></h3>
+<p style="margin: 0cm 0cm 0pt" class="MsoNormal"><span style="font-family: 宋体; font-size: 12pt" lang="EN-US">208<o:p></o:p></span></p>

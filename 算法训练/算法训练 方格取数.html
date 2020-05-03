@@ -1,0 +1,32 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 方格取数</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p><style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+	-->
+	</style></p>
+<p style="margin-bottom: 0in"><b>问题描述</b><font face="Times New Roman, serif"><b>   </b></font></p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">设有<font face="Times New Roman, serif">N*N</font>的方格图<font face="Times New Roman, serif">(N&lt;=10),</font>我们将其中的某些方格中填入正整数<font face="Times New Roman, serif">,</font>而其他的方格中则放入数字<font face="Times New Roman, serif">0</font>。</p>
+<p style="margin-bottom: 0in">&nbsp;<span style="text-indent: 0.29in;">某人从图的左上角的</span><font face="Times New Roman, serif" style="text-indent: 0.29in;">A </font><span style="text-indent: 0.29in;">点(1,1)出发，可以向下行走，也可以向右走，直到到达右下角的</span><font face="Times New Roman, serif" style="text-indent: 0.29in;">B</font><span style="text-indent: 0.29in;">点(N,N)。在走过的路上，他可以取走方格中的数（取走后的方格中将变为数字</span><font face="Times New Roman, serif" style="text-indent: 0.29in;">0</font><span style="text-indent: 0.29in;">）。</span></p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">此人从<font face="Times New Roman, serif">A</font>点到<font face="Times New Roman, serif">B </font>点共走两次，试找出<font face="Times New Roman, serif">2</font>条这样的路径，使得取得的数之和为最大。</p>
+<p style="margin-bottom: 0in">&nbsp;<b>输</b><b>入格式</b></p>
+<p style="text-indent: 0.29in; margin-bottom: 0in">输入的第一行为一个整数<font face="Times New Roman, serif">N</font>（表示<font face="Times New Roman, serif">N*N</font>的方格图），接下来的每行有三个整数，前两个表示位置，第三个数为该位置上所放的数。一行单独的<font face="Times New Roman, serif">0</font>表示输入结束。</p>
+<p style="margin-bottom: 0in">&nbsp;<b>输</b><b>出格式</b></p>
+<p style="margin-bottom: 0in">只需输出一个整数，表示<font face="Times New Roman, serif">2</font>条路径上取得的最大的和。</p>
+<p style="margin-bottom: 0in">&nbsp;<b>样</b><b>例</b><b>输</b><b>入</b></p>
+<p>8</p>
+<p>&nbsp;2 3 13</p>
+<p>&nbsp;2 6 6</p>
+<p>&nbsp;3 5 7</p>
+<p>&nbsp;4 4 14</p>
+<p>&nbsp;5 2 21</p>
+<p>&nbsp;5 6 4</p>
+<p>&nbsp;6 3 15</p>
+<p>&nbsp;7 2 14</p>
+<p>&nbsp;0 0 0</p>
+<p style="margin-bottom: 0in"><b>样例输出</b></p>
+<p style="margin-bottom: 0in"><font face="Times New Roman, serif">67</font></p>

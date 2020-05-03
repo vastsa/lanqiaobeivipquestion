@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 C++ CH08 01</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>【问题描述】<br />
+<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">已知一个有理数类Zrf_Ratio，实现如下的操作符重载形式：</span><br style="margin: 0px; padding: 0px; color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;" />
+<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">　　friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp;, const zrf_Ratio&amp;);</span><span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">//输出最简分数</span><br style="margin: 0px; padding: 0px; color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;" />
+<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">　　friend std::istream&amp; operator&gt;&gt;(std::istream&amp;, zrf_Ratio&amp;);</span><br style="margin: 0px; padding: 0px; color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;" />
+<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">　　friend bool operator==(const zrf_Ratio&amp;, const zrf_Ratio&amp;);</span><br style="margin: 0px; padding: 0px; color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;" />
+<span style="color: rgb(32, 0, 0); font-family: 'Times New Roman', 宋体; font-size: 14px;">　　friend bool operator&lt;(const zrf_Ratio&amp;, const zrf_Ratio&amp;);</span></p>
+<p>&nbsp;</p>
+<p>【测试】<br />
+<br />
+测试时主程序会输入四个整数a, b, c, d，表示两个分数a/b和c/d。要求输出最简分数以及两个分数相等和大小的比较结果。<br />
+<br />
+【输入样例】<br />
+<br />
+1 7 26 25<br />
+<br />
+【输出样例】<br />
+&nbsp;</p>
+<p>zrf is:1/7; ssh is:26/25</p>
+<p>(zrf==ssh) is:0; (zrf&lt;ssh) is:1</p>
+<p><br />
+<br />
+&nbsp;</p>

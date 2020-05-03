@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+<title>算法训练 Lift and Throw</title>
+<link rel="stylesheet" href="../css/main.css">
+</head>
+ <p>&nbsp;</p>
+<p>问题描述</p>
+<p>&nbsp;</p>
+<p>给定一条标有整点(1, 2, 3, ...)的射线. 定义两个点之间的距离为其下标之差的绝对值.</p>
+<p>Laharl, Etna, Flonne一开始在这条射线上不同的三个点, 他们希望其中某个人能够到达下标最大的点.</p>
+<p>每个角色只能进行下面的3种操作, 且每种操作不能每人不能进行超过一次.</p>
+<p>1.移动一定的距离</p>
+<p>2.把另一个角色高举过头</p>
+<p>3.将举在头上的角色扔出一段距离</p>
+<p>每个角色有一个movement range参数, 他们只能移动到没有人的位置, 并且起点和终点的距离不超过movement range.</p>
+<p>如果角色A和另一个角色B距离为1, 并且角色B没有被别的角色举起, 那么A就能举起B. 同时, B会移动到A的位置,B原来所占的位置变为没有人的位置. 被举起的角色不能进行任何操作, 举起别人的角色不能移动.同时, 每个角色还有一个throwing range参数, 即他能把举起的角色扔出的最远的距离. 注意, 一个角色只能被扔到没有别的角色占据的位置. 我们认为一个角色举起另一个同样举起一个角色的角色是允许的. 这种情况下会出现3个人在同一个位置的情况. 根据前面的描述, 这种情况下上面的两个角色不能进行任何操作, 而最下面的角色可以同时扔出上面的两个角色. 你的任务是计算这些角色能够到达的位置的最大下标, 即最大的数字x, 使得存在一个角色能够到达x.&nbsp;</p>
+<p>&nbsp;</p>
+<p>输入格式</p>
+<p><span class="Apple-tab-span" style="white-space:pre">	</span>输入共三行, 分别为Laharl, Etna, Floone的信息.</p>
+<p><span class="Apple-tab-span" style="white-space:pre">	</span>每一行有且仅有3个整数, 描述对应角色的初始位置, movement range, throwing range.</p>
+<p><span class="Apple-tab-span" style="white-space:pre">	</span>数据保证3个角色的初始位置两两不相同且所有的数字都在1到10之间.&lt;/div&gt;</p>
+<p>输出格式</p>
+<p><span class="Apple-tab-span" style="white-space:pre">	</span>仅有1个整数, 即Laharl, Etna, Flonne之一能到达的最大距离.</p>
+<p><span class="Apple-tab-span" style="white-space:pre">	</span></p>
+<p>样例输入</p>
+<p>9 3 3</p>
+<p>4 3 1</p>
+<p>2 3 3</p>
+<p>&nbsp;</p>
+<p>样例输出</p>
+<p>15</p>
+<p>&nbsp;</p>
+<p>样例解释</p>
+<p>一开始Laharl在位置9, Etna在位置4, Flonne在位置2.</p>
+<p>首先, Laharl移动到6.</p>
+<p>然后Flonne移动到位置5并且举起Etna.</p>
+<p>Laharl举起Flonne将其扔到位置9.</p>
+<p>Flonne把Etna扔到位置12.</p>
+<p>Etna移动到位置15.</p>
+<div>&nbsp;</div>
+<p>&nbsp;</p>
